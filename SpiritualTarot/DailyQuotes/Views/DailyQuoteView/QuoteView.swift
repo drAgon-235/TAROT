@@ -41,6 +41,7 @@ struct QuoteView: View {
                     .background(Color.teal)
                     .cornerRadius(10)
                     .padding()
+                
                 Spacer()
             }
             //.onAppear(){

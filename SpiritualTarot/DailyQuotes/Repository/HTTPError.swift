@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Creating some own throwable Error Types:
 enum HTTPError: Error {
     case invalidURL
     case missingData

@@ -10,6 +10,7 @@ import SwiftUI
 struct FavoriteQuotesView: View {
     var body: some View {
         Text("Favorite Quotes (List) View")
+        
     }
 }
 
