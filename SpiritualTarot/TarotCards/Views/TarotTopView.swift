@@ -11,6 +11,12 @@ struct TarotTopView: View {
     var body: some View {
         NavigationStack {
             Text("TAROT Top View")
+                .toolbar {
+                    HStack {
+                        Spacer()
+                        LogoutButtonAlert()
+                    }
+                }
         }
     }
 }

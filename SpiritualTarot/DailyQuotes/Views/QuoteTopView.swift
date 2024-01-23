@@ -33,7 +33,14 @@ struct QuoteTopView: View {
                 
                 NavigationLink(destination: FavoriteQuotesView()) {
                     ShowFavBTN()
-                }.navigationBarTitle(Text("Daily quotes"))
+                }
+                .navigationBarTitle(Text("Daily quotes"))
+                .toolbar {
+                    HStack {
+                        Spacer()
+                        LogoutButtonAlert()
+                    }
+                }
             }
         }
         // sheet for Quote of the Day
