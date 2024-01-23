@@ -1,0 +1,20 @@
+//
+//  TarotTopView.swift
+//  SpiritualTarot
+//
+//  Created by Slawo Dragon on 23.01.24.
+//
+
+import SwiftUI
+
+struct TarotTopView: View {
+    var body: some View {
+        NavigationStack {
+            Text("TAROT Top View")
+        }
+    }
+}
+
+#Preview {
+    TarotTopView()
+}
