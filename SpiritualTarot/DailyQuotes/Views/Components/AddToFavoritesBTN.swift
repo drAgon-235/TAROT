@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AddToFavoritesBTN: View {
     
+    
     let action: () -> Void
 
     var body: some View {
@@ -22,7 +23,7 @@ struct AddToFavoritesBTN: View {
             .font(.title)
             //.padding(.vertical, 5)
             //.padding(.horizontal, 10)
-            //.foregroundColor(.white)
+            .foregroundColor(.purple)
             //.background(Color.accentColor)
             //.clipShape(Capsule())
         }

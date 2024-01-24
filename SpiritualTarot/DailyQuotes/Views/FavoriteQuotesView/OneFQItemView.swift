@@ -8,11 +8,34 @@
 import SwiftUI
 
 struct OneFQItemView: View {
+    
+    let favQuote: FavoriteQuote
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+       
+            VStack {
+                //Only padding to top, for the Divider() already "has" an own padding by default
+                Text(favQuote.q)
+                    .padding(.top, 8)
+                    .padding(.horizontal, 5)
+                    .font(.title3)
+                    .foregroundColor(.white)
+                
+                Divider()
+                
+                //Only padding to bottom, for the Divider() already "has" an own padding by default
+                Text(favQuote.a)
+                    .padding(.bottom, 8)
+                    .foregroundColor(.indigo)
+            }
+            //.padding(8)
+            .background(Color.mint)
+            .cornerRadius(10)
+            //.padding()
+            
     }
 }
 
 #Preview {
-    OneFQItemView()
+    OneFQItemView(favQuote: FavoriteQuote(userID: "123", q: "Any words without meaning but lot of sense", a: "Anonymous", isFavorite: true))
 }

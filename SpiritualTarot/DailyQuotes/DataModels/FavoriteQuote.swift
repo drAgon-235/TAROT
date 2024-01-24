@@ -8,7 +8,8 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-class FavoriteQuote: Codable, Identifiable {
+// this has to be a struct: class does not work for Firebase :
+struct FavoriteQuote: Codable, Identifiable {
     @DocumentID var id: String?
 
     var userID: String

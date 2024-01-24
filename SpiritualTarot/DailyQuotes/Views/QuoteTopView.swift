@@ -26,10 +26,11 @@ struct QuoteTopView: View {
                     .padding(.vertical, 10)
                     .padding(.horizontal, 15)
                     .foregroundColor(.white)
-                    .background(Color.accentColor)
+                    .background(Color.mint)
                     .cornerRadius(10)
                 })
                 .padding(40)
+                
                 
                 NavigationLink(destination: FavoriteQuotesView()) {
                     ShowFavBTN()

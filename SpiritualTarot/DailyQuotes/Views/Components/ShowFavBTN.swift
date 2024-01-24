@@ -15,7 +15,7 @@ struct ShowFavBTN: View {
         }
         .font(.title)
         .frame(width: 250, height: 50, alignment: .center)
-        .background(Color.blue)
+        .background(Color.purple)
         .foregroundColor(Color.white)
         .cornerRadius(10)    }
 }
