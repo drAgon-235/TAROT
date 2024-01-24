@@ -9,12 +9,11 @@ import Foundation
 
 class QuotesViewModel: ObservableObject {
     
-    
     init() {
         fetchData()
     }
      
-     
+    
     @Published var quote: [Quote] = []
     
     func fetchData() {

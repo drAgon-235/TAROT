@@ -33,7 +33,7 @@ class FavoriteQuotesVM: ObservableObject {
         do {
             try FirebaseManager.shared.database.collection("favQuotes").addDocument(from: favQuote2)
         } catch let error {
-            print("Error saving the favQuote: \(error)")
+            print("Error saving the Favorite Quotes: \(error)")
         }
     }
     
@@ -49,7 +49,7 @@ class FavoriteQuotesVM: ObservableObject {
             }
             
             guard let documents = querySnaphot?.documents else {
-                print("Error loading the books")
+                print("Error loading Favorite Quotes")
                 return
             }
             
@@ -69,10 +69,10 @@ class FavoriteQuotesVM: ObservableObject {
     func deleteFavQuote(with id: String) {
         FirebaseManager.shared.database.collection("favQuotes").document(id).delete() { error in
             if let error {
-                print("Error deleting the book", error.localizedDescription)
+                print("Error deleting Favorite Quote", error.localizedDescription)
                 return
             }
-            print("DELETED Book with ID: \(id)")
+            print("DELETED FavQuote with ID: \(id)")
         }
     }
     

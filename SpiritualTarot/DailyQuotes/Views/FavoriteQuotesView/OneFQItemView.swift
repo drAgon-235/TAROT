@@ -26,7 +26,7 @@ struct OneFQItemView: View {
                 //Only padding to bottom, for the Divider() already "has" an own padding by default
                 Text(favQuote.a)
                     .padding(.bottom, 8)
-                    .foregroundColor(.indigo)
+                    .foregroundColor(.purple)
             }
             //.padding(8)
             .background(Color.mint)
@@ -37,5 +37,5 @@ struct OneFQItemView: View {
 }
 
 #Preview {
-    OneFQItemView(favQuote: FavoriteQuote(userID: "123", q: "Any words without meaning but lot of sense", a: "Anonymous", isFavorite: true))
+    OneFQItemView(favQuote: FavoriteQuote(userID: "123", q: "Any words without meaning but lot of nonsense", a: "Anonymous", isFavorite: true))
 }

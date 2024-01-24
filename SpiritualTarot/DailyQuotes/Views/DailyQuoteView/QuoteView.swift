@@ -37,17 +37,21 @@ struct QuoteView: View {
      
                         // checking, if the quote already is in Favorites DB:
                         if favQuotesVW.containsQuote(quote) {
-                            Text("Is in your favorites list")
+                            Text("Is saved in your")
                                 .foregroundColor(.purple)
+                           
+                            NavigationLink(destination: FavoriteQuotesView()) {
+                                ShowFavListBTN()
+                            }
+                            
+                            
                             Image(systemName: "heart.fill")
                                 .padding(.trailing, 30)
                                 .foregroundColor(.purple)
-
                         } else {
                             AddToFavoritesBTN(action: {showFavConfirmAlert.toggle()})
                                 .padding(.trailing, 30)
                         }
-                        
                     }
                     
                     VStack {
@@ -57,8 +61,7 @@ struct QuoteView: View {
                         Divider()
                         Text(author)
                             .padding(4)
-                            .foregroundColor(.indigo)
-
+                            .foregroundColor(.purple)
                     }
                     .padding()
                     .background(Color.mint)

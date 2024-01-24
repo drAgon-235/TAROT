@@ -18,7 +18,6 @@ struct FavoriteQuotesView: View {
             .foregroundColor(.purple)
             .font(.title)
         
-       
             List(observedFavQuotesVM.favQuotes) { favoriteQuote in
                 OneFQItemView(favQuote: favoriteQuote)
                 //.padding(.horizontal, 20)
@@ -29,7 +28,6 @@ struct FavoriteQuotesView: View {
                             Label("Delete", systemImage: "trash")
                         }
                     }
-                
             }
             
             /* here the swipesActions didn't work : ?!?!?!??
@@ -52,7 +50,6 @@ struct FavoriteQuotesView: View {
              }
              }
              */
-            
             
         }
     }

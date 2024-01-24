@@ -8,7 +8,8 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-// this has to be a struct: class does not work for Firebase :
+// For the Firestore Favorites DB:
+// this has to be a 'struct'; a 'class' wouldn't work for Firebase :
 struct FavoriteQuote: Codable, Identifiable {
     @DocumentID var id: String?
 
