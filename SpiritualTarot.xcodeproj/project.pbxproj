@@ -59,6 +59,8 @@
 		29C46C892B60329F00881C4E /* ShowFavBTN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C46C882B60329F00881C4E /* ShowFavBTN.swift */; };
 		29C46C8B2B60330500881C4E /* RemoveFromFavsBTN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C46C8A2B60330500881C4E /* RemoveFromFavsBTN.swift */; };
 		29C46C8D2B60344500881C4E /* FavoriteQuotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C46C8C2B60344500881C4E /* FavoriteQuotesView.swift */; };
+		29C46C8F2B604AE500881C4E /* FavoriteQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C46C8E2B604AE500881C4E /* FavoriteQuote.swift */; };
+		29C46C912B604C3E00881C4E /* FavoriteQuotesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C46C902B604C3E00881C4E /* FavoriteQuotesVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +90,8 @@
 		29C46C882B60329F00881C4E /* ShowFavBTN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowFavBTN.swift; sourceTree = "<group>"; };
 		29C46C8A2B60330500881C4E /* RemoveFromFavsBTN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveFromFavsBTN.swift; sourceTree = "<group>"; };
 		29C46C8C2B60344500881C4E /* FavoriteQuotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteQuotesView.swift; sourceTree = "<group>"; };
+		29C46C8E2B604AE500881C4E /* FavoriteQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteQuote.swift; sourceTree = "<group>"; };
+		29C46C902B604C3E00881C4E /* FavoriteQuotesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteQuotesVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				29C46C7E2B6029F200881C4E /* QuotesViewModel.swift */,
+				29C46C902B604C3E00881C4E /* FavoriteQuotesVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				29C46C782B60293600881C4E /* Quote.swift */,
+				29C46C8E2B604AE500881C4E /* FavoriteQuote.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -493,6 +499,7 @@
 				29C46C822B60315600881C4E /* AddToFavoritesBTN.swift in Sources */,
 				29C46C702B601E5600881C4E /* UserViewModel.swift in Sources */,
 				29C46C7D2B6029A300881C4E /* QuotesRepository.swift in Sources */,
+				29C46C8F2B604AE500881C4E /* FavoriteQuote.swift in Sources */,
 				29C46C752B601FD100881C4E /* LogoutButtonAlert.swift in Sources */,
 				29C46C172B60013900881C4E /* Tab.swift in Sources */,
 				29C46C6E2B601D6A00881C4E /* FirebaseManager.swift in Sources */,
@@ -501,6 +508,7 @@
 				29C46C892B60329F00881C4E /* ShowFavBTN.swift in Sources */,
 				29C46C872B60323A00881C4E /* QuoteView.swift in Sources */,
 				29C46C1D2B6003ED00881C4E /* QuoteTopView.swift in Sources */,
+				29C46C912B604C3E00881C4E /* FavoriteQuotesVM.swift in Sources */,
 				29C46C2F2B600AF600881C4E /* TextButton.swift in Sources */,
 				29C46C772B60204A00881C4E /* AuthenticationView.swift in Sources */,
 				29C46C052B5FFFB500881C4E /* SpiritualTarotApp.swift in Sources */,
