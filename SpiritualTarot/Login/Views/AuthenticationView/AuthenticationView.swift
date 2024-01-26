@@ -57,7 +57,7 @@ struct AuthenticationView: View {
             
             
             VStack(spacing: 12) {
-                // If the Field is visible is being decided in the Enum (AuthenticationMode) by it's state:
+                // The visibility of the Field depends on the Enum (AuthenticationMode) and it's state:
                 if mode.nameFieldIsVisible {
                     ZStack(alignment: .bottom) {
                         TextField("Name", text: $name)

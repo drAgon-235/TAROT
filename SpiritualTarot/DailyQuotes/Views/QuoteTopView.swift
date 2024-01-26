@@ -11,7 +11,6 @@ struct QuoteTopView: View {
         
     // manage the changing to other Views with toggles
     @State var showQuoteView = false
-    @State var showFavoritesView = false
     
     var body: some View {
         NavigationStack{
@@ -30,7 +29,6 @@ struct QuoteTopView: View {
                     .cornerRadius(10)
                 })
                 .padding(40)
-                
                 
                 NavigationLink(destination: FavoriteQuotesView()) {
                     ShowFavBTN()

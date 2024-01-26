@@ -83,6 +83,5 @@ class FavoriteQuotesVM: ObservableObject {
             $0.q == quote
         }
     }
-    
-    
+
 }

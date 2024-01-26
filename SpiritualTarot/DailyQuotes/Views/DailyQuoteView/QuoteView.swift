@@ -19,6 +19,7 @@ struct QuoteView: View {
     var body: some View {
         NavigationStack{
             VStack {
+                // Filling the variable with data from the VM, triggering an API call by init() of the VM
                 let quote = quotesVM.quote.first?.q ?? "API ERROR 404 - Quote"
                 let author = quotesVM.quote.first?.a ?? "API ERROR 404 - Author"
                 
