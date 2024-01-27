@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct CashedQuote: Codable {
+    var q: String
+    var a: String
+    var date: String
+}

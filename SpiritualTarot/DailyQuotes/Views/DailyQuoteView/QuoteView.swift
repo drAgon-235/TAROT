@@ -9,12 +9,12 @@ import SwiftUI
 
 struct QuoteView: View {
     
+    @StateObject private var cashVM = CashedQuoteVM()
     @StateObject private var quotesVM = QuotesViewModel()
     @StateObject private var favQuotesVW = FavoriteQuotesVM()
-    
-    @State var showFavConfirmAlert = false
-    @State var showDeleteFavoriteAlert = false
+    @StateObject private var userVM = UserViewModel()
 
+    @State var showFavConfirmAlert = false
 
     var body: some View {
         NavigationStack{
@@ -23,19 +23,32 @@ struct QuoteView: View {
                 let quote = quotesVM.quote.first?.q ?? "API ERROR 404 - Quote"
                 let author = quotesVM.quote.first?.a ?? "API ERROR 404 - Author"
                 
-                
-                HStack{
-                    Image(systemName: "quote.opening")
-                    Text("Quote of the day")
-                    Image(systemName: "quote.closing")
+                VStack{
+                    HStack{
+                        Image(systemName: "quote.opening")
+                        Text("Quote of the day")
+                        Image(systemName: "quote.closing")
+                    }
+                    .padding(.top, 10)
+                    
+                    Text("for: ")
+                        .font(.title3)
+                    
+                    Text(userVM.name)
+                        .bold()
+                        .padding(2)
+                        .font(.title2)
+                        .foregroundColor(.purple)
                 }
-                .padding()
                 .foregroundColor(.mint)
+                    
+                DateTodayView()
+                    .padding(.top, 25)
                 
                 Spacer()
-                    HStack{
+
+                HStack{
                         Spacer()
-     
                         // checking, if the quote already is in Favorites DB:
                         if favQuotesVW.containsQuote(quote) {
                             Text("Is saved in your")
@@ -44,7 +57,6 @@ struct QuoteView: View {
                             NavigationLink(destination: FavoriteQuotesView()) {
                                 ShowFavListBTN()
                             }
-                            
                             
                             Image(systemName: "heart.fill")
                                 .padding(.trailing, 30)

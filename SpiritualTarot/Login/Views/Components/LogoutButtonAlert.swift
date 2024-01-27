@@ -23,7 +23,7 @@ struct LogoutButtonAlert: View {
         .alert("Logout?", isPresented: $alertVisible) {
             Button("OK") {
                 userVM.logout()
-                //marketVM.removeListener()  // important for DB !!!
+                //marketVM.removeListener()  // important for DB cart , but not for etarnal favorites !!!
             }
             Button("Cancel", role: .cancel) {}
         }    }

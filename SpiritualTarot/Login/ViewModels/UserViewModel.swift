@@ -36,9 +36,12 @@ class UserViewModel: ObservableObject {
     }
     
     var email: String {
-        user?.email ?? ""
+        user?.email ?? "Email"
     }
     
+    var name: String {
+        user?.name ?? "Name"
+    }
     
     // MARK: - Functions
     
