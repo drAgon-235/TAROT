@@ -9,20 +9,13 @@ import Foundation
 
 class CashedQuoteVM: ObservableObject {
     
-    @Published var cashedQuoteToday: CashedQuote = CashedQuote(q: "...", a: "...", date: "date")
     
-    func checkDate() {
-        
+    @Published var cashedQuoteToday: [CashedQuote] = [CashedQuote(q: "...", a: "...", date: "date")]
+    
+    
+    func putToDailyCashe(quote: CashedQuote) {
+        self.cashedQuoteToday[0] = CashedQuote(q: quote.q, a: quote.a, date: quote.date)
     }
-    
-    func putToDailyCashe(quote: Quote) {
-        self.cashedQuoteToday.q = quote.q
-        self.cashedQuoteToday.a = quote.a
-        self.cashedQuoteToday.date = getCurrentDate()
-    }
-    
-    
-    
     
     
     func getCurrentDate() -> String {
@@ -30,4 +23,14 @@ class CashedQuoteVM: ObservableObject {
         formatter.dateFormat = "dd-MMM-yyyy" // MMM: short month name
         return formatter.string(from: Date())
     }
+    
+    /*
+    func containsQuote(_ quote: String) -> Bool {
+        cashedQuoteToday.q == quote
+    }
+    
+    func isCurrentDateSameAsCashed() -> Bool {
+        cashedQuoteToday.date == getCurrentDate()
+    }
+     */
 }

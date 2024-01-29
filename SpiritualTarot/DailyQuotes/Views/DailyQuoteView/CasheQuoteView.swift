@@ -7,9 +7,32 @@
 
 import SwiftUI
 
+// just for Testing purposals:
 struct CasheQuoteView: View {
+    
+    @StateObject private var cashVM = CashedQuoteVM()
+
+
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        let quote = cashVM.cashedQuoteToday.first!.q
+        let author = cashVM.cashedQuoteToday.first!.a
+        
+        VStack {
+            
+            Text(quote)
+                .font(.title2)
+                .foregroundColor(.white)
+            Divider()
+            Text(author)
+                .padding(4)
+                .foregroundColor(.purple)
+        }
+        .padding()
+        .background(Color.mint)
+        .cornerRadius(10)
+        .padding()
+        
     }
 }
 

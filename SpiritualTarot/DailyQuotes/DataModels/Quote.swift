@@ -9,7 +9,7 @@ import Foundation
 import FirebaseFirestoreSwift
 
 // class for API call - (it work as struct as well)
-class Quote: Codable {
+struct Quote: Codable {
     var q: String
     var a: String
 }
