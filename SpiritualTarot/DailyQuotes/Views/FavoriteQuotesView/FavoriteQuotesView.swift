@@ -9,8 +9,6 @@ import SwiftUI
 
 struct FavoriteQuotesView: View {
     
-    @EnvironmentObject private var userVM: UserViewModel
-    @StateObject private var favQuotesVM = FavoriteQuotesVM()
     @ObservedObject private var observedFavQuotesVM = FavoriteQuotesVM()
     
     var body: some View {

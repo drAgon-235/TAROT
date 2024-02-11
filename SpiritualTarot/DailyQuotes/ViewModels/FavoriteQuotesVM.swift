@@ -27,11 +27,10 @@ class FavoriteQuotesVM: ObservableObject {
     func createFavQuote(thisQuote: String, thisAuthor: String, thisFavorite: Bool) {
         guard let userId = FirebaseManager.shared.userId else { return }
 
-        //let favQuote:  = FavoriteQuote(q: "qqq", a: "aaa", isFavorite: false)
-        let favQuote2 = FavoriteQuote(userID: userId, q: thisQuote, a: thisAuthor, isFavorite: thisFavorite)
+        let favQuote = FavoriteQuote(userID: userId, q: thisQuote, a: thisAuthor, isFavorite: thisFavorite)
         
         do {
-            try FirebaseManager.shared.database.collection("favQuotes").addDocument(from: favQuote2)
+            try FirebaseManager.shared.database.collection("favQuotes").addDocument(from: favQuote)
         } catch let error {
             print("Error saving the Favorite Quotes: \(error)")
         }

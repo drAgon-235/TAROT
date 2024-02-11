@@ -8,7 +8,12 @@
 import SwiftUI
 import SwiftData
 
+// Argument for breaking the MVVM here:
+// 1. the fetched Data (from Api or SwiftData) is only used in this View
+// 2. the SwiftData actually IS the View Model !!! used here
+
 struct ApiCashQuoteItemView: View {
+    
     
     // Variables for saving Favorite Quotes in Firebase:
     @StateObject private var favQuotesVW = FavoriteQuotesVM()
@@ -26,10 +31,12 @@ struct ApiCashQuoteItemView: View {
     @State private var cachingTest: String = "Cashe !!!"
 
     // checks if Quote is already in Favourites list:
-    // (most tricky part of this View - took me 2 days to figure out, this has to be an extra function also checking EMPITNESS first)
+    // (most tricky part of this View - took me 2 days to figure out, this has to be an extra function also checking EMPTYNESS first)
     func favQuoteExists() -> Bool {
+        // this order is necessary:
         if allDaQuotes.isEmpty  {
-            return false // this check prevents crashes if 'allDaQuotes == nil', which regularly happened on first usage !!!
+            // this check prevents crashes if 'allDaQuotes == nil', which regularly happened on first usage !!!
+            return false
         } else if favQuotesVW.containsQuote(allDaQuotes.first!.q)  {
             return true
         } else {
@@ -40,9 +47,11 @@ struct ApiCashQuoteItemView: View {
     
     var body: some View {
         VStack {
+            Spacer()
             HStack{
                     Spacer()
                     // checking, if the quote already is in Favorites DB:
+            //  if favQuotesVW.containsQuote(allDaQuotes.first!.q) {  <-this didn't work at all
                 if favQuoteExists()  {
                         Text("Is saved in your")
                             .foregroundColor(.purple)
@@ -80,7 +89,7 @@ struct ApiCashQuoteItemView: View {
            
             // Test Fields:
             Text("Status: \(cachingTest)")
-            Text("Last Data: \(lastFetchedDate)")
+        //    Text("Last Data: \(lastFetchedDate)")
            // Text(allDaQuotes.first!.q)
             
             Spacer()
@@ -117,6 +126,7 @@ struct ApiCashQuoteItemView: View {
             }
         }
         */
+        
         // almost invisible:
         .overlay {
             if isLoading {
@@ -124,6 +134,7 @@ struct ApiCashQuoteItemView: View {
             }
         }
         
+        // confirm saving to favorites list:
         .alert("Save to favorites list?", isPresented: $showFavConfirmAlert) {
             Button("OK"){
                 favQuotesVW.createFavQuote(thisQuote: allDaQuotes.first!.q, thisAuthor: allDaQuotes.first!.a, thisFavorite: true)
@@ -144,7 +155,7 @@ struct ApiCashQuoteItemView: View {
 // Extension for caching in SwiftData & AppStorage:
 extension ApiCashQuoteItemView {
     
-    // The tricky part is, that the JSON call gives a List[Quote] of Quotes, even if it is definitely just one single random Quote !!!
+    // The tricky part is, that the JSON call gives a List[Quote] of Quotes, even though it returns definitely just one single random Quote !!!
     func fetchQuotes() async throws {
         
         guard let url = URL(string: "https://zenquotes.io/api/today") else {
@@ -154,17 +165,17 @@ extension ApiCashQuoteItemView {
         
         let outputQuotes = try JSONDecoder().decode([Quote].self, from: data)
         
+        // caching in SwiftData:
         outputQuotes.forEach { quoteModelContext.insert($0) }
         
+        // saving current date in AppStorage for future comaprisons with new daily quote
         lastFetchedDate = getCurrentDate()
     }
     
-    
+    // Checking if cashed date (lastFetchedDate) is same as today:
     func lastSavedDayIsSameAsToday() -> Bool {
         let dateToday = getCurrentDate()
         let lastCall = lastFetchedDate
-        //var retValue = false
-        
         if dateToday == lastCall {
             return true
         } else {

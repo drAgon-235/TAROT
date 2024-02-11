@@ -24,3 +24,5 @@ struct NavigatorView: View {
 #Preview {
     NavigatorView()
 }
+
+

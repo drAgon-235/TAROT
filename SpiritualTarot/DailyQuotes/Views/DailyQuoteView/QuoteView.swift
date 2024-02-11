@@ -10,8 +10,6 @@ import SwiftData
 
 struct QuoteView: View {
     
-    //@StateObject private var quotesVM = QuotesViewModel()
-    //@StateObject private var favQuotesVW = FavoriteQuotesVM()
     @StateObject private var userVM = UserViewModel()
 
     @State var showFavConfirmAlert = false
@@ -41,11 +39,11 @@ struct QuoteView: View {
                 DateTodayView()
                     .padding(.top, 25)
                 
-                Spacer()
+               // Spacer()
             }
                      
                 VStack {
-                        APIQuoteView()
+                        ApiCashQuoteItemView()
                         // implementing the cache container: (gets FORGOTTEN very OFTEN !!!)
                         .modelContainer(for: [Quote.self])
                 }
@@ -53,9 +51,6 @@ struct QuoteView: View {
                 Spacer()
             }
 
-            //.onAppear(){
-              // quotesVM.fetchData() // not neccessary, if init(fetchData())-Block in VM
-            //}
         }
     }
 
