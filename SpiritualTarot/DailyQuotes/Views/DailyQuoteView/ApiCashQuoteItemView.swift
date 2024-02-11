@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct APIQuoteView: View {
+struct ApiCashQuoteItemView: View {
     
     // Variables for saving Favorite Quotes in Firebase:
     @StateObject private var favQuotesVW = FavoriteQuotesVM()
@@ -26,10 +26,10 @@ struct APIQuoteView: View {
     @State private var cachingTest: String = "Cashe !!!"
 
     // checks if Quote is already in Favourites list:
-    // (most tricky part of this View)
+    // (most tricky part of this View - took me 2 days to figure out, this has to be an extra function also checking EMPITNESS first)
     func favQuoteExists() -> Bool {
         if allDaQuotes.isEmpty  {
-            return false
+            return false // this check prevents crashes if 'allDaQuotes == nil', which regularly happened on first usage !!!
         } else if favQuotesVW.containsQuote(allDaQuotes.first!.q)  {
             return true
         } else {
@@ -40,7 +40,6 @@ struct APIQuoteView: View {
     
     var body: some View {
         VStack {
-
             HStack{
                     Spacer()
                     // checking, if the quote already is in Favorites DB:
@@ -61,7 +60,7 @@ struct APIQuoteView: View {
                 }
             }
             
-                // We only take Data from Cashe here: the .task below decides whether it is old data or it is being freshly filled with API data before
+                // We only take Data from Cashe here: the Task.onAppear below decides whether it is old data or it is being freshly filled with API data before
                 ForEach(allDaQuotes) { quote in
                     VStack {
                         Text(quote.q)
@@ -95,7 +94,6 @@ struct APIQuoteView: View {
                         clearDailyQuoteCache()
                         try await fetchQuotes()  // Our cashe: 'allDataQuotes' gets refreshed with API request
                         cachingTest = "API Call !!!"
-                    
                 } catch {
                     print("Error in fetchQuotes \(error)")
                 }
@@ -137,14 +135,14 @@ struct APIQuoteView: View {
 }
 
 #Preview {
-    APIQuoteView()
+    ApiCashQuoteItemView()
         .modelContainer(for: [Quote.self])
 
 }
 
 
 // Extension for caching in SwiftData & AppStorage:
-extension APIQuoteView {
+extension ApiCashQuoteItemView {
     
     // The tricky part is, that the JSON call gives a List[Quote] of Quotes, even if it is definitely just one single random Quote !!!
     func fetchQuotes() async throws {
@@ -172,7 +170,6 @@ extension APIQuoteView {
         } else {
             return false
         }
-        
     }
     
     // in case of loading new Quote from API & loading it to cash
