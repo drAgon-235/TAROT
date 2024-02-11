@@ -8,10 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		294F0E502B643E9C00764790 /* DateTodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F0E4F2B643E9C00764790 /* DateTodayView.swift */; };
-		294F0E522B6574B000764790 /* CashedQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F0E512B6574B000764790 /* CashedQuote.swift */; };
-		294F0E542B6575FE00764790 /* CashedQuoteVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F0E532B6575FE00764790 /* CashedQuoteVM.swift */; };
 		294F0E562B6588EB00764790 /* APIQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F0E552B6588EB00764790 /* APIQuoteView.swift */; };
-		294F0E582B6588FF00764790 /* CasheQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F0E572B6588FF00764790 /* CasheQuoteView.swift */; };
 		295E6EB12B61565500C3B4D4 /* OneFQItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295E6EB02B61565500C3B4D4 /* OneFQItemView.swift */; };
 		295E6EB32B61BCA200C3B4D4 /* ShowFavListBTN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295E6EB22B61BCA200C3B4D4 /* ShowFavListBTN.swift */; };
 		29C46C052B5FFFB500881C4E /* SpiritualTarotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C46C042B5FFFB500881C4E /* SpiritualTarotApp.swift */; };
@@ -72,10 +69,7 @@
 
 /* Begin PBXFileReference section */
 		294F0E4F2B643E9C00764790 /* DateTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTodayView.swift; sourceTree = "<group>"; };
-		294F0E512B6574B000764790 /* CashedQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashedQuote.swift; sourceTree = "<group>"; };
-		294F0E532B6575FE00764790 /* CashedQuoteVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashedQuoteVM.swift; sourceTree = "<group>"; };
 		294F0E552B6588EB00764790 /* APIQuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIQuoteView.swift; sourceTree = "<group>"; };
-		294F0E572B6588FF00764790 /* CasheQuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasheQuoteView.swift; sourceTree = "<group>"; };
 		295E6EB02B61565500C3B4D4 /* OneFQItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneFQItemView.swift; sourceTree = "<group>"; };
 		295E6EB22B61BCA200C3B4D4 /* ShowFavListBTN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowFavListBTN.swift; sourceTree = "<group>"; };
 		29C46C012B5FFFB500881C4E /* SpiritualTarot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpiritualTarot.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -244,7 +238,6 @@
 			children = (
 				29C46C7E2B6029F200881C4E /* QuotesViewModel.swift */,
 				29C46C902B604C3E00881C4E /* FavoriteQuotesVM.swift */,
-				294F0E532B6575FE00764790 /* CashedQuoteVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -254,7 +247,6 @@
 			children = (
 				29C46C782B60293600881C4E /* Quote.swift */,
 				29C46C8E2B604AE500881C4E /* FavoriteQuote.swift */,
-				294F0E512B6574B000764790 /* CashedQuote.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -373,7 +365,6 @@
 			children = (
 				29C46C862B60323A00881C4E /* QuoteView.swift */,
 				294F0E552B6588EB00764790 /* APIQuoteView.swift */,
-				294F0E572B6588FF00764790 /* CasheQuoteView.swift */,
 			);
 			path = DailyQuoteView;
 			sourceTree = "<group>";
@@ -518,7 +509,6 @@
 			files = (
 				29C46C312B600B6300881C4E /* PrimaryButton.swift in Sources */,
 				29C46C822B60315600881C4E /* AddToFavoritesBTN.swift in Sources */,
-				294F0E522B6574B000764790 /* CashedQuote.swift in Sources */,
 				29C46C702B601E5600881C4E /* UserViewModel.swift in Sources */,
 				29C46C7D2B6029A300881C4E /* QuotesRepository.swift in Sources */,
 				29C46C8F2B604AE500881C4E /* FavoriteQuote.swift in Sources */,
@@ -530,7 +520,6 @@
 				294F0E562B6588EB00764790 /* APIQuoteView.swift in Sources */,
 				294F0E502B643E9C00764790 /* DateTodayView.swift in Sources */,
 				29C46C892B60329F00881C4E /* ShowFavBTN.swift in Sources */,
-				294F0E582B6588FF00764790 /* CasheQuoteView.swift in Sources */,
 				29C46C872B60323A00881C4E /* QuoteView.swift in Sources */,
 				29C46C1D2B6003ED00881C4E /* QuoteTopView.swift in Sources */,
 				29C46C912B604C3E00881C4E /* FavoriteQuotesVM.swift in Sources */,
@@ -545,7 +534,6 @@
 				29C46C232B60046F00881C4E /* TarotTopView.swift in Sources */,
 				29C46C8B2B60330500881C4E /* RemoveFromFavsBTN.swift in Sources */,
 				29C46C7F2B6029F200881C4E /* QuotesViewModel.swift in Sources */,
-				294F0E542B6575FE00764790 /* CashedQuoteVM.swift in Sources */,
 				29C46C8D2B60344500881C4E /* FavoriteQuotesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,7 +8,7 @@
 import Foundation
 
 class QuotesRepository {
-    
+    /*
     // The tricky part is, that the JSON call gives a List[Quote] of Quotes, even if it is definitely just one single random Quote !!!
     static func fetchQuotes() async throws -> [Quote] {
         
@@ -19,7 +19,7 @@ class QuotesRepository {
         
         return try JSONDecoder().decode([Quote].self, from: data)
     }
-    
+    */
 }
 
 // https://zenquotes.io/api/random

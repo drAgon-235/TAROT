@@ -8,7 +8,7 @@
 import Foundation
 
 class QuotesViewModel: ObservableObject {
-    
+    /*
     init() {
         fetchData()
     }
@@ -25,6 +25,7 @@ class QuotesViewModel: ObservableObject {
             }
         }
     }
-    
-    
+    */
+     
 }
+
