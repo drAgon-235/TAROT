@@ -52,6 +52,7 @@ struct ApiCashQuoteItemView: View {
                     Spacer()
                     // checking, if the quote already is in Favorites DB:
             //  if favQuotesVW.containsQuote(allDaQuotes.first!.q) {  <-this didn't work at all
+                //(it took me 2 day to fix it with: func favQuoteExists()  above)
                 if favQuoteExists()  {
                         Text("Is saved in your")
                             .foregroundColor(.purple)
@@ -111,6 +112,7 @@ struct ApiCashQuoteItemView: View {
 
         }
         /*
+         // alternative Code:
         .task {
             do {
                 isLoading = true

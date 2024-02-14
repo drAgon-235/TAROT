@@ -8,8 +8,30 @@
 import SwiftUI
 
 struct AllPathsView: View {
+    
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            
+            NavigationLink(destination: SimplePathView(width: 80, height: 120)) {
+                SimplePathNavBTN()
+
+            }
+            
+            NavigationLink(destination: LittleCrossView(width: 80, height: 120)) {
+                LittleCrossNavBTN()
+            }
+            
+            
+            
+            .navigationBarTitle(Text("Tarot Cards"))
+            
+            
+            
+        }
+
+        
     }
 }
 

@@ -17,7 +17,8 @@ struct SimplePathNavBTN: View {
         .frame(width: 250, height: 50, alignment: .center)
         .background(Color.purple)
         .foregroundColor(Color.white)
-        .cornerRadius(10)    
+        .cornerRadius(10)   
+        .padding()
     }
 }
 

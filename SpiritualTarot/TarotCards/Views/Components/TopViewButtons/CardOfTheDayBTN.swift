@@ -8,11 +8,26 @@
 import SwiftUI
 
 struct CardOfTheDayBTN: View {
+    
+    let action: () -> Void
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+        
+        Button(action: action) {
+            HStack {
+                //Image(systemName: "")
+                Text("Card of the Day")
+            }
+            .font(.title)
+            .frame(width: 250, height: 50, alignment: .center)
+            .background(Color.green)
+            .foregroundColor(Color.white)
+            .cornerRadius(10)
+            .padding()
+        }
+        }
 }
 
 #Preview {
-    CardOfTheDayBTN()
+    CardOfTheDayBTN() {}
 }

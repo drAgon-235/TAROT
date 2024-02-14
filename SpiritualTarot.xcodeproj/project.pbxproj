@@ -17,6 +17,24 @@
 		298A45102B7D4933006F8A77 /* Repo_TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A450F2B7D4933006F8A77 /* Repo_TestView.swift */; };
 		298A45152B7D4BC7006F8A77 /* CardModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 298A45132B7D4BC7006F8A77 /* CardModel.xcdatamodeld */; };
 		298A45172B7D4D0B006F8A77 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A45162B7D4D0B006F8A77 /* DBManager.swift */; };
+		298A451E2B7D536F006F8A77 /* CardFrontTurn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A451D2B7D536F006F8A77 /* CardFrontTurn.swift */; };
+		298A45202B7D53C5006F8A77 /* CardBackTurn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A451F2B7D53C5006F8A77 /* CardBackTurn.swift */; };
+		298A45232B7D54C9006F8A77 /* CardFrontTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A45222B7D54C9006F8A77 /* CardFrontTestView.swift */; };
+		298A45262B7D5520006F8A77 /* CardBackTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A45252B7D5520006F8A77 /* CardBackTestView.swift */; };
+		298A45282B7D55F2006F8A77 /* CardBackTwist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A45272B7D55F2006F8A77 /* CardBackTwist.swift */; };
+		298A452A2B7D56B0006F8A77 /* CardFlipTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A45292B7D56B0006F8A77 /* CardFlipTestView.swift */; };
+		298A452C2B7D57FC006F8A77 /* CardViewModelCoreDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A452B2B7D57FC006F8A77 /* CardViewModelCoreDB.swift */; };
+		298A452E2B7D5896006F8A77 /* OneCardSheetCoreDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A452D2B7D5896006F8A77 /* OneCardSheetCoreDB.swift */; };
+		298A45302B7D5962006F8A77 /* SimplePathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A452F2B7D5962006F8A77 /* SimplePathView.swift */; };
+		298A45332B7D5B12006F8A77 /* TransparentCardBTN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A45322B7D5B12006F8A77 /* TransparentCardBTN.swift */; };
+		298A45352B7D5B88006F8A77 /* ActionBTN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A45342B7D5B88006F8A77 /* ActionBTN.swift */; };
+		298A45372B7D5BD3006F8A77 /* InactiveBTN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A45362B7D5BD3006F8A77 /* InactiveBTN.swift */; };
+		298A45392B7D660E006F8A77 /* SimplePathNavBTN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A45382B7D660E006F8A77 /* SimplePathNavBTN.swift */; };
+		298A453C2B7D6D6B006F8A77 /* AllPathsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A453B2B7D6D6B006F8A77 /* AllPathsView.swift */; };
+		298A453F2B7D6F4D006F8A77 /* SessionsBTN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A453E2B7D6F4D006F8A77 /* SessionsBTN.swift */; };
+		298A45412B7D70FE006F8A77 /* CardOfTheDayBTN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A45402B7D70FE006F8A77 /* CardOfTheDayBTN.swift */; };
+		298A45442B7D7DEC006F8A77 /* LittleCrossNavBTN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A45432B7D7DEC006F8A77 /* LittleCrossNavBTN.swift */; };
+		298A45462B7D7E20006F8A77 /* LittleCrossView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A45452B7D7E20006F8A77 /* LittleCrossView.swift */; };
 		29C46C052B5FFFB500881C4E /* SpiritualTarotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C46C042B5FFFB500881C4E /* SpiritualTarotApp.swift */; };
 		29C46C092B5FFFB700881C4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29C46C082B5FFFB700881C4E /* Assets.xcassets */; };
 		29C46C0C2B5FFFB700881C4E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29C46C0B2B5FFFB700881C4E /* Preview Assets.xcassets */; };
@@ -84,6 +102,24 @@
 		298A450F2B7D4933006F8A77 /* Repo_TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo_TestView.swift; sourceTree = "<group>"; };
 		298A45142B7D4BC7006F8A77 /* CardModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CardModel.xcdatamodel; sourceTree = "<group>"; };
 		298A45162B7D4D0B006F8A77 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		298A451D2B7D536F006F8A77 /* CardFrontTurn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFrontTurn.swift; sourceTree = "<group>"; };
+		298A451F2B7D53C5006F8A77 /* CardBackTurn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBackTurn.swift; sourceTree = "<group>"; };
+		298A45222B7D54C9006F8A77 /* CardFrontTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFrontTestView.swift; sourceTree = "<group>"; };
+		298A45252B7D5520006F8A77 /* CardBackTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBackTestView.swift; sourceTree = "<group>"; };
+		298A45272B7D55F2006F8A77 /* CardBackTwist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBackTwist.swift; sourceTree = "<group>"; };
+		298A45292B7D56B0006F8A77 /* CardFlipTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFlipTestView.swift; sourceTree = "<group>"; };
+		298A452B2B7D57FC006F8A77 /* CardViewModelCoreDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModelCoreDB.swift; sourceTree = "<group>"; };
+		298A452D2B7D5896006F8A77 /* OneCardSheetCoreDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCardSheetCoreDB.swift; sourceTree = "<group>"; };
+		298A452F2B7D5962006F8A77 /* SimplePathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePathView.swift; sourceTree = "<group>"; };
+		298A45322B7D5B12006F8A77 /* TransparentCardBTN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentCardBTN.swift; sourceTree = "<group>"; };
+		298A45342B7D5B88006F8A77 /* ActionBTN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionBTN.swift; sourceTree = "<group>"; };
+		298A45362B7D5BD3006F8A77 /* InactiveBTN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InactiveBTN.swift; sourceTree = "<group>"; };
+		298A45382B7D660E006F8A77 /* SimplePathNavBTN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePathNavBTN.swift; sourceTree = "<group>"; };
+		298A453B2B7D6D6B006F8A77 /* AllPathsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPathsView.swift; sourceTree = "<group>"; };
+		298A453E2B7D6F4D006F8A77 /* SessionsBTN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsBTN.swift; sourceTree = "<group>"; };
+		298A45402B7D70FE006F8A77 /* CardOfTheDayBTN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardOfTheDayBTN.swift; sourceTree = "<group>"; };
+		298A45432B7D7DEC006F8A77 /* LittleCrossNavBTN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleCrossNavBTN.swift; sourceTree = "<group>"; };
+		298A45452B7D7E20006F8A77 /* LittleCrossView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleCrossView.swift; sourceTree = "<group>"; };
 		29C46C012B5FFFB500881C4E /* SpiritualTarot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpiritualTarot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C46C042B5FFFB500881C4E /* SpiritualTarotApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritualTarotApp.swift; sourceTree = "<group>"; };
 		29C46C082B5FFFB700881C4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -155,6 +191,7 @@
 		298A45062B7D478A006F8A77 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				298A452B2B7D57FC006F8A77 /* CardViewModelCoreDB.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -193,6 +230,100 @@
 				298A45162B7D4D0B006F8A77 /* DBManager.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		298A45182B7D527E006F8A77 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				298A453D2B7D6F26006F8A77 /* TopViewButtons */,
+				298A45312B7D5AF2006F8A77 /* SessionButtons */,
+				298A451C2B7D5331006F8A77 /* TwistingCard */,
+				298A451B2B7D5326006F8A77 /* FlippingCard */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		298A45192B7D529B006F8A77 /* SimplePath */ = {
+			isa = PBXGroup;
+			children = (
+				298A452F2B7D5962006F8A77 /* SimplePathView.swift */,
+				298A45382B7D660E006F8A77 /* SimplePathNavBTN.swift */,
+			);
+			path = SimplePath;
+			sourceTree = "<group>";
+		};
+		298A451A2B7D52BF006F8A77 /* Cardinterpretation */ = {
+			isa = PBXGroup;
+			children = (
+				298A452D2B7D5896006F8A77 /* OneCardSheetCoreDB.swift */,
+			);
+			path = Cardinterpretation;
+			sourceTree = "<group>";
+		};
+		298A451B2B7D5326006F8A77 /* FlippingCard */ = {
+			isa = PBXGroup;
+			children = (
+				298A45212B7D5498006F8A77 /* Design_Test */,
+				298A451D2B7D536F006F8A77 /* CardFrontTurn.swift */,
+				298A451F2B7D53C5006F8A77 /* CardBackTurn.swift */,
+			);
+			path = FlippingCard;
+			sourceTree = "<group>";
+		};
+		298A451C2B7D5331006F8A77 /* TwistingCard */ = {
+			isa = PBXGroup;
+			children = (
+				298A45272B7D55F2006F8A77 /* CardBackTwist.swift */,
+			);
+			path = TwistingCard;
+			sourceTree = "<group>";
+		};
+		298A45212B7D5498006F8A77 /* Design_Test */ = {
+			isa = PBXGroup;
+			children = (
+				298A45222B7D54C9006F8A77 /* CardFrontTestView.swift */,
+				298A45252B7D5520006F8A77 /* CardBackTestView.swift */,
+				298A45292B7D56B0006F8A77 /* CardFlipTestView.swift */,
+			);
+			path = Design_Test;
+			sourceTree = "<group>";
+		};
+		298A45312B7D5AF2006F8A77 /* SessionButtons */ = {
+			isa = PBXGroup;
+			children = (
+				298A45322B7D5B12006F8A77 /* TransparentCardBTN.swift */,
+				298A45342B7D5B88006F8A77 /* ActionBTN.swift */,
+				298A45362B7D5BD3006F8A77 /* InactiveBTN.swift */,
+			);
+			path = SessionButtons;
+			sourceTree = "<group>";
+		};
+		298A453A2B7D6D58006F8A77 /* AllPaths */ = {
+			isa = PBXGroup;
+			children = (
+				298A45422B7D7DC7006F8A77 /* LittleCross */,
+				298A45192B7D529B006F8A77 /* SimplePath */,
+				298A453B2B7D6D6B006F8A77 /* AllPathsView.swift */,
+			);
+			path = AllPaths;
+			sourceTree = "<group>";
+		};
+		298A453D2B7D6F26006F8A77 /* TopViewButtons */ = {
+			isa = PBXGroup;
+			children = (
+				298A453E2B7D6F4D006F8A77 /* SessionsBTN.swift */,
+				298A45402B7D70FE006F8A77 /* CardOfTheDayBTN.swift */,
+			);
+			path = TopViewButtons;
+			sourceTree = "<group>";
+		};
+		298A45422B7D7DC7006F8A77 /* LittleCross */ = {
+			isa = PBXGroup;
+			children = (
+				298A45432B7D7DEC006F8A77 /* LittleCrossNavBTN.swift */,
+				298A45452B7D7E20006F8A77 /* LittleCrossView.swift */,
+			);
+			path = LittleCross;
 			sourceTree = "<group>";
 		};
 		29C46BF82B5FFFB500881C4E = {
@@ -318,6 +449,9 @@
 		29C46C1F2B60043900881C4E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				298A453A2B7D6D58006F8A77 /* AllPaths */,
+				298A451A2B7D52BF006F8A77 /* Cardinterpretation */,
+				298A45182B7D527E006F8A77 /* Components */,
 				29C46C222B60046F00881C4E /* TarotTopView.swift */,
 			);
 			path = Views;
@@ -542,21 +676,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				29C46C312B600B6300881C4E /* PrimaryButton.swift in Sources */,
+				298A453C2B7D6D6B006F8A77 /* AllPathsView.swift in Sources */,
 				29C46C822B60315600881C4E /* AddToFavoritesBTN.swift in Sources */,
+				298A451E2B7D536F006F8A77 /* CardFrontTurn.swift in Sources */,
+				298A45332B7D5B12006F8A77 /* TransparentCardBTN.swift in Sources */,
 				29C46C702B601E5600881C4E /* UserViewModel.swift in Sources */,
 				29C46C7D2B6029A300881C4E /* QuotesRepository.swift in Sources */,
+				298A45302B7D5962006F8A77 /* SimplePathView.swift in Sources */,
+				298A45412B7D70FE006F8A77 /* CardOfTheDayBTN.swift in Sources */,
 				29C46C8F2B604AE500881C4E /* FavoriteQuote.swift in Sources */,
 				29C46C752B601FD100881C4E /* LogoutButtonAlert.swift in Sources */,
 				29C46C172B60013900881C4E /* Tab.swift in Sources */,
 				29C46C6E2B601D6A00881C4E /* FirebaseManager.swift in Sources */,
+				298A45352B7D5B88006F8A77 /* ActionBTN.swift in Sources */,
 				29C46C732B601EDF00881C4E /* AuthenticationMode.swift in Sources */,
 				29C46C2C2B6007A400881C4E /* FireUser.swift in Sources */,
 				294F0E562B6588EB00764790 /* ApiCashQuoteItemView.swift in Sources */,
 				298A45172B7D4D0B006F8A77 /* DBManager.swift in Sources */,
+				298A453F2B7D6F4D006F8A77 /* SessionsBTN.swift in Sources */,
+				298A45462B7D7E20006F8A77 /* LittleCrossView.swift in Sources */,
 				298A450E2B7D48A6006F8A77 /* TarotCardsRepo.swift in Sources */,
 				294F0E502B643E9C00764790 /* DateTodayView.swift in Sources */,
 				29C46C892B60329F00881C4E /* ShowFavBTN.swift in Sources */,
 				29C46C872B60323A00881C4E /* QuoteView.swift in Sources */,
+				298A452E2B7D5896006F8A77 /* OneCardSheetCoreDB.swift in Sources */,
+				298A45282B7D55F2006F8A77 /* CardBackTwist.swift in Sources */,
 				298A450C2B7D4875006F8A77 /* TarotCard.swift in Sources */,
 				29C46C1D2B6003ED00881C4E /* QuoteTopView.swift in Sources */,
 				29C46C912B604C3E00881C4E /* FavoriteQuotesVM.swift in Sources */,
@@ -564,14 +708,22 @@
 				29C46C772B60204A00881C4E /* AuthenticationView.swift in Sources */,
 				29C46C052B5FFFB500881C4E /* SpiritualTarotApp.swift in Sources */,
 				295E6EB32B61BCA200C3B4D4 /* ShowFavListBTN.swift in Sources */,
+				298A452A2B7D56B0006F8A77 /* CardFlipTestView.swift in Sources */,
 				295E6EB12B61565500C3B4D4 /* OneFQItemView.swift in Sources */,
+				298A45372B7D5BD3006F8A77 /* InactiveBTN.swift in Sources */,
+				298A45202B7D53C5006F8A77 /* CardBackTurn.swift in Sources */,
 				29C46C252B60053300881C4E /* NavigatorView.swift in Sources */,
+				298A45262B7D5520006F8A77 /* CardBackTestView.swift in Sources */,
+				298A45232B7D54C9006F8A77 /* CardFrontTestView.swift in Sources */,
 				298A450A2B7D4858006F8A77 /* SuiteEnum.swift in Sources */,
 				29C46C792B60293600881C4E /* Quote.swift in Sources */,
+				298A45392B7D660E006F8A77 /* SimplePathNavBTN.swift in Sources */,
 				29C46C7B2B60298600881C4E /* HTTPError.swift in Sources */,
+				298A452C2B7D57FC006F8A77 /* CardViewModelCoreDB.swift in Sources */,
 				29C46C232B60046F00881C4E /* TarotTopView.swift in Sources */,
 				298A45152B7D4BC7006F8A77 /* CardModel.xcdatamodeld in Sources */,
 				29C46C8B2B60330500881C4E /* RemoveFromFavsBTN.swift in Sources */,
+				298A45442B7D7DEC006F8A77 /* LittleCrossNavBTN.swift in Sources */,
 				29C46C7F2B6029F200881C4E /* QuotesViewModel.swift in Sources */,
 				298A45102B7D4933006F8A77 /* Repo_TestView.swift in Sources */,
 				29C46C8D2B60344500881C4E /* FavoriteQuotesView.swift in Sources */,

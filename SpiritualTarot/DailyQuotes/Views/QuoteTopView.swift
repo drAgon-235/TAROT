@@ -41,6 +41,7 @@ struct QuoteTopView: View {
                     ShowFavBTN()
                 }
                 .navigationBarTitle(Text("Daily quotes"))
+                
                 .toolbar {
                     HStack {
                         Spacer()
