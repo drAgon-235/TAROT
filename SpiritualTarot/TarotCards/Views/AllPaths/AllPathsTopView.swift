@@ -15,18 +15,20 @@ struct AllPathsTopView: View {
        
             
             NavigationLink(destination: SimplePathView(width: 80, height: 120)) {
-                SimplePathNavBTN()
-
+                ReadingDefaultBTN(text: "The Simple Path")
             }
             
             NavigationLink(destination: LittleCrossView(width: 80, height: 120)) {
-                LittleCrossNavBTN()
+                ReadingDefaultBTN(text: "The Little Cross")
             }
             
-            NavigationLink(destination: GreatPathView(width: 80, height: 120)) {
-                GreatPathNavBTN()
+            NavigationLink(destination: GreatPathView(width: 60, height: 90)) {
+                ReadingDefaultBTN(text: "The Great Path")
             }
             
+            NavigationLink(destination: LoveOracleView(width: 80, height: 120)) {
+                ReadingDefaultBTN(text: "Love Oracle")
+            }
             
             //.navigationBarTitle(Text("Tarot Cards"))
             

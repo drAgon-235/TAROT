@@ -16,7 +16,7 @@ class TarotCardsRepo: ObservableObject {
     
     var cardsList: [TarotCard] = []
 
-    // this function inserts our 'tarotDeck' into the 'cardsList':
+    // this function inserts our 'tarotDeck' into the 'cardsList' - by init:
     func fetchData() {
         cardsList.append(contentsOf: tarotDeck)
     }

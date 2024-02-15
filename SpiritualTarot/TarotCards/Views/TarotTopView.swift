@@ -23,29 +23,33 @@ struct TarotTopView: View {
                     showCardSheet01.toggle()
                 })
                 
-                
-                NavigationLink(destination: AllPathsView()) {
+                NavigationLink(destination: AllPathsTopView()) {
                     SessionsBTN()
                 }
+                
+                NavigationLink(destination: TarotSchoolTopView()) {
+                    TarotSchoolBTN()
+                }
+                
                // .navigationBarTitle(Text("Tarot Cards"))
 
                 
-                    .toolbar {
-                        HStack {
-                            Spacer()
-                            LogoutButtonAlert()
-                        }
+                .toolbar {
+                    HStack {
+                        Spacer()
+                        LogoutButtonAlert()
                     }
+                }
                 
             }
         }
          
                 .sheet( isPresented: $showCardSheet01){
                     // the first card from the shuffled deck = random card
-                    OneCardSheetCoreDB(oneCard: cardVM.shuffledDeck().first!)
+                    OneCardSheetCoreDB( oneCard: cardVM.shuffledDeck().first!, givenText: "Your daily/random Card")
                     // optional:
                     Button("Close"){ showCardSheet01.toggle() }
-                    //Spacer()
+                    // Spacer()
                 }
             
     }

@@ -235,36 +235,52 @@ struct SimplePathView: View {
             Spacer()
             VStack {
                 HStack(spacing: 30) {
-                    RoundedRectangle(cornerRadius: 20.0)
-                        .stroke(.purple.opacity(0.9), lineWidth: 3)
-                        .matchedGeometryEffect(id:  move ? "card_basic1" : "", in: readingCard01, isSource: true)
-                        .frame(width: width, height: height)
+                    VStack {
+                        Text("2")
+                        RoundedRectangle(cornerRadius: 20.0)
+                            .stroke(.red.opacity(0.9), lineWidth: 3)
+                            .matchedGeometryEffect(id:  move ? "card_basic2" : "", in: readingCard02, isSource: true)
+                            .frame(width: width, height: height)
+                        Text("PAST")
+                    }
+                    .foregroundColor(.red)
+
                     
-                    RoundedRectangle(cornerRadius: 20.0)
-                        .stroke(.green.opacity(0.9), lineWidth: 3)
-                        .matchedGeometryEffect(id: move ? "card_basic2" : "", in: readingCard02, isSource: true)
-                        .frame(width: width, height: height)
+                    VStack {
+                        Text("1")
+                        RoundedRectangle(cornerRadius: 20.0)
+                            .stroke(.blue.opacity(0.9), lineWidth: 3)
+                            .matchedGeometryEffect(id: move ? "card_basic1" : "", in: readingCard01, isSource: true)
+                            .frame(width: width, height: height)
+                        Text("PRESENT")
+                    }
+                    .foregroundColor(.blue)
+
                     
-                    RoundedRectangle(cornerRadius: 20.0)
-                        .stroke(.red.opacity(0.9), lineWidth: 3)
-                        .matchedGeometryEffect(id: move ? "card_basic3" : "", in: readingCard03, isSource: true)
-                        .frame(width: width, height: height)
-                    
+                    VStack {
+                        Text("3")
+                        RoundedRectangle(cornerRadius: 20.0)
+                            .stroke(.green.opacity(0.9), lineWidth: 3)
+                            .matchedGeometryEffect(id: move ? "card_basic3" : "", in: readingCard03, isSource: true)
+                            .frame(width: width, height: height)
+                        Text("FUTURE")
+                    }
+                    .foregroundColor(.green)
                 }
             }
             Spacer()
             
         }
         .sheet( isPresented: $showCardSheet01){
-            OneCardSheetCoreDB(oneCard: shuffledDeck[0])
+            OneCardSheetCoreDB(oneCard: shuffledDeck[0], givenText: "This card represents the PRESENT. \nThe actual situation / issue. \nWhat it's all about.")
         }
         
         .sheet( isPresented: $showCardSheet02){
-            OneCardSheetCoreDB(oneCard: shuffledDeck[1])
+            OneCardSheetCoreDB(oneCard: shuffledDeck[1], givenText: "This card represents the PAST \nand it's influence for the issue. \nThe root cause for the actual situation. ")
         }
         
         .sheet( isPresented: $showCardSheet03){
-            OneCardSheetCoreDB(oneCard: shuffledDeck[2])
+            OneCardSheetCoreDB(oneCard: shuffledDeck[2], givenText: "This card represents the FUTURE. \nThe direction it all evolves to. \nThe outcome")
         }
         
         

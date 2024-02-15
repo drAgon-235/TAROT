@@ -12,6 +12,7 @@ import FirebaseFirestoreSwift
 
 class FirebaseManager {
     
+    // Singleton:
     static let shared = FirebaseManager()
     
     let auth = Auth.auth()

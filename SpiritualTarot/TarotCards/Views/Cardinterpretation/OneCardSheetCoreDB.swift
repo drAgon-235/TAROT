@@ -11,8 +11,23 @@ struct OneCardSheetCoreDB: View {
     
     var oneCard: Card
     
+    let givenText: String
+    
     var body: some View {
         ScrollView {
+            ZStack {
+                RoundedRectangle(cornerRadius: 10.0)
+                    .fill(.mint.opacity(0.2))
+                    .stroke(.purple.opacity(0.9), lineWidth: 3)
+
+                Text(givenText)
+                    .padding()
+                    .foregroundColor(.indigo)
+                    .font(.title3)
+                    .bold()
+            }
+            .padding()
+            
             VStack {
                 Text(oneCard.name!)
                     .font(.title)

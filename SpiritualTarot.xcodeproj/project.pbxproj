@@ -11,6 +11,7 @@
 		294F0E562B6588EB00764790 /* ApiCashQuoteItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F0E552B6588EB00764790 /* ApiCashQuoteItemView.swift */; };
 		295E6EB12B61565500C3B4D4 /* OneFQItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295E6EB02B61565500C3B4D4 /* OneFQItemView.swift */; };
 		295E6EB32B61BCA200C3B4D4 /* ShowFavListBTN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295E6EB22B61BCA200C3B4D4 /* ShowFavListBTN.swift */; };
+		2978ACD52B7EBAFA0090C12D /* DailyCardSheetCoreDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2978ACD42B7EBAFA0090C12D /* DailyCardSheetCoreDB.swift */; };
 		298A450A2B7D4858006F8A77 /* SuiteEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A45092B7D4858006F8A77 /* SuiteEnum.swift */; };
 		298A450C2B7D4875006F8A77 /* TarotCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A450B2B7D4875006F8A77 /* TarotCard.swift */; };
 		298A450E2B7D48A6006F8A77 /* TarotCardsRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A450D2B7D48A6006F8A77 /* TarotCardsRepo.swift */; };
@@ -29,12 +30,21 @@
 		298A45332B7D5B12006F8A77 /* TransparentCardBTN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A45322B7D5B12006F8A77 /* TransparentCardBTN.swift */; };
 		298A45352B7D5B88006F8A77 /* ActionBTN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A45342B7D5B88006F8A77 /* ActionBTN.swift */; };
 		298A45372B7D5BD3006F8A77 /* InactiveBTN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A45362B7D5BD3006F8A77 /* InactiveBTN.swift */; };
-		298A45392B7D660E006F8A77 /* SimplePathNavBTN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A45382B7D660E006F8A77 /* SimplePathNavBTN.swift */; };
-		298A453C2B7D6D6B006F8A77 /* AllPathsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A453B2B7D6D6B006F8A77 /* AllPathsView.swift */; };
+		298A453C2B7D6D6B006F8A77 /* AllPathsTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A453B2B7D6D6B006F8A77 /* AllPathsTopView.swift */; };
 		298A453F2B7D6F4D006F8A77 /* SessionsBTN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A453E2B7D6F4D006F8A77 /* SessionsBTN.swift */; };
 		298A45412B7D70FE006F8A77 /* CardOfTheDayBTN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A45402B7D70FE006F8A77 /* CardOfTheDayBTN.swift */; };
-		298A45442B7D7DEC006F8A77 /* LittleCrossNavBTN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A45432B7D7DEC006F8A77 /* LittleCrossNavBTN.swift */; };
 		298A45462B7D7E20006F8A77 /* LittleCrossView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A45452B7D7E20006F8A77 /* LittleCrossView.swift */; };
+		29A6DD5C2B7E262B00F6F06C /* TarotSchoolBTN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A6DD5B2B7E262B00F6F06C /* TarotSchoolBTN.swift */; };
+		29A6DD5F2B7E26A400F6F06C /* TarotSchoolTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A6DD5E2B7E26A400F6F06C /* TarotSchoolTopView.swift */; };
+		29A6DD642B7E391F00F6F06C /* GreatPathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A6DD632B7E391F00F6F06C /* GreatPathView.swift */; };
+		29A6DD672B7E48B400F6F06C /* ArcanaTabsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A6DD662B7E48B400F6F06C /* ArcanaTabsEnum.swift */; };
+		29A6DD6A2B7E4A0F00F6F06C /* MajorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A6DD692B7E4A0F00F6F06C /* MajorView.swift */; };
+		29A6DD6C2B7E4A1E00F6F06C /* CupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A6DD6B2B7E4A1E00F6F06C /* CupsView.swift */; };
+		29A6DD6E2B7E4A4A00F6F06C /* WandsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A6DD6D2B7E4A4A00F6F06C /* WandsView.swift */; };
+		29A6DD702B7E4A7600F6F06C /* CoinsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A6DD6F2B7E4A7600F6F06C /* CoinsView.swift */; };
+		29A6DD722B7E4A9300F6F06C /* SwordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A6DD712B7E4A9300F6F06C /* SwordsView.swift */; };
+		29A6DD7A2B7EA29300F6F06C /* LoveOracleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A6DD792B7EA29300F6F06C /* LoveOracleView.swift */; };
+		29A6DD7D2B7EA69A00F6F06C /* ReadingDefaultBTN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A6DD7C2B7EA69A00F6F06C /* ReadingDefaultBTN.swift */; };
 		29C46C052B5FFFB500881C4E /* SpiritualTarotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C46C042B5FFFB500881C4E /* SpiritualTarotApp.swift */; };
 		29C46C092B5FFFB700881C4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29C46C082B5FFFB700881C4E /* Assets.xcassets */; };
 		29C46C0C2B5FFFB700881C4E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29C46C0B2B5FFFB700881C4E /* Preview Assets.xcassets */; };
@@ -96,6 +106,7 @@
 		294F0E552B6588EB00764790 /* ApiCashQuoteItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCashQuoteItemView.swift; sourceTree = "<group>"; };
 		295E6EB02B61565500C3B4D4 /* OneFQItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneFQItemView.swift; sourceTree = "<group>"; };
 		295E6EB22B61BCA200C3B4D4 /* ShowFavListBTN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowFavListBTN.swift; sourceTree = "<group>"; };
+		2978ACD42B7EBAFA0090C12D /* DailyCardSheetCoreDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCardSheetCoreDB.swift; sourceTree = "<group>"; };
 		298A45092B7D4858006F8A77 /* SuiteEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuiteEnum.swift; sourceTree = "<group>"; };
 		298A450B2B7D4875006F8A77 /* TarotCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarotCard.swift; sourceTree = "<group>"; };
 		298A450D2B7D48A6006F8A77 /* TarotCardsRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarotCardsRepo.swift; sourceTree = "<group>"; };
@@ -114,12 +125,21 @@
 		298A45322B7D5B12006F8A77 /* TransparentCardBTN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentCardBTN.swift; sourceTree = "<group>"; };
 		298A45342B7D5B88006F8A77 /* ActionBTN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionBTN.swift; sourceTree = "<group>"; };
 		298A45362B7D5BD3006F8A77 /* InactiveBTN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InactiveBTN.swift; sourceTree = "<group>"; };
-		298A45382B7D660E006F8A77 /* SimplePathNavBTN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePathNavBTN.swift; sourceTree = "<group>"; };
-		298A453B2B7D6D6B006F8A77 /* AllPathsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPathsView.swift; sourceTree = "<group>"; };
+		298A453B2B7D6D6B006F8A77 /* AllPathsTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPathsTopView.swift; sourceTree = "<group>"; };
 		298A453E2B7D6F4D006F8A77 /* SessionsBTN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsBTN.swift; sourceTree = "<group>"; };
 		298A45402B7D70FE006F8A77 /* CardOfTheDayBTN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardOfTheDayBTN.swift; sourceTree = "<group>"; };
-		298A45432B7D7DEC006F8A77 /* LittleCrossNavBTN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleCrossNavBTN.swift; sourceTree = "<group>"; };
 		298A45452B7D7E20006F8A77 /* LittleCrossView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleCrossView.swift; sourceTree = "<group>"; };
+		29A6DD5B2B7E262B00F6F06C /* TarotSchoolBTN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarotSchoolBTN.swift; sourceTree = "<group>"; };
+		29A6DD5E2B7E26A400F6F06C /* TarotSchoolTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarotSchoolTopView.swift; sourceTree = "<group>"; };
+		29A6DD632B7E391F00F6F06C /* GreatPathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreatPathView.swift; sourceTree = "<group>"; };
+		29A6DD662B7E48B400F6F06C /* ArcanaTabsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcanaTabsEnum.swift; sourceTree = "<group>"; };
+		29A6DD692B7E4A0F00F6F06C /* MajorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorView.swift; sourceTree = "<group>"; };
+		29A6DD6B2B7E4A1E00F6F06C /* CupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupsView.swift; sourceTree = "<group>"; };
+		29A6DD6D2B7E4A4A00F6F06C /* WandsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WandsView.swift; sourceTree = "<group>"; };
+		29A6DD6F2B7E4A7600F6F06C /* CoinsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsView.swift; sourceTree = "<group>"; };
+		29A6DD712B7E4A9300F6F06C /* SwordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwordsView.swift; sourceTree = "<group>"; };
+		29A6DD792B7EA29300F6F06C /* LoveOracleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveOracleView.swift; sourceTree = "<group>"; };
+		29A6DD7C2B7EA69A00F6F06C /* ReadingDefaultBTN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingDefaultBTN.swift; sourceTree = "<group>"; };
 		29C46C012B5FFFB500881C4E /* SpiritualTarot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpiritualTarot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C46C042B5FFFB500881C4E /* SpiritualTarotApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritualTarotApp.swift; sourceTree = "<group>"; };
 		29C46C082B5FFFB700881C4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -247,7 +267,6 @@
 			isa = PBXGroup;
 			children = (
 				298A452F2B7D5962006F8A77 /* SimplePathView.swift */,
-				298A45382B7D660E006F8A77 /* SimplePathNavBTN.swift */,
 			);
 			path = SimplePath;
 			sourceTree = "<group>";
@@ -256,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				298A452D2B7D5896006F8A77 /* OneCardSheetCoreDB.swift */,
+				2978ACD42B7EBAFA0090C12D /* DailyCardSheetCoreDB.swift */,
 			);
 			path = Cardinterpretation;
 			sourceTree = "<group>";
@@ -301,9 +321,12 @@
 		298A453A2B7D6D58006F8A77 /* AllPaths */ = {
 			isa = PBXGroup;
 			children = (
+				29A6DD7B2B7EA67200F6F06C /* Components */,
+				29A6DD762B7EA24D00F6F06C /* LoveOracle */,
+				29A6DD602B7E38CB00F6F06C /* GreatPathView */,
 				298A45422B7D7DC7006F8A77 /* LittleCross */,
 				298A45192B7D529B006F8A77 /* SimplePath */,
-				298A453B2B7D6D6B006F8A77 /* AllPathsView.swift */,
+				298A453B2B7D6D6B006F8A77 /* AllPathsTopView.swift */,
 			);
 			path = AllPaths;
 			sourceTree = "<group>";
@@ -313,6 +336,7 @@
 			children = (
 				298A453E2B7D6F4D006F8A77 /* SessionsBTN.swift */,
 				298A45402B7D70FE006F8A77 /* CardOfTheDayBTN.swift */,
+				29A6DD5B2B7E262B00F6F06C /* TarotSchoolBTN.swift */,
 			);
 			path = TopViewButtons;
 			sourceTree = "<group>";
@@ -320,10 +344,63 @@
 		298A45422B7D7DC7006F8A77 /* LittleCross */ = {
 			isa = PBXGroup;
 			children = (
-				298A45432B7D7DEC006F8A77 /* LittleCrossNavBTN.swift */,
 				298A45452B7D7E20006F8A77 /* LittleCrossView.swift */,
 			);
 			path = LittleCross;
+			sourceTree = "<group>";
+		};
+		29A6DD5D2B7E266900F6F06C /* TarotSchool */ = {
+			isa = PBXGroup;
+			children = (
+				29A6DD682B7E49CA00F6F06C /* HorizArcanaViews */,
+				29A6DD652B7E489300F6F06C /* SegmentedPicker */,
+				29A6DD5E2B7E26A400F6F06C /* TarotSchoolTopView.swift */,
+			);
+			path = TarotSchool;
+			sourceTree = "<group>";
+		};
+		29A6DD602B7E38CB00F6F06C /* GreatPathView */ = {
+			isa = PBXGroup;
+			children = (
+				29A6DD632B7E391F00F6F06C /* GreatPathView.swift */,
+			);
+			path = GreatPathView;
+			sourceTree = "<group>";
+		};
+		29A6DD652B7E489300F6F06C /* SegmentedPicker */ = {
+			isa = PBXGroup;
+			children = (
+				29A6DD662B7E48B400F6F06C /* ArcanaTabsEnum.swift */,
+			);
+			path = SegmentedPicker;
+			sourceTree = "<group>";
+		};
+		29A6DD682B7E49CA00F6F06C /* HorizArcanaViews */ = {
+			isa = PBXGroup;
+			children = (
+				29A6DD692B7E4A0F00F6F06C /* MajorView.swift */,
+				29A6DD6B2B7E4A1E00F6F06C /* CupsView.swift */,
+				29A6DD6D2B7E4A4A00F6F06C /* WandsView.swift */,
+				29A6DD6F2B7E4A7600F6F06C /* CoinsView.swift */,
+				29A6DD712B7E4A9300F6F06C /* SwordsView.swift */,
+			);
+			path = HorizArcanaViews;
+			sourceTree = "<group>";
+		};
+		29A6DD762B7EA24D00F6F06C /* LoveOracle */ = {
+			isa = PBXGroup;
+			children = (
+				29A6DD792B7EA29300F6F06C /* LoveOracleView.swift */,
+			);
+			path = LoveOracle;
+			sourceTree = "<group>";
+		};
+		29A6DD7B2B7EA67200F6F06C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				29A6DD7C2B7EA69A00F6F06C /* ReadingDefaultBTN.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		29C46BF82B5FFFB500881C4E = {
@@ -449,6 +526,7 @@
 		29C46C1F2B60043900881C4E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				29A6DD5D2B7E266900F6F06C /* TarotSchool */,
 				298A453A2B7D6D58006F8A77 /* AllPaths */,
 				298A451A2B7D52BF006F8A77 /* Cardinterpretation */,
 				298A45182B7D527E006F8A77 /* Components */,
@@ -675,8 +753,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29A6DD6A2B7E4A0F00F6F06C /* MajorView.swift in Sources */,
 				29C46C312B600B6300881C4E /* PrimaryButton.swift in Sources */,
-				298A453C2B7D6D6B006F8A77 /* AllPathsView.swift in Sources */,
+				298A453C2B7D6D6B006F8A77 /* AllPathsTopView.swift in Sources */,
+				29A6DD7D2B7EA69A00F6F06C /* ReadingDefaultBTN.swift in Sources */,
 				29C46C822B60315600881C4E /* AddToFavoritesBTN.swift in Sources */,
 				298A451E2B7D536F006F8A77 /* CardFrontTurn.swift in Sources */,
 				298A45332B7D5B12006F8A77 /* TransparentCardBTN.swift in Sources */,
@@ -691,6 +771,7 @@
 				298A45352B7D5B88006F8A77 /* ActionBTN.swift in Sources */,
 				29C46C732B601EDF00881C4E /* AuthenticationMode.swift in Sources */,
 				29C46C2C2B6007A400881C4E /* FireUser.swift in Sources */,
+				29A6DD642B7E391F00F6F06C /* GreatPathView.swift in Sources */,
 				294F0E562B6588EB00764790 /* ApiCashQuoteItemView.swift in Sources */,
 				298A45172B7D4D0B006F8A77 /* DBManager.swift in Sources */,
 				298A453F2B7D6F4D006F8A77 /* SessionsBTN.swift in Sources */,
@@ -712,18 +793,25 @@
 				295E6EB12B61565500C3B4D4 /* OneFQItemView.swift in Sources */,
 				298A45372B7D5BD3006F8A77 /* InactiveBTN.swift in Sources */,
 				298A45202B7D53C5006F8A77 /* CardBackTurn.swift in Sources */,
+				29A6DD6C2B7E4A1E00F6F06C /* CupsView.swift in Sources */,
+				29A6DD5C2B7E262B00F6F06C /* TarotSchoolBTN.swift in Sources */,
 				29C46C252B60053300881C4E /* NavigatorView.swift in Sources */,
 				298A45262B7D5520006F8A77 /* CardBackTestView.swift in Sources */,
 				298A45232B7D54C9006F8A77 /* CardFrontTestView.swift in Sources */,
 				298A450A2B7D4858006F8A77 /* SuiteEnum.swift in Sources */,
 				29C46C792B60293600881C4E /* Quote.swift in Sources */,
-				298A45392B7D660E006F8A77 /* SimplePathNavBTN.swift in Sources */,
 				29C46C7B2B60298600881C4E /* HTTPError.swift in Sources */,
 				298A452C2B7D57FC006F8A77 /* CardViewModelCoreDB.swift in Sources */,
+				29A6DD722B7E4A9300F6F06C /* SwordsView.swift in Sources */,
 				29C46C232B60046F00881C4E /* TarotTopView.swift in Sources */,
+				29A6DD702B7E4A7600F6F06C /* CoinsView.swift in Sources */,
+				29A6DD7A2B7EA29300F6F06C /* LoveOracleView.swift in Sources */,
 				298A45152B7D4BC7006F8A77 /* CardModel.xcdatamodeld in Sources */,
 				29C46C8B2B60330500881C4E /* RemoveFromFavsBTN.swift in Sources */,
-				298A45442B7D7DEC006F8A77 /* LittleCrossNavBTN.swift in Sources */,
+				29A6DD672B7E48B400F6F06C /* ArcanaTabsEnum.swift in Sources */,
+				29A6DD6E2B7E4A4A00F6F06C /* WandsView.swift in Sources */,
+				29A6DD5F2B7E26A400F6F06C /* TarotSchoolTopView.swift in Sources */,
+				2978ACD52B7EBAFA0090C12D /* DailyCardSheetCoreDB.swift in Sources */,
 				29C46C7F2B6029F200881C4E /* QuotesViewModel.swift in Sources */,
 				298A45102B7D4933006F8A77 /* Repo_TestView.swift in Sources */,
 				29C46C8D2B60344500881C4E /* FavoriteQuotesView.swift in Sources */,

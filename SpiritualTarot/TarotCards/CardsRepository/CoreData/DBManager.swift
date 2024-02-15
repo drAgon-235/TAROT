@@ -54,7 +54,7 @@ struct DBManager {
             
             if count == 0 {
                 isEmpty = true
-            }       else {   }
+            } else {   }
         } catch {
             isEmpty = true
         }

@@ -23,7 +23,7 @@ struct Repo_TestView: View {
                     .frame(width: 50, height: 100)
             }
         }
-        //Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+
     }
 }
 
