@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct AllPathsView: View {
+struct AllPathsTopView: View {
     
     
     
     var body: some View {
-        NavigationStack {
+       
             
             NavigationLink(destination: SimplePathView(width: 80, height: 120)) {
                 SimplePathNavBTN()
@@ -23,18 +23,21 @@ struct AllPathsView: View {
                 LittleCrossNavBTN()
             }
             
+            NavigationLink(destination: GreatPathView(width: 80, height: 120)) {
+                GreatPathNavBTN()
+            }
             
             
-            .navigationBarTitle(Text("Tarot Cards"))
+            //.navigationBarTitle(Text("Tarot Cards"))
             
             
             
-        }
+        
 
         
     }
 }
 
 #Preview {
-    AllPathsView()
+    AllPathsTopView()
 }
