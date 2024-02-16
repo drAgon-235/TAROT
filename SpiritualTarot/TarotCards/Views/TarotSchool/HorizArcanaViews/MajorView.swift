@@ -46,7 +46,7 @@ struct MajorView: View {
         Spacer()
         
         .sheet( isPresented: $showCardSheet01){
-            OneCardSheetCoreDB(oneCard: cardForSheet, givenText: "_ _ _")
+            CardSheetBlank(oneCard: cardForSheet)
             
         }
         

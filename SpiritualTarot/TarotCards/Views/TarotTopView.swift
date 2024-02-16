@@ -46,7 +46,7 @@ struct TarotTopView: View {
          
                 .sheet( isPresented: $showCardSheet01){
                     // the first card from the shuffled deck = random card
-                    OneCardSheetCoreDB( oneCard: cardVM.shuffledDeck().first!, givenText: "Your daily/random Card")
+                    CardSheetExplanation( oneCard: cardVM.shuffledDeck().first!, givenText: "Your daily/random Card")
                     // optional:
                     Button("Close"){ showCardSheet01.toggle() }
                     // Spacer()

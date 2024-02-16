@@ -44,7 +44,7 @@ struct SwordsView: View {
         Spacer()
         
         .sheet( isPresented: $showCardSheet01){
-            OneCardSheetCoreDB(oneCard: cardForSheet, givenText: "-S-S-S")
+            CardSheetBlank(oneCard: cardForSheet)
         }
     }
 }

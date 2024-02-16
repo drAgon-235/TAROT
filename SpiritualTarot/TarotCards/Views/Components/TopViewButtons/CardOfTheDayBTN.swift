@@ -16,7 +16,7 @@ struct CardOfTheDayBTN: View {
         Button(action: action) {
             HStack {
                 //Image(systemName: "")
-                Text("Card of the Day")
+                Text("Daily / random Card")
             }
             .font(.title)
             .frame(width: 250, height: 50, alignment: .center)

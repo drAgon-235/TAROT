@@ -415,31 +415,31 @@ struct GreatPathView: View {
                 
             }
             .sheet( isPresented: $showCardSheet01){
-                OneCardSheetCoreDB(oneCard: shuffledDeck[0], givenText: "This card represents the CHANCES  \nand GOALS at the end of your path. \nThe possible outcome.")
+                CardSheetExplanation(oneCard: shuffledDeck[0], givenText: "This card represents the CHANCES  and GOALS at the end of your path. The possible outcome.")
             }
             
             .sheet( isPresented: $showCardSheet02){
-                OneCardSheetCoreDB(oneCard: shuffledDeck[1], givenText: "This card represents your CONSCIOUS\nattitude to this issue TODAY. Rational \n intentions, thaughts and actions.\n(compare to card 7)")
+                CardSheetExplanation(oneCard: shuffledDeck[1], givenText: "This card represents your CONSCIOUS attitude to this issue TODAY. Rational intentions, thaughts and actions. \n(compare to card 7)")
             }
             
             .sheet( isPresented: $showCardSheet03){
-                OneCardSheetCoreDB(oneCard: shuffledDeck[2], givenText: "This stands for your UNCONSCIOUS\nrealm. Your feelings, desires,\nestimations, (wrong) expectations! \n(compare to card 6)")
+                CardSheetExplanation(oneCard: shuffledDeck[2], givenText: "This card stands for your UNCONSCIOUS realm. Your feelings, desires,estimations, (wrong) expectations! \n(compare to card 6)")
             }
             
             .sheet( isPresented: $showCardSheet04){
-                OneCardSheetCoreDB(oneCard: shuffledDeck[3], givenText: "This card shows your REALTY NOW. \nThat's how others see you. \nThat's what you don't know. \n(compare to card 5)")
+                CardSheetExplanation(oneCard: shuffledDeck[3], givenText: "This card shows your REALTY NOW. That's how others see you. That's what you don't know. \n(compare to card 5)")
             }
             
             .sheet( isPresented: $showCardSheet05){
-                OneCardSheetCoreDB(oneCard: shuffledDeck[4], givenText: "This card represents your  FUTURE \nREALITY. It suggests how to perform, \nshows what you may reveal.\n(compare to card 4)")
+                CardSheetExplanation(oneCard: shuffledDeck[4], givenText: "This card represents your  FUTURE REALITY. It suggests how to perform, shows what you may reveal. (compare to card 4)")
             }
             
             .sheet( isPresented: $showCardSheet06){
-                OneCardSheetCoreDB(oneCard: shuffledDeck[5], givenText: "This card suggests a direction for\nyour emotions. It shows for what you\nshould open your mind and heart.\n(compare to card 3)")
+                CardSheetExplanation(oneCard: shuffledDeck[5], givenText: "This card suggests a direction for your emotions. It shows for what you should open your mind and heart. (compare to card 3)")
             }
             
             .sheet( isPresented: $showCardSheet07){
-                OneCardSheetCoreDB(oneCard: shuffledDeck[6], givenText: "This card suggests, on what you\nshould focus your thaughts and \nactions in FUTURE CONSCIOUSLY.\n(compare to card 2)")
+                CardSheetExplanation(oneCard: shuffledDeck[6], givenText: "This card suggests, on what you should focus your thaughts and actions in FUTURE CONSCIOUSLY.\n(compare to card 2)")
             }
             
             

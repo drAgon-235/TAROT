@@ -305,19 +305,19 @@ struct LoveOracleView: View {
             
         }
         .sheet( isPresented: $showCardSheet01){
-            OneCardSheetCoreDB(oneCard: shuffledDeck[0], givenText: "The Significator:\nThis card represents the \nrelationship, topic or question.")
+            CardSheetExplanation(oneCard: shuffledDeck[0], givenText: "The Significator:\nThis card represents the \nrelationship, topic or question.")
         }
         
         .sheet( isPresented: $showCardSheet02){
-            OneCardSheetCoreDB(oneCard: shuffledDeck[1], givenText: "This card shows the other person.\nHer/his attitude, expectations, \nHis/her perspective on you.")
+            CardSheetExplanation(oneCard: shuffledDeck[1], givenText: "This card shows the other person.\nHer/his attitude, expectations, \nHis/her perspective on you.")
         }
         
         .sheet( isPresented: $showCardSheet03){
-            OneCardSheetCoreDB(oneCard: shuffledDeck[2], givenText: "This card represents your inner world.\nHopes, anxieties, wishes, Motivations! ")
+            CardSheetExplanation(oneCard: shuffledDeck[2], givenText: "This card represents your inner world. Hopes, anxieties, wishes, motivations. ")
         }
         
         .sheet( isPresented: $showCardSheet04){
-            OneCardSheetCoreDB(oneCard: shuffledDeck[3], givenText: "This card is your Oracle! \n It can be a proposal for an action  \nor attitude.")
+            CardSheetExplanation(oneCard: shuffledDeck[3], givenText: "This card is your Oracle! \n It can be a proposal for an action  \nor attitude.")
         }   
     }
 }

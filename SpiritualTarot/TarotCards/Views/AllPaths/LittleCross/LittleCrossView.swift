@@ -304,19 +304,19 @@ struct LittleCrossView: View {
             
         }
         .sheet( isPresented: $showCardSheet01){
-            OneCardSheetCoreDB(oneCard: shuffledDeck[0],givenText: "This card represents your \nissue, topic or quoestion. \nIt shows what's on your mind. ")
+            CardSheetExplanation(oneCard: shuffledDeck[0],givenText: "This card represents your \nissue, topic or question. \nIt shows what's on your mind. ")
         }
         
         .sheet( isPresented: $showCardSheet02){
-            OneCardSheetCoreDB(oneCard: shuffledDeck[1], givenText: "This card tells you what you should \navoid! Don't do that!")
+            CardSheetExplanation(oneCard: shuffledDeck[1], givenText: "This card tells you what you should \navoid! Don't do that!")
         }
         
         .sheet( isPresented: $showCardSheet03){
-            OneCardSheetCoreDB(oneCard: shuffledDeck[2], givenText: "This card tells you \nwhat you should do. \nIt shows you the direction to go.")
+            CardSheetExplanation(oneCard: shuffledDeck[2], givenText: "This card tells you what you should do. \nIt shows you the direction to go.")
         }
         
         .sheet( isPresented: $showCardSheet04){
-            OneCardSheetCoreDB(oneCard: shuffledDeck[3], givenText: "This card shows a possible outcome, \nif you follow the card 2 and 3. \nThe goal to achieve.")
+            CardSheetExplanation(oneCard: shuffledDeck[3], givenText: "This card shows a possible outcome, if you follow the card 2 and 3. The goal to achieve.")
         }
         
     }

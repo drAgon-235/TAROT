@@ -272,15 +272,15 @@ struct SimplePathView: View {
             
         }
         .sheet( isPresented: $showCardSheet01){
-            OneCardSheetCoreDB(oneCard: shuffledDeck[0], givenText: "This card represents the PRESENT. \nThe actual situation / issue. \nWhat it's all about.")
+            CardSheetExplanation(oneCard: shuffledDeck[0], givenText: "This card represents the PRESENT. \nThe actual situation / issue. \nWhat it's all about.")
         }
         
         .sheet( isPresented: $showCardSheet02){
-            OneCardSheetCoreDB(oneCard: shuffledDeck[1], givenText: "This card represents the PAST \nand it's influence for the issue. \nThe root cause for the actual situation. ")
+            CardSheetExplanation(oneCard: shuffledDeck[1], givenText: "This card represents the PAST \nand it's influence for the issue. \nThe root cause for the actual situation. ")
         }
         
         .sheet( isPresented: $showCardSheet03){
-            OneCardSheetCoreDB(oneCard: shuffledDeck[2], givenText: "This card represents the FUTURE. \nThe direction it all evolves to. \nThe outcome")
+            CardSheetExplanation(oneCard: shuffledDeck[2], givenText: "This card represents the FUTURE. \nThe direction it all evolves to. \nThe outcome.")
         }
         
         
