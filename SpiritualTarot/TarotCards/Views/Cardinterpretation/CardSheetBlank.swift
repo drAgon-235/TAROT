@@ -1,13 +1,13 @@
 //
-//  OneCardSheetCoreDB.swift
+//  DailyCardSheetCoreDB.swift
 //  SpiritualTarot
 //
-//  Created by Slawo Dragon on 14.02.24.
+//  Created by Slawo Dragon on 15.02.24.
 //
 
 import SwiftUI
 
-struct OneCardSheetCoreDB: View {
+struct CardSheetBlank: View {
     
     var oneCard: Card
     
@@ -95,7 +95,7 @@ struct OneCardSheetCoreDB: View {
 }
 
 /*
- #Preview {
- OneCardSheetCoreDB()
- }
- */
+#Preview {
+    DailyCardSheetCoreDB()
+}
+*/
