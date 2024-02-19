@@ -36,7 +36,10 @@ struct CardFrontTestView: View {
                 .frame(width: theWidth, height: theHeight)
                 .foregroundColor(.purple)
             
-        }    }
+        } 
+        .shadow(radius: 10)
+
+    }
 }
 
 #Preview {

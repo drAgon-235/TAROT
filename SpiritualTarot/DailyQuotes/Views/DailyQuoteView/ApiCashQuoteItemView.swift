@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-// Argument for breaking the MVVM here:
+// Arguments for breaking the MVVM in this case:
 // 1. the fetched Data (from Api or SwiftData) is only used in this View
 // 2. the SwiftData actually IS the View Model !!! used here
 
@@ -86,6 +86,7 @@ struct ApiCashQuoteItemView: View {
                     .background(Color.mint)
                     .cornerRadius(10)
                     .padding()
+                    .shadow(radius: 10)
                 }
            
             // Test Fields:
@@ -99,9 +100,12 @@ struct ApiCashQuoteItemView: View {
             if !lastSavedDayIsSameAsToday() || allDaQuotes.isEmpty{
             Task {
                 do {
+                    // almost invisible loading animation:
                     isLoading = true
                     defer { isLoading = false }
+                    // cler cashe before refilling:
                         clearDailyQuoteCache()
+                    // get quote from API:
                         try await fetchQuotes()  // Our cashe: 'allDataQuotes' gets refreshed with API request
                         cachingTest = "API Call !!!"
                 } catch {
@@ -112,7 +116,7 @@ struct ApiCashQuoteItemView: View {
 
         }
         /*
-         // alternative Code:
+         // alternative Code to .onAppear:
         .task {
             do {
                 isLoading = true
@@ -139,6 +143,7 @@ struct ApiCashQuoteItemView: View {
         // confirm saving to favorites list:
         .alert("Save to favorites list?", isPresented: $showFavConfirmAlert) {
             Button("OK"){
+                // saving to favorites List in Firestore:
                 favQuotesVW.createFavQuote(thisQuote: allDaQuotes.first!.q, thisAuthor: allDaQuotes.first!.a, thisFavorite: true)
             }
             Button("Cancel", role: .cancel) {}

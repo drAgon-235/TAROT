@@ -21,15 +21,7 @@ struct SimplePathView: View {
     @State var showCardSheet02 = false
     @State var showCardSheet03 = false
 
-    
-    // Variables for saving the session - in alert:
-    @State var showSaveSessionAlert = false
-    @StateObject var savedSessionsVM = SavedSessionViewModel()
-    var listOfIDsToSave: [Int16] = []
-    @State var newSessionTopic = ""
 
-    
-    
     // Variables for the ShuffleAnimViews:
     @State var isFlippedShuffle = false
     @State var readingBtnIsVisible = false
@@ -58,7 +50,6 @@ struct SimplePathView: View {
             withAnimation(.linear(duration: durationAndDelay_A)) {
                 frontDegree_A = 270
             }
-            
             withAnimation(.linear(duration: durationAndDelay_01)) {
                 backDegree_01 = -360
             }
@@ -76,7 +67,6 @@ struct SimplePathView: View {
             withAnimation(.linear(duration: durationAndDelay_A)) {
                 frontDegree_A = -270
             }
-            
             withAnimation(.linear(duration: durationAndDelay_01)) {
                 backDegree_01 = 0
             }
@@ -105,6 +95,8 @@ struct SimplePathView: View {
 
     @State private var move = false
     
+
+    
     // After clicking Reading Button:
     func flipFlowingCard() {
         // The parameters make the turn animation slower or faster for each card:
@@ -121,35 +113,50 @@ struct SimplePathView: View {
         } else {  }
     }
     
+    // Variables for saving the session - in alert:
+    @State var showSaveSessionAlert = false
+    @StateObject var savedSessionsVM = SavedSessionViewModel()
+    var listOfIDsToSave: [Int16] = []
+    @State var newSessionTopic = ""
+    @State private var sessionIsSaved = false
+
 
     
     var body: some View {
     
         VStack{
             HStack {
+                // Left part of the HStack:
                 ZStack{
                     // the magic of moving and disappearing buttons:
                     if move {
-                        ActionBTN(text: "Save", action: {showSaveSessionAlert.toggle()}, action_02: {}, action_03: {})
-                            .padding(40)
+                        if sessionIsSaved {
+                            Text("Session saved")
+                                .font(.title2)
+                                .bold()
+                                .foregroundColor(.mint)
+                                .padding(40)
+                        } else {
+                            ActionBTN(text: "Save", action: {showSaveSessionAlert.toggle()}, action_02: {}, action_03: {})
+                                .padding(40)
+                        }
                     } else {
                         ActionBTN(text: "Shuffle",
                                   action: shuffleCards,
                                   action_02: {cardVM.justShuffle()}, // this action makes the Deck really shuffle each time you click the BTN
                                   // you see the result: every time another card is flipping !!! This is Perfection !!!
                                   action_03: {})
-                        
-                            .padding(40)
+                                .padding(40)
                         // Optional Query-Text for repetition of shuffling:
                         if readingBtnIsVisible {
-                            Text("one more \ntime")
+                            Text("..again..?")
                                 .padding(.top, 90)
                                 .foregroundColor(.gray)
                         } else {  }
                     }
-    
                 }
                 
+                // Center of the HStack:
                 ZStack {
                     // All the cards to be read in the back - I love ZStacks:
                     // Card 1 - Front & Back:
@@ -194,6 +201,7 @@ struct SimplePathView: View {
                 }
                 //.padding( 20)
                 
+                // Right part of the HStack:
                 // Thanks to the Holy Spirit for this logic (NO ChatGPT!):
                 if !move {
                     if readingBtnIsVisible {
@@ -217,8 +225,10 @@ struct SimplePathView: View {
             }
             .padding(.trailing, 15)
             // End of HStack on top of view
-            
             Spacer()
+
+            
+            // Start Cards View:
             VStack {
                 HStack(spacing: 30) {
                     VStack {
@@ -231,7 +241,6 @@ struct SimplePathView: View {
                     }
                     .foregroundColor(.red)
 
-                    
                     VStack {
                         Text("1")
                         RoundedRectangle(cornerRadius: 10.0)
@@ -242,7 +251,6 @@ struct SimplePathView: View {
                     }
                     .foregroundColor(.blue)
 
-                    
                     VStack {
                         Text("3")
                         RoundedRectangle(cornerRadius: 10.0)
@@ -254,8 +262,8 @@ struct SimplePathView: View {
                     .foregroundColor(.green)
                 }
             }
+            // - End Cards View -
             Spacer()
-            
         }
         .sheet( isPresented: $showCardSheet01){
             CardSheetExplanation(oneCard: cardVM.allCards[0], givenText: "This card represents the PRESENT. \nThe actual situation / issue. \nWhat it's all about.")
@@ -278,6 +286,8 @@ struct SimplePathView: View {
             Button("Save") {
                 // creating new SavedSession in FirestoreDB with our cards in the right order (thx to List[]):
                 savedSessionsVM.createSavedSession(thisReading: AllPathsEnum.simplePath.name, thisTopic: newSessionTopic, thisCardIdList: [ cardVM.allCards[0].id - 1, cardVM.allCards[1].id - 1, cardVM.allCards[2].id - 1 ])
+                // setting the "Save"-button as inactive:
+                sessionIsSaved = true
             }
         }
         

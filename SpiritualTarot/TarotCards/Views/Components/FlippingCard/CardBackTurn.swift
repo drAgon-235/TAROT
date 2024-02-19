@@ -19,22 +19,22 @@ struct CardBackTurn: View {
         
         ZStack {
             // The purple border (biggest element in back):
-            RoundedRectangle(cornerRadius: 20.0)
+            RoundedRectangle(cornerRadius: 10.0)
                 .stroke(.purple.opacity(0.9), lineWidth: 3)
                 .frame(width: theWidth, height: theHeight)
             
             // the mint margin, also in the back
-            RoundedRectangle(cornerRadius: 20.0)
+            RoundedRectangle(cornerRadius: 10.0)
                 .fill(.mint.opacity(0.9))
                 .frame(width: theWidth, height: theHeight)
                 .shadow(color: .gray, radius: 1, x: 0, y: 0)
             
             // The smaller, purple rectangle just gets a padding:
-            RoundedRectangle(cornerRadius: 20.0)
+            RoundedRectangle(cornerRadius: 10.0)
                 .fill(.purple.opacity(0.2))
                 .padding()
                 .frame(width: theWidth, height: theHeight)
-            RoundedRectangle(cornerRadius: 20.0)
+            RoundedRectangle(cornerRadius: 10.0)
                 .stroke(.purple.opacity(0.8), lineWidth: 3)
                 .padding()
                 .frame(width: theWidth, height: theHeight)

@@ -20,7 +20,7 @@ struct ActionBTN: View {
             action()
             action_02()
             action_03()
-            print("ActionBTN O.K.  e.g.")
+            print("ActionBTN O.K. ")
         } label: {
             Text(text)
         }
@@ -31,6 +31,8 @@ struct ActionBTN: View {
                 .foregroundColor(Color(red: 0 / 255, green: 0 / 255, blue: 250 / 255))
                 .frame(width: 120, height: 40)
         )
+        .shadow(radius: 10)
+
         //.padding()
         
     }

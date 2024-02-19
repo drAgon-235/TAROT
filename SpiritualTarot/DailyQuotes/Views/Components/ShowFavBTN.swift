@@ -18,6 +18,8 @@ struct ShowFavBTN: View {
         .background(Color.purple)
         .foregroundColor(Color.white)
         .cornerRadius(10)   
+        .shadow(radius: 10)
+
     }
 }
 

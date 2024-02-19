@@ -25,6 +25,7 @@ struct CardSheetBlank: View {
                 Image(oneCard.image!)
                     .resizable()
                     .frame(width: 160, height: 250)
+                    .shadow(radius: 10)
                 
                 HStack {
                     Text("Value:")

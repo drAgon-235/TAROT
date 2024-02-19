@@ -13,6 +13,7 @@ struct ShowFavListBTN: View {
             Text("Favorite's List")
         }
         .foregroundColor(Color.blue)
+        .shadow(radius: 10)
 
     }
 }

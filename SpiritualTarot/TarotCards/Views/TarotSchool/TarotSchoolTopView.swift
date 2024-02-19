@@ -14,15 +14,21 @@ struct TarotSchoolTopView: View {
     var body: some View {
         
         VStack {
+            Text("Tarot School")
+                .font(.title)
+                .foregroundColor(.mint)
             Text("The 5 Arcanas")
+                .foregroundColor(.purple)
+
             Picker("Arcanas", selection: $selectedTab) {
                 ForEach(ArcanaTabsEnum.allCases, id: \.self) { tab in
                     Text(tab.rawValue).tag(tab)
                 }
+
             }
             .pickerStyle(.segmented)
             .padding(.horizontal, 10)
-            
+
             selectedTab.tabView()
         }
         Spacer()

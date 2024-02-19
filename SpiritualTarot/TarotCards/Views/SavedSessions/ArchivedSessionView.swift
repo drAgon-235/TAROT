@@ -10,22 +10,26 @@ import SwiftUI
 struct ArchivedSessionView: View {
     
     let date: String
-    let reading: String
+    let myTopic: String
+    let pathName: String
 
     var body: some View {
         VStack {
             HStack{
                 Text(date)
+                    .bold()
                 Spacer()
+                Text(pathName)
+                    .foregroundColor(.blue)
             }
             HStack {
+                Text(myTopic)
                 Spacer()
-                Text(reading)
             }
         }  
     }
 }
 
 #Preview {
-    ArchivedSessionView(date: "2024-Mar_27", reading: "App Developer Exam")
+    ArchivedSessionView(date: "2024-Mar_27", myTopic: "App Developer Exam", pathName: "SimplePath")
 }

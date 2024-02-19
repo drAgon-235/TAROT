@@ -26,7 +26,8 @@ struct LogoutButtonAlert: View {
                 //marketVM.removeListener()  // important for DB cart , but not for etarnal favorites !!!
             }
             Button("Cancel", role: .cancel) {}
-        }    }
+        }   
+    }
 }
 
 #Preview {

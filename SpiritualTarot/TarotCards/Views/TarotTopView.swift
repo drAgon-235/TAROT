@@ -15,7 +15,6 @@ struct TarotTopView: View {
     // Variables for filling the cards with sense & logic:
     @StateObject var cardVM = CardViewModelCoreDB()
 
-    
     var body: some View {
         NavigationStack {
             VStack {
@@ -24,14 +23,17 @@ struct TarotTopView: View {
                 })
                 
                 NavigationLink(destination: AllPathsTopView()) {
-                    SessionsBTN()
+                    NavigationBTN(text: "Reading Sessions", color: Color.blue)
                 }
                 
                 NavigationLink(destination: TarotSchoolTopView()) {
-                    TarotSchoolBTN()
+                    NavigationBTN(text: "Tarot School", color: Color.mint)            
                 }
                 
-               // .navigationBarTitle(Text("Tarot Cards"))
+                NavigationLink(destination: ArchivedSessionsListView(width: 80, height: 120)) {
+                    NavigationBTN(text: "Saved Sessions", color: Color.orange)
+                }
+                .navigationBarTitle(Text("Tarot Home"))
 
                 
                 .toolbar {
@@ -44,6 +46,7 @@ struct TarotTopView: View {
             }
         }
          
+            // The daily/random Card:
                 .sheet( isPresented: $showCardSheet01){
                     // the first card from the shuffled deck = random card
                     CardSheetExplanation( oneCard: cardVM.shuffledDeck().first!, givenText: "Your daily/random Card")

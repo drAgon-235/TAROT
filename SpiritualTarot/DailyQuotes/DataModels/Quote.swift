@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import FirebaseFirestoreSwift
+//import FirebaseFirestoreSwift
 import SwiftData
 
 // for API-Requests AND SwiftData !!!

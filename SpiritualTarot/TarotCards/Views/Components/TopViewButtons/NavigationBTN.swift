@@ -23,6 +23,7 @@ struct NavigationBTN: View {
         .foregroundColor(Color.white)
         .cornerRadius(10)
         .padding()
+        .shadow(radius: 10)
     }
 }
 

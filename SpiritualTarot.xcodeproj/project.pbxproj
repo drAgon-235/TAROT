@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		29197BE52B7FE91600B05C47 /* SimplePathViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29197BE42B7FE91600B05C47 /* SimplePathViewModel.swift */; };
+		29197BE52B7FE91600B05C47 /* SavedSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29197BE42B7FE91600B05C47 /* SavedSessionViewModel.swift */; };
+		29197BE72B7FEC9900B05C47 /* SavedSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29197BE62B7FEC9900B05C47 /* SavedSession.swift */; };
+		29197BEA2B80050B00B05C47 /* ArchivedSessionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29197BE92B80050B00B05C47 /* ArchivedSessionsListView.swift */; };
+		2933C69F2B825A23008D8182 /* AllPathsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2933C69E2B825A23008D8182 /* AllPathsEnum.swift */; };
 		294F0E502B643E9C00764790 /* DateTodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F0E4F2B643E9C00764790 /* DateTodayView.swift */; };
 		294F0E562B6588EB00764790 /* ApiCashQuoteItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F0E552B6588EB00764790 /* ApiCashQuoteItemView.swift */; };
 		295E6EB12B61565500C3B4D4 /* OneFQItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295E6EB02B61565500C3B4D4 /* OneFQItemView.swift */; };
@@ -32,10 +35,11 @@
 		298A45352B7D5B88006F8A77 /* ActionBTN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A45342B7D5B88006F8A77 /* ActionBTN.swift */; };
 		298A45372B7D5BD3006F8A77 /* InactiveBTN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A45362B7D5BD3006F8A77 /* InactiveBTN.swift */; };
 		298A453C2B7D6D6B006F8A77 /* AllPathsTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A453B2B7D6D6B006F8A77 /* AllPathsTopView.swift */; };
-		298A453F2B7D6F4D006F8A77 /* SessionsBTN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A453E2B7D6F4D006F8A77 /* SessionsBTN.swift */; };
+		298A453F2B7D6F4D006F8A77 /* NavigationBTN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A453E2B7D6F4D006F8A77 /* NavigationBTN.swift */; };
 		298A45412B7D70FE006F8A77 /* CardOfTheDayBTN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A45402B7D70FE006F8A77 /* CardOfTheDayBTN.swift */; };
 		298A45462B7D7E20006F8A77 /* LittleCrossView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A45452B7D7E20006F8A77 /* LittleCrossView.swift */; };
-		29A6DD5C2B7E262B00F6F06C /* TarotSchoolBTN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A6DD5B2B7E262B00F6F06C /* TarotSchoolBTN.swift */; };
+		298F611E2B81408E00B5D4D7 /* SimplePathArchiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298F611D2B81408E00B5D4D7 /* SimplePathArchiveView.swift */; };
+		298F61202B81548B00B5D4D7 /* ArchivedSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298F611F2B81548B00B5D4D7 /* ArchivedSessionView.swift */; };
 		29A6DD5F2B7E26A400F6F06C /* TarotSchoolTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A6DD5E2B7E26A400F6F06C /* TarotSchoolTopView.swift */; };
 		29A6DD642B7E391F00F6F06C /* GreatPathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A6DD632B7E391F00F6F06C /* GreatPathView.swift */; };
 		29A6DD672B7E48B400F6F06C /* ArcanaTabsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A6DD662B7E48B400F6F06C /* ArcanaTabsEnum.swift */; };
@@ -96,14 +100,19 @@
 		29C46C822B60315600881C4E /* AddToFavoritesBTN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C46C812B60315600881C4E /* AddToFavoritesBTN.swift */; };
 		29C46C872B60323A00881C4E /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C46C862B60323A00881C4E /* QuoteView.swift */; };
 		29C46C892B60329F00881C4E /* ShowFavBTN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C46C882B60329F00881C4E /* ShowFavBTN.swift */; };
-		29C46C8B2B60330500881C4E /* RemoveFromFavsBTN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C46C8A2B60330500881C4E /* RemoveFromFavsBTN.swift */; };
 		29C46C8D2B60344500881C4E /* FavoriteQuotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C46C8C2B60344500881C4E /* FavoriteQuotesView.swift */; };
 		29C46C8F2B604AE500881C4E /* FavoriteQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C46C8E2B604AE500881C4E /* FavoriteQuote.swift */; };
 		29C46C912B604C3E00881C4E /* FavoriteQuotesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C46C902B604C3E00881C4E /* FavoriteQuotesVM.swift */; };
+		29EC8B442B83B50300E323A2 /* LittleCrossArchiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EC8B432B83B50300E323A2 /* LittleCrossArchiveView.swift */; };
+		29EC8B462B83D68A00E323A2 /* LoveOracleArchiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EC8B452B83D68A00E323A2 /* LoveOracleArchiveView.swift */; };
+		29EC8B482B83DEBA00E323A2 /* GreatPathArchiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EC8B472B83DEBA00E323A2 /* GreatPathArchiveView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		29197BE42B7FE91600B05C47 /* SimplePathViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePathViewModel.swift; sourceTree = "<group>"; };
+		29197BE42B7FE91600B05C47 /* SavedSessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedSessionViewModel.swift; sourceTree = "<group>"; };
+		29197BE62B7FEC9900B05C47 /* SavedSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedSession.swift; sourceTree = "<group>"; };
+		29197BE92B80050B00B05C47 /* ArchivedSessionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivedSessionsListView.swift; sourceTree = "<group>"; };
+		2933C69E2B825A23008D8182 /* AllPathsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPathsEnum.swift; sourceTree = "<group>"; };
 		294F0E4F2B643E9C00764790 /* DateTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTodayView.swift; sourceTree = "<group>"; };
 		294F0E552B6588EB00764790 /* ApiCashQuoteItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCashQuoteItemView.swift; sourceTree = "<group>"; };
 		295E6EB02B61565500C3B4D4 /* OneFQItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneFQItemView.swift; sourceTree = "<group>"; };
@@ -128,10 +137,11 @@
 		298A45342B7D5B88006F8A77 /* ActionBTN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionBTN.swift; sourceTree = "<group>"; };
 		298A45362B7D5BD3006F8A77 /* InactiveBTN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InactiveBTN.swift; sourceTree = "<group>"; };
 		298A453B2B7D6D6B006F8A77 /* AllPathsTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPathsTopView.swift; sourceTree = "<group>"; };
-		298A453E2B7D6F4D006F8A77 /* SessionsBTN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsBTN.swift; sourceTree = "<group>"; };
+		298A453E2B7D6F4D006F8A77 /* NavigationBTN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBTN.swift; sourceTree = "<group>"; };
 		298A45402B7D70FE006F8A77 /* CardOfTheDayBTN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardOfTheDayBTN.swift; sourceTree = "<group>"; };
 		298A45452B7D7E20006F8A77 /* LittleCrossView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleCrossView.swift; sourceTree = "<group>"; };
-		29A6DD5B2B7E262B00F6F06C /* TarotSchoolBTN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarotSchoolBTN.swift; sourceTree = "<group>"; };
+		298F611D2B81408E00B5D4D7 /* SimplePathArchiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePathArchiveView.swift; sourceTree = "<group>"; };
+		298F611F2B81548B00B5D4D7 /* ArchivedSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivedSessionView.swift; sourceTree = "<group>"; };
 		29A6DD5E2B7E26A400F6F06C /* TarotSchoolTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarotSchoolTopView.swift; sourceTree = "<group>"; };
 		29A6DD632B7E391F00F6F06C /* GreatPathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreatPathView.swift; sourceTree = "<group>"; };
 		29A6DD662B7E48B400F6F06C /* ArcanaTabsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcanaTabsEnum.swift; sourceTree = "<group>"; };
@@ -166,10 +176,12 @@
 		29C46C812B60315600881C4E /* AddToFavoritesBTN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToFavoritesBTN.swift; sourceTree = "<group>"; };
 		29C46C862B60323A00881C4E /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
 		29C46C882B60329F00881C4E /* ShowFavBTN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowFavBTN.swift; sourceTree = "<group>"; };
-		29C46C8A2B60330500881C4E /* RemoveFromFavsBTN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveFromFavsBTN.swift; sourceTree = "<group>"; };
 		29C46C8C2B60344500881C4E /* FavoriteQuotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteQuotesView.swift; sourceTree = "<group>"; };
 		29C46C8E2B604AE500881C4E /* FavoriteQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteQuote.swift; sourceTree = "<group>"; };
 		29C46C902B604C3E00881C4E /* FavoriteQuotesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteQuotesVM.swift; sourceTree = "<group>"; };
+		29EC8B432B83B50300E323A2 /* LittleCrossArchiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleCrossArchiveView.swift; sourceTree = "<group>"; };
+		29EC8B452B83D68A00E323A2 /* LoveOracleArchiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveOracleArchiveView.swift; sourceTree = "<group>"; };
+		29EC8B472B83DEBA00E323A2 /* GreatPathArchiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreatPathArchiveView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,10 +222,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29197BE82B8004AF00B05C47 /* SavedSessions */ = {
+			isa = PBXGroup;
+			children = (
+				298F611C2B81404F00B5D4D7 /* ReadingArchiveViews */,
+				29197BE92B80050B00B05C47 /* ArchivedSessionsListView.swift */,
+				298F611F2B81548B00B5D4D7 /* ArchivedSessionView.swift */,
+			);
+			path = SavedSessions;
+			sourceTree = "<group>";
+		};
+		2933C69D2B825A0F008D8182 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				2933C69E2B825A23008D8182 /* AllPathsEnum.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		298A45062B7D478A006F8A77 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				29197BE42B7FE91600B05C47 /* SimplePathViewModel.swift */,
+				29197BE42B7FE91600B05C47 /* SavedSessionViewModel.swift */,
 				298A452B2B7D57FC006F8A77 /* CardViewModelCoreDB.swift */,
 			);
 			path = ViewModels;
@@ -224,6 +254,7 @@
 			children = (
 				298A45092B7D4858006F8A77 /* SuiteEnum.swift */,
 				298A450B2B7D4875006F8A77 /* TarotCard.swift */,
+				29197BE62B7FEC9900B05C47 /* SavedSession.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -321,7 +352,7 @@
 			path = SessionButtons;
 			sourceTree = "<group>";
 		};
-		298A453A2B7D6D58006F8A77 /* AllPaths */ = {
+		298A453A2B7D6D58006F8A77 /* AllReadings */ = {
 			isa = PBXGroup;
 			children = (
 				29A6DD7B2B7EA67200F6F06C /* Components */,
@@ -331,15 +362,14 @@
 				298A45192B7D529B006F8A77 /* SimplePath */,
 				298A453B2B7D6D6B006F8A77 /* AllPathsTopView.swift */,
 			);
-			path = AllPaths;
+			path = AllReadings;
 			sourceTree = "<group>";
 		};
 		298A453D2B7D6F26006F8A77 /* TopViewButtons */ = {
 			isa = PBXGroup;
 			children = (
-				298A453E2B7D6F4D006F8A77 /* SessionsBTN.swift */,
+				298A453E2B7D6F4D006F8A77 /* NavigationBTN.swift */,
 				298A45402B7D70FE006F8A77 /* CardOfTheDayBTN.swift */,
-				29A6DD5B2B7E262B00F6F06C /* TarotSchoolBTN.swift */,
 			);
 			path = TopViewButtons;
 			sourceTree = "<group>";
@@ -350,6 +380,17 @@
 				298A45452B7D7E20006F8A77 /* LittleCrossView.swift */,
 			);
 			path = LittleCross;
+			sourceTree = "<group>";
+		};
+		298F611C2B81404F00B5D4D7 /* ReadingArchiveViews */ = {
+			isa = PBXGroup;
+			children = (
+				298F611D2B81408E00B5D4D7 /* SimplePathArchiveView.swift */,
+				29EC8B432B83B50300E323A2 /* LittleCrossArchiveView.swift */,
+				29EC8B452B83D68A00E323A2 /* LoveOracleArchiveView.swift */,
+				29EC8B472B83DEBA00E323A2 /* GreatPathArchiveView.swift */,
+			);
+			path = ReadingArchiveViews;
 			sourceTree = "<group>";
 		};
 		29A6DD5D2B7E266900F6F06C /* TarotSchool */ = {
@@ -529,8 +570,10 @@
 		29C46C1F2B60043900881C4E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2933C69D2B825A0F008D8182 /* Enums */,
+				29197BE82B8004AF00B05C47 /* SavedSessions */,
 				29A6DD5D2B7E266900F6F06C /* TarotSchool */,
-				298A453A2B7D6D58006F8A77 /* AllPaths */,
+				298A453A2B7D6D58006F8A77 /* AllReadings */,
 				298A451A2B7D52BF006F8A77 /* Cardinterpretation */,
 				298A45182B7D527E006F8A77 /* Components */,
 				29C46C222B60046F00881C4E /* TarotTopView.swift */,
@@ -602,7 +645,6 @@
 			children = (
 				29C46C812B60315600881C4E /* AddToFavoritesBTN.swift */,
 				29C46C882B60329F00881C4E /* ShowFavBTN.swift */,
-				29C46C8A2B60330500881C4E /* RemoveFromFavsBTN.swift */,
 				295E6EB22B61BCA200C3B4D4 /* ShowFavListBTN.swift */,
 				294F0E4F2B643E9C00764790 /* DateTodayView.swift */,
 			);
@@ -760,13 +802,15 @@
 				29C46C312B600B6300881C4E /* PrimaryButton.swift in Sources */,
 				298A453C2B7D6D6B006F8A77 /* AllPathsTopView.swift in Sources */,
 				29A6DD7D2B7EA69A00F6F06C /* ReadingDefaultBTN.swift in Sources */,
+				29197BE72B7FEC9900B05C47 /* SavedSession.swift in Sources */,
 				29C46C822B60315600881C4E /* AddToFavoritesBTN.swift in Sources */,
 				298A451E2B7D536F006F8A77 /* CardFrontTurn.swift in Sources */,
 				298A45332B7D5B12006F8A77 /* TransparentCardBTN.swift in Sources */,
-				29197BE52B7FE91600B05C47 /* SimplePathViewModel.swift in Sources */,
+				29197BE52B7FE91600B05C47 /* SavedSessionViewModel.swift in Sources */,
 				29C46C702B601E5600881C4E /* UserViewModel.swift in Sources */,
 				29C46C7D2B6029A300881C4E /* QuotesRepository.swift in Sources */,
 				298A45302B7D5962006F8A77 /* SimplePathView.swift in Sources */,
+				2933C69F2B825A23008D8182 /* AllPathsEnum.swift in Sources */,
 				298A45412B7D70FE006F8A77 /* CardOfTheDayBTN.swift in Sources */,
 				29C46C8F2B604AE500881C4E /* FavoriteQuote.swift in Sources */,
 				29C46C752B601FD100881C4E /* LogoutButtonAlert.swift in Sources */,
@@ -778,27 +822,32 @@
 				29A6DD642B7E391F00F6F06C /* GreatPathView.swift in Sources */,
 				294F0E562B6588EB00764790 /* ApiCashQuoteItemView.swift in Sources */,
 				298A45172B7D4D0B006F8A77 /* DBManager.swift in Sources */,
-				298A453F2B7D6F4D006F8A77 /* SessionsBTN.swift in Sources */,
+				298A453F2B7D6F4D006F8A77 /* NavigationBTN.swift in Sources */,
 				298A45462B7D7E20006F8A77 /* LittleCrossView.swift in Sources */,
 				298A450E2B7D48A6006F8A77 /* TarotCardsRepo.swift in Sources */,
 				294F0E502B643E9C00764790 /* DateTodayView.swift in Sources */,
+				29EC8B442B83B50300E323A2 /* LittleCrossArchiveView.swift in Sources */,
 				29C46C892B60329F00881C4E /* ShowFavBTN.swift in Sources */,
 				29C46C872B60323A00881C4E /* QuoteView.swift in Sources */,
 				298A452E2B7D5896006F8A77 /* CardSheetExplanation.swift in Sources */,
 				298A45282B7D55F2006F8A77 /* CardBackTwist.swift in Sources */,
 				298A450C2B7D4875006F8A77 /* TarotCard.swift in Sources */,
 				29C46C1D2B6003ED00881C4E /* QuoteTopView.swift in Sources */,
+				298F611E2B81408E00B5D4D7 /* SimplePathArchiveView.swift in Sources */,
+				29197BEA2B80050B00B05C47 /* ArchivedSessionsListView.swift in Sources */,
 				29C46C912B604C3E00881C4E /* FavoriteQuotesVM.swift in Sources */,
 				29C46C2F2B600AF600881C4E /* TextButton.swift in Sources */,
 				29C46C772B60204A00881C4E /* AuthenticationView.swift in Sources */,
 				29C46C052B5FFFB500881C4E /* SpiritualTarotApp.swift in Sources */,
+				298F61202B81548B00B5D4D7 /* ArchivedSessionView.swift in Sources */,
 				295E6EB32B61BCA200C3B4D4 /* ShowFavListBTN.swift in Sources */,
+				29EC8B462B83D68A00E323A2 /* LoveOracleArchiveView.swift in Sources */,
 				298A452A2B7D56B0006F8A77 /* CardFlipTestView.swift in Sources */,
 				295E6EB12B61565500C3B4D4 /* OneFQItemView.swift in Sources */,
 				298A45372B7D5BD3006F8A77 /* InactiveBTN.swift in Sources */,
 				298A45202B7D53C5006F8A77 /* CardBackTurn.swift in Sources */,
+				29EC8B482B83DEBA00E323A2 /* GreatPathArchiveView.swift in Sources */,
 				29A6DD6C2B7E4A1E00F6F06C /* CupsView.swift in Sources */,
-				29A6DD5C2B7E262B00F6F06C /* TarotSchoolBTN.swift in Sources */,
 				29C46C252B60053300881C4E /* NavigatorView.swift in Sources */,
 				298A45262B7D5520006F8A77 /* CardBackTestView.swift in Sources */,
 				298A45232B7D54C9006F8A77 /* CardFrontTestView.swift in Sources */,
@@ -811,7 +860,6 @@
 				29A6DD702B7E4A7600F6F06C /* CoinsView.swift in Sources */,
 				29A6DD7A2B7EA29300F6F06C /* LoveOracleView.swift in Sources */,
 				298A45152B7D4BC7006F8A77 /* CardModel.xcdatamodeld in Sources */,
-				29C46C8B2B60330500881C4E /* RemoveFromFavsBTN.swift in Sources */,
 				29A6DD672B7E48B400F6F06C /* ArcanaTabsEnum.swift in Sources */,
 				29A6DD6E2B7E4A4A00F6F06C /* WandsView.swift in Sources */,
 				29A6DD5F2B7E26A400F6F06C /* TarotSchoolTopView.swift in Sources */,

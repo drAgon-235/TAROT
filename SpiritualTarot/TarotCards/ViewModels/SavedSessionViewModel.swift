@@ -13,6 +13,9 @@ import SwiftUI
 
 class SavedSessionViewModel: ObservableObject {
     
+    init() {
+        fetchSessions()
+    }
     
     // Variables
     private var listener: ListenerRegistration?
@@ -21,10 +24,10 @@ class SavedSessionViewModel: ObservableObject {
     
     
     // Functions:
-    func createSavedSession(thisReading: String, thisDate: String, thisCardIdList: [Int16]) {
+    func createSavedSession(thisReading: String, thisTopic: String, thisCardIdList: [Int16]) {
         guard let thisUserId = FirebaseManager.shared.userId else { return }
 
-        let session = SavedSession(userID: thisUserId, reading: thisReading, date: thisDate, cardsIdList: thisCardIdList)
+        let session = SavedSession(userID: thisUserId, reading: thisReading, topic: thisTopic, date: getCurrentDate(), cardsIdList: thisCardIdList)
         
         do {
             try FirebaseManager.shared.database.collection("savedSessions").addDocument(from: session)
@@ -34,7 +37,7 @@ class SavedSessionViewModel: ObservableObject {
     }
     
     
-    func fetchSession() {
+    func fetchSessions() {
         guard let userId = FirebaseManager.shared.userId else { return }
 
         self.listener = FirebaseManager.shared.database.collection("savedSessions").whereField("userID", isEqualTo: userId).addSnapshotListener {querySnapshot, error in
@@ -63,8 +66,23 @@ class SavedSessionViewModel: ObservableObject {
     }
     
     
-    func deleteSession() {
+    func deleteSession(with id: String) {
         
+        FirebaseManager.shared.database.collection("savedSessions").document(id).delete() { error in
+            if let error {
+                print("Error deleting Favorite Quote", error.localizedDescription)
+                return
+            }
+            print("DELETED FavQuote with ID: \(id)")
+        }
+        
+    }
+    
+    // gives us the current date formatted to a String:
+    func getCurrentDate() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MMM-dd" // MMM: short month name
+        return formatter.string(from: Date())
     }
     
     

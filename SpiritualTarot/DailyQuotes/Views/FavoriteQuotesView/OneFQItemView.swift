@@ -31,6 +31,8 @@ struct OneFQItemView: View {
             //.padding(8)
             .background(Color.mint)
             .cornerRadius(10)
+            .shadow(radius: 8)
+
             //.padding()
             
     }

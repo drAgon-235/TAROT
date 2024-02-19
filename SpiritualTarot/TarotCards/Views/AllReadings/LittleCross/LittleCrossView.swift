@@ -13,7 +13,6 @@ struct LittleCrossView: View {
     let width: CGFloat
     let height: CGFloat
     
-    
     // Variables for the ShuffleAnimViews:
     @State var isFlippedShuffle = false
     @State var readingBtnIsVisible = false
@@ -135,40 +134,46 @@ struct LittleCrossView: View {
     // Variables for filling the cards with sense & logic:
     @StateObject var cardVM = CardViewModelCoreDB()
 
-    func shuffleDeck() -> [Card] {
-        // our freshly shuffled deck:
-        let shuffledDeck = cardVM.shuffledDeck()
-        return shuffledDeck
-    }
+    // Variables for saving a session - in alert:
+    @StateObject var savedSessionsVM = SavedSessionViewModel()
+    @State private var sessionIsSaved = false
+    @State var showSaveSessionAlert = false
+    var listOfIDsToSave: [Int16] = []
+    @State var newSessionTopic = ""
     
     
     var body: some View {
-        // our freshly shuffled deck:
-        @State var shuffledDeck = shuffleDeck()
-
+   
+        // Outer VStack:
         VStack{
             HStack {
                 ZStack{
                     // the magic of moving and disappearing buttons:
                     if move {
-                        ActionBTN(text: "Interprete", action: {}, action_02: {}, action_03: {})
-                            .padding(40)
+                        if sessionIsSaved {
+                            Text("Session saved")
+                                .font(.title2)
+                                .bold()
+                                .foregroundColor(.mint)
+                                .padding(40)
+                        } else {
+                            ActionBTN(text: "Save", action: {showSaveSessionAlert.toggle()}, action_02: {}, action_03: {})
+                                .padding(40)
+                        }
                     } else {
                         ActionBTN(text: "Shuffle",
                                   action: shuffleCards,
                                   action_02: {cardVM.justShuffle()}, // this action makes the Deck really shuffle each time you click the BTN
                                   // you see the result: every time another card is flipping !!! This is Perfection !!!
                                   action_03: {})
-                        
-                            .padding(40)
+                                .padding(40)
                         // Optional Query-Text for repetition of shuffling:
                         if readingBtnIsVisible {
-                            Text("one more \ntime")
+                            Text("..again..?")
                                 .padding(.top, 90)
                                 .foregroundColor(.gray)
                         } else {  }
                     }
-    
                 }
                 
                 ZStack {
@@ -176,7 +181,7 @@ struct LittleCrossView: View {
                     // Card 1 - Front & Back:
                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
                         .matchedGeometryEffect(id: "card_basic1", in: readingCard01, isSource: false)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: shuffledDeck[0])
+                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[0])
                         .matchedGeometryEffect(id: "card_basic1", in: readingCard01, isSource: false)
                     // & the corresponding [transparent] button (appears just when card is laid out):
                     TransparentCardBTN(action: toggleCard01Sheet )
@@ -186,7 +191,7 @@ struct LittleCrossView: View {
                     // Card 2 - Front & Back:
                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
                         .matchedGeometryEffect(id: "card_basic2", in: readingCard02, isSource: false)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: shuffledDeck[1])
+                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[1])
                         .matchedGeometryEffect(id: "card_basic2", in: readingCard02, isSource: false)
                     // & the corresponding [transparent] button (appears just when card is laid out):
                     TransparentCardBTN(action: toggleCard02Sheet )
@@ -195,7 +200,7 @@ struct LittleCrossView: View {
                     // Card 3 - Front & Back:
                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
                         .matchedGeometryEffect(id: "card_basic3", in: readingCard03, isSource: false)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: shuffledDeck[2])
+                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[2])
                         .matchedGeometryEffect(id: "card_basic3", in: readingCard03, isSource: false)
                     // & the corresponding [transparent] button (appears just when card is laid out):
                     TransparentCardBTN(action: toggleCard03Sheet )
@@ -204,7 +209,7 @@ struct LittleCrossView: View {
                     // Card 4 - Front & Back:
                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
                         .matchedGeometryEffect(id: "card_basic4", in: readingCard04, isSource: false)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: shuffledDeck[3])
+                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[3])
                         .matchedGeometryEffect(id: "card_basic4", in: readingCard04, isSource: false)
                     // & the corresponding [transparent] button (appears just when card is laid out):
                     TransparentCardBTN(action: toggleCard04Sheet )
@@ -218,7 +223,7 @@ struct LittleCrossView: View {
                     CardBackTwist(theWidth: width, theHeight: height, myDegree: $backDegree_02)
                     // The only "real" card on top, otherwise you don't really see the rotation of the "Wheel of Fortune"
                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegree_A)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegree_A, card: shuffledDeck[11])
+                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegree_A, card: cardVM.allCards[13])
 
                     
                 }
@@ -249,6 +254,7 @@ struct LittleCrossView: View {
             // End of HStack on top of view
             
             Spacer()
+            // Inner VStack:
             VStack {
                 HStack {
                     VStack {
@@ -300,23 +306,40 @@ struct LittleCrossView: View {
                     .foregroundColor(.purple)
                 }
             }
+            // End of inner VStack
             Spacer()
             
         }
+        // End of outer VStack
+        
         .sheet( isPresented: $showCardSheet01){
-            CardSheetExplanation(oneCard: shuffledDeck[0],givenText: "This card represents your \nissue, topic or question. \nIt shows what's on your mind. ")
+            CardSheetExplanation(oneCard: cardVM.allCards[0],givenText: "This card represents your \nissue, topic or question. \nIt shows what's on your mind. ")
         }
         
         .sheet( isPresented: $showCardSheet02){
-            CardSheetExplanation(oneCard: shuffledDeck[1], givenText: "This card tells you what you should \navoid! Don't do that!")
+            CardSheetExplanation(oneCard: cardVM.allCards[1], givenText: "This card tells you what you should \navoid! Don't do that!")
         }
         
         .sheet( isPresented: $showCardSheet03){
-            CardSheetExplanation(oneCard: shuffledDeck[2], givenText: "This card tells you what you should do. \nIt shows you the direction to go.")
+            CardSheetExplanation(oneCard: cardVM.allCards[2], givenText: "This card tells you what you should do. \nIt shows you the direction to go.")
         }
         
         .sheet( isPresented: $showCardSheet04){
-            CardSheetExplanation(oneCard: shuffledDeck[3], givenText: "This card shows a possible outcome, if you follow the card 2 and 3. The goal to achieve.")
+            CardSheetExplanation(oneCard: cardVM.allCards[3], givenText: "This card shows a possible outcome, if you follow the card 2 and 3. The goal to achieve.")
+        }
+        
+        // saving the Session:
+        .alert("Save the session? \n \(savedSessionsVM.getCurrentDate())", isPresented: $showSaveSessionAlert) {
+            // Textfield for topic:
+            TextField("Topic", text: $newSessionTopic)
+            
+            Button("Cancel", role: .cancel) {}
+            Button("Save") {
+                // creating new SavedSession in FirestoreDB with our cards in the right order (thx to List[]):
+                savedSessionsVM.createSavedSession(thisReading: AllPathsEnum.littleCross.name, thisTopic: newSessionTopic, thisCardIdList: [ cardVM.allCards[0].id - 1, cardVM.allCards[1].id - 1, cardVM.allCards[2].id - 1, cardVM.allCards[3].id - 1 ])
+                // setting the "Save"-button as inactive:
+                sessionIsSaved = true
+            }
         }
         
     }

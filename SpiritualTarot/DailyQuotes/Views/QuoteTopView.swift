@@ -31,6 +31,7 @@ struct QuoteTopView: View {
                     .foregroundColor(.white)
                     .background(Color.mint)
                     .cornerRadius(10)
+                    .shadow(radius: 10)
                 })
                 .padding(40)
                 
@@ -40,7 +41,7 @@ struct QuoteTopView: View {
                 NavigationLink(destination: FavoriteQuotesView()) {
                     ShowFavBTN()
                 }
-                .navigationBarTitle(Text("Daily quotes"))
+                .navigationBarTitle(Text("Quotes Home"))
                 
                 .toolbar {
                     HStack {

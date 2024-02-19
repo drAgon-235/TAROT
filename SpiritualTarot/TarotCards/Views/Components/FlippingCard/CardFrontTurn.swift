@@ -21,11 +21,11 @@ struct CardFrontTurn: View {
         ZStack {
             // The borders and backgrounds:
             
-            RoundedRectangle(cornerRadius: 20.0)
+            RoundedRectangle(cornerRadius: 10.0)
                 .stroke(.purple.opacity(0.7), lineWidth: 3)
                 .frame(width: theWidth, height: theHeight)
             
-            RoundedRectangle(cornerRadius: 20.0)
+            RoundedRectangle(cornerRadius: 10.0)
                 .fill(.mint.opacity(0.2))
                 .frame(width: theWidth, height: theHeight)
                 .shadow(color: .gray, radius: 1, x: 0, y: 0)
@@ -37,6 +37,8 @@ struct CardFrontTurn: View {
         }
         // this enables the card to rotate, by $changing the $myDegree variable on call around the definded axis:
         .rotation3DEffect(Angle(degrees: myDegree), axis: (x: 0, y: 1, z: 0))
+        .shadow(radius: 10)
+
     }
 }
 

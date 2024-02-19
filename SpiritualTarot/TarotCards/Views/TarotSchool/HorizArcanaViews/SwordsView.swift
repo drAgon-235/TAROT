@@ -28,6 +28,7 @@ struct SwordsView: View {
                                 Image(thisCard.image!)
                                     .resizable()
                                     .frame(width: 150, height: 250)
+                                    .shadow(radius: 10)
                                 Text(thisCard.name ?? "No Value found")
                             }
                             .onTapGesture {

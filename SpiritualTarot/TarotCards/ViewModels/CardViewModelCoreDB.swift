@@ -22,8 +22,8 @@ class CardViewModelCoreDB: ObservableObject {
     // The source of TarotCard-Data for the CoreDB:
     private let cardsRepo = TarotCardsRepo()
     
+    // The Core DB:
     private let container = DBManager.shared
-    
     @Published var allCards: [Card] = []
     
     
@@ -76,7 +76,7 @@ class CardViewModelCoreDB: ObservableObject {
     }
     
     // only needed for testing the CoreDB
-    // (just deletes data, not the Entity itself)
+    // (just deletes data, not the Entity itself):
     func delete() {
         let allcards = container.context.persistentStoreCoordinator
         for card in container.context.registeredObjects {
@@ -89,22 +89,23 @@ class CardViewModelCoreDB: ObservableObject {
         }
     }
 
-    
-    // deletes the entity in CoreDB
+    // (deletes the entire entity in CoreDB):
     func deletecard(_ tarotCard: Card) {
         container.context.delete(tarotCard)
         container.save()
         fetchCardsFromCoreDB()
     }
 
-    // returns the deck (@Published var cards) shuffled:
+    
+    // returns the deck (@Published var cards) shuffled - but does NOT shuffle THIS deck!!!:
+    // (only used in "Your daily/random Card" as randomizer, used only once, each time)
     func shuffledDeck() -> [Card] {
         let shuffledDeck: [Card] = allCards.shuffled()
         return shuffledDeck
     }
     
     
-    // only shuffles this deck - uesed for multiple shuffleing the deck before laying
+    // only shuffles THIS deck - allows multiple shuffleing the deck before laying
     func justShuffle() {
         allCards.shuffle()
     }

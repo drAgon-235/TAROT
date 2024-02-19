@@ -19,7 +19,7 @@ struct CardSheetExplanation: View {
                 RoundedRectangle(cornerRadius: 10.0)
                     .fill(.mint.opacity(0.2))
                     .stroke(.purple.opacity(0.9), lineWidth: 3)
-
+                
                 Text(givenText)
                     .padding()
                     .foregroundColor(.indigo)
@@ -37,6 +37,7 @@ struct CardSheetExplanation: View {
                 Image(oneCard.image!)
                     .resizable()
                     .frame(width: 160, height: 250)
+                    .shadow(radius: 10)
                 
                 HStack {
                     Text("Value:")
@@ -52,7 +53,7 @@ struct CardSheetExplanation: View {
                 }
                 .foregroundColor(.blue)
                 .bold()
-
+                
                 
                 Text("Keywords:")
                     .padding(.top, 10)
@@ -91,7 +92,9 @@ struct CardSheetExplanation: View {
                 
             }
         }
-        .background(Color.purple.opacity(0.2))    }
+        .background(Color.purple.opacity(0.2))
+        
+    }
 }
 
 /*

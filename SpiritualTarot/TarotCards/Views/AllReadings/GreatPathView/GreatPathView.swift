@@ -151,36 +151,41 @@ struct GreatPathView: View {
     // Variables for filling the cards with sense & logic:
     @StateObject var cardVM = CardViewModelCoreDB()
 
-    func shuffleDeck() -> [Card] {
-        // our freshly shuffled deck:
-        let shuffledDeck = cardVM.shuffledDeck()
-        return shuffledDeck
-    }
-   
+    // Variables for saving a session - in alert:
+    @StateObject var savedSessionsVM = SavedSessionViewModel()
+    @State private var sessionIsSaved = false
+    @State var showSaveSessionAlert = false
+    var listOfIDsToSave: [Int16] = []
+    @State var newSessionTopic = ""
+    
     
     var body: some View {
-        
-        // our freshly shuffled deck:
-        @State var shuffledDeck = shuffleDeck()
-
+        // Outer VStack:
         VStack{
             HStack {
                 ZStack{
                     // the magic of moving and disappearing buttons:
                     if move {
-                        ActionBTN(text: "Interprete", action: {}, action_02: {}, action_03: {})
-                            .padding(40)
+                        if sessionIsSaved {
+                            Text("Session saved")
+                                .font(.title2)
+                                .bold()
+                                .foregroundColor(.mint)
+                                .padding(40)
+                        } else {
+                            ActionBTN(text: "Save", action: {showSaveSessionAlert.toggle()}, action_02: {}, action_03: {})
+                                .padding(40)
+                        }
                     } else {
                         ActionBTN(text: "Shuffle",
                                   action: shuffleCards,
                                   action_02: {cardVM.justShuffle()}, // this action makes the Deck really shuffle each time you click the BTN
                                   // you see the result: every time another card is flipping !!! This is Perfection !!!
                                   action_03: {})
-                        
-                        .padding(40)
+                                .padding(40)
                         // Optional Query-Text for repetition of shuffling:
                         if readingBtnIsVisible {
-                            Text("one more \ntime")
+                            Text("..again..?")
                                 .padding(.top, 90)
                                 .foregroundColor(.gray)
                         } else {  }
@@ -193,7 +198,7 @@ struct GreatPathView: View {
                     // Card 1 - Front & Back:
                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
                         .matchedGeometryEffect(id: "card_basic1", in: readingCard01, isSource: false)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: shuffledDeck[0])
+                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[0])
                         .matchedGeometryEffect(id: "card_basic1", in: readingCard01, isSource: false)
                     // & the corresponding [transparent] button (appears just when card is laid out):
                     TransparentCardBTN(action: toggleCard01Sheet )
@@ -203,7 +208,7 @@ struct GreatPathView: View {
                     // Card 2 - Front & Back:
                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
                         .matchedGeometryEffect(id: "card_basic2", in: readingCard02, isSource: false)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: shuffledDeck[1])
+                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[1])
                         .matchedGeometryEffect(id: "card_basic2", in: readingCard02, isSource: false)
                     // & the corresponding [transparent] button (appears just when card is laid out):
                     TransparentCardBTN(action: toggleCard02Sheet )
@@ -212,7 +217,7 @@ struct GreatPathView: View {
                     // Card 3 - Front & Back:
                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
                         .matchedGeometryEffect(id: "card_basic3", in: readingCard03, isSource: false)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: shuffledDeck[2])
+                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[2])
                         .matchedGeometryEffect(id: "card_basic3", in: readingCard03, isSource: false)
                     // & the corresponding [transparent] button (appears just when card is laid out):
                     TransparentCardBTN(action: toggleCard03Sheet )
@@ -221,7 +226,7 @@ struct GreatPathView: View {
                     // Card 4 - Front & Back:
                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
                         .matchedGeometryEffect(id: "card_basic4", in: readingCard04, isSource: false)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: shuffledDeck[3])
+                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[3])
                         .matchedGeometryEffect(id: "card_basic4", in: readingCard04, isSource: false)
                     // & the corresponding [transparent] button (appears just when card is laid out):
                     TransparentCardBTN(action: toggleCard04Sheet )
@@ -230,7 +235,7 @@ struct GreatPathView: View {
                     // Card 5 - Front & Back:
                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
                         .matchedGeometryEffect(id: "card_basic5", in: readingCard05, isSource: false)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: shuffledDeck[4])
+                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[4])
                         .matchedGeometryEffect(id: "card_basic5", in: readingCard05, isSource: false)
                     // & the corresponding [transparent] button (appears just when card is laid out):
                     TransparentCardBTN(action: toggleCard05Sheet )
@@ -239,7 +244,7 @@ struct GreatPathView: View {
                     // Card 6 - Front & Back:
                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
                         .matchedGeometryEffect(id: "card_basic6", in: readingCard06, isSource: false)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: shuffledDeck[5])
+                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[5])
                         .matchedGeometryEffect(id: "card_basic6", in: readingCard06, isSource: false)
                     // & the corresponding [transparent] button (appears just when card is laid out):
                     TransparentCardBTN(action: toggleCard06Sheet )
@@ -249,7 +254,7 @@ struct GreatPathView: View {
                     // Card 6 - Front & Back:
                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
                         .matchedGeometryEffect(id: "card_basic7", in: readingCard07, isSource: false)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: shuffledDeck[6])
+                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[6])
                         .matchedGeometryEffect(id: "card_basic7", in: readingCard07, isSource: false)
                     // & the corresponding [transparent] button (appears just when card is laid out):
                     TransparentCardBTN(action: toggleCard07Sheet )
@@ -264,7 +269,7 @@ struct GreatPathView: View {
                     CardBackTwist(theWidth: width, theHeight: height, myDegree: $backDegree_02)
                     // The only "real" card on top, otherwise you don't really see the rotation of the "Wheel of Fortune"
                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegree_A)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegree_A, card: shuffledDeck[11])
+                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegree_A, card: cardVM.allCards[11])
                     
                     
                 }
@@ -415,39 +420,47 @@ struct GreatPathView: View {
                 
             }
             .sheet( isPresented: $showCardSheet01){
-                CardSheetExplanation(oneCard: shuffledDeck[0], givenText: "This card represents the CHANCES  and GOALS at the end of your path. The possible outcome.")
+                CardSheetExplanation(oneCard: cardVM.allCards[0], givenText: "This card represents the CHANCES  and GOALS at the end of your path. The possible outcome.")
             }
             
             .sheet( isPresented: $showCardSheet02){
-                CardSheetExplanation(oneCard: shuffledDeck[1], givenText: "This card represents your CONSCIOUS attitude to this issue TODAY. Rational intentions, thaughts and actions. \n(compare to card 7)")
+                CardSheetExplanation(oneCard: cardVM.allCards[1], givenText: "This card represents your CONSCIOUS attitude to this issue TODAY. Rational intentions, thaughts and actions. \n(compare to card 7)")
             }
             
             .sheet( isPresented: $showCardSheet03){
-                CardSheetExplanation(oneCard: shuffledDeck[2], givenText: "This card stands for your UNCONSCIOUS realm. Your feelings, desires,estimations, (wrong) expectations! \n(compare to card 6)")
+                CardSheetExplanation(oneCard: cardVM.allCards[2], givenText: "This card stands for your UNCONSCIOUS realm. Your feelings, desires,estimations, (wrong) expectations! \n(compare to card 6)")
             }
             
             .sheet( isPresented: $showCardSheet04){
-                CardSheetExplanation(oneCard: shuffledDeck[3], givenText: "This card shows your REALTY NOW. That's how others see you. That's what you don't know. \n(compare to card 5)")
+                CardSheetExplanation(oneCard: cardVM.allCards[3], givenText: "This card shows your REALTY NOW. That's how others see you. That's what you don't know. \n(compare to card 5)")
             }
             
             .sheet( isPresented: $showCardSheet05){
-                CardSheetExplanation(oneCard: shuffledDeck[4], givenText: "This card represents your  FUTURE REALITY. It suggests how to perform, shows what you may reveal. (compare to card 4)")
+                CardSheetExplanation(oneCard: cardVM.allCards[4], givenText: "This card represents your  FUTURE REALITY. It suggests how to perform, shows what you may reveal. (compare to card 4)")
             }
             
             .sheet( isPresented: $showCardSheet06){
-                CardSheetExplanation(oneCard: shuffledDeck[5], givenText: "This card suggests a direction for your emotions. It shows for what you should open your mind and heart. (compare to card 3)")
+                CardSheetExplanation(oneCard: cardVM.allCards[5], givenText: "This card suggests a direction for your emotions. It shows for what you should open your mind and heart. (compare to card 3)")
             }
             
             .sheet( isPresented: $showCardSheet07){
-                CardSheetExplanation(oneCard: shuffledDeck[6], givenText: "This card suggests, on what you should focus your thaughts and actions in FUTURE CONSCIOUSLY.\n(compare to card 2)")
+                CardSheetExplanation(oneCard: cardVM.allCards[6], givenText: "This card suggests, on what you should focus your thaughts and actions in FUTURE CONSCIOUSLY.\n(compare to card 2)")
             }
             
-            
-            
-            
         }
-        
-        //Text("Hello, World!")
+        // saving the Session:
+        .alert("Save the session? \n \(savedSessionsVM.getCurrentDate())", isPresented: $showSaveSessionAlert) {
+            // Textfield for topic:
+            TextField("Topic", text: $newSessionTopic)
+            
+            Button("Cancel", role: .cancel) {}
+            Button("Save") {
+                // creating new SavedSession in FirestoreDB with our cards in the right order (thx to List[]):
+                savedSessionsVM.createSavedSession(thisReading: AllPathsEnum.greatPath.name, thisTopic: newSessionTopic, thisCardIdList: [ cardVM.allCards[0].id - 1, cardVM.allCards[1].id - 1, cardVM.allCards[2].id - 1, cardVM.allCards[3].id - 1, cardVM.allCards[4].id - 1, cardVM.allCards[5].id - 1, cardVM.allCards[6].id - 1 ])
+                // setting the "Save"-button as inactive, which triggers a new View ("Session Saved"):
+                sessionIsSaved = true
+            }
+        }
     }
 }
 
