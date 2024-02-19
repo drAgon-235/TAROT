@@ -7,15 +7,19 @@
 
 import SwiftUI
 
-struct SessionsBTN: View {
+struct NavigationBTN: View {
+    
+    var text: String
+    var color: Color
+    
     var body: some View {
         HStack {
             //Image(systemName: "")
-            Text("Laying Sessions")
+            Text(text)
         }
         .font(.title)
         .frame(width: 250, height: 50, alignment: .center)
-        .background(Color.blue)
+        .background(color)
         .foregroundColor(Color.white)
         .cornerRadius(10)
         .padding()
@@ -23,5 +27,5 @@ struct SessionsBTN: View {
 }
 
 #Preview {
-    SessionsBTN()
+    NavigationBTN(text: "TEst Button", color: Color.red)
 }

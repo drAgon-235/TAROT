@@ -305,7 +305,7 @@ struct GreatPathView: View {
                             Text("PAST")
                                 .foregroundColor(.blue)
                             Text("2")
-                                RoundedRectangle(cornerRadius: 20.0)
+                                RoundedRectangle(cornerRadius: 10.0)
                                     .stroke(.blue.opacity(0.9), lineWidth: 3)
                                     .matchedGeometryEffect(id: move ? "card_basic2" : "", in: readingCard02, isSource: true)
                                     .frame(width: width, height: height)
@@ -316,7 +316,7 @@ struct GreatPathView: View {
                         
                         VStack {
                             Text("1")
-                            RoundedRectangle(cornerRadius: 20.0)
+                            RoundedRectangle(cornerRadius: 10.0)
                                     .stroke(.green.opacity(0.9), lineWidth: 3)
                                     .matchedGeometryEffect(id: move ? "card_basic1" : "", in: readingCard01, isSource: true)
                                     .frame(width: width, height: height)
@@ -333,7 +333,7 @@ struct GreatPathView: View {
                         VStack {
                             Text("FUTURE")
                             Text("7")
-                                RoundedRectangle(cornerRadius: 20.0)
+                                RoundedRectangle(cornerRadius: 10.0)
                                     .stroke(.red.opacity(0.9), lineWidth: 3)
                                     .matchedGeometryEffect(id: move ? "card_basic7" : "", in: readingCard07, isSource: true)
                                     .frame(width: width, height: height)
@@ -349,7 +349,7 @@ struct GreatPathView: View {
                     HStack(spacing: 30) {
                         VStack {
                             Text("3")
-                                RoundedRectangle(cornerRadius: 20.0)
+                                RoundedRectangle(cornerRadius: 10.0)
                                     .stroke(.blue.opacity(0.9), lineWidth: 3)
                                     .matchedGeometryEffect(id: move ? "card_basic3" : "", in: readingCard03, isSource: true)
                                     .frame(width: width, height: height)
@@ -362,7 +362,7 @@ struct GreatPathView: View {
                         
                         VStack{
                             Text("6")
-                                RoundedRectangle(cornerRadius: 20.0)
+                                RoundedRectangle(cornerRadius: 10.0)
                                     .stroke(.red.opacity(0.9), lineWidth: 3)
                                     .matchedGeometryEffect(id: move ? "card_basic6" : "", in: readingCard06, isSource: true)
                                     .frame(width: width, height: height)
@@ -380,7 +380,7 @@ struct GreatPathView: View {
                     HStack(spacing: 30) {
                         VStack {
                             Text("4")
-                            RoundedRectangle(cornerRadius: 20.0)
+                            RoundedRectangle(cornerRadius: 10.0)
                                     .stroke(.blue.opacity(0.9), lineWidth: 3)
                                     .matchedGeometryEffect(id: move ? "card_basic4" : "", in: readingCard04, isSource: true)
                                     .frame(width: width, height: height)
@@ -394,7 +394,7 @@ struct GreatPathView: View {
                         
                         VStack{
                             Text("5")
-                            RoundedRectangle(cornerRadius: 20.0)
+                            RoundedRectangle(cornerRadius: 10.0)
                                     .stroke(.red.opacity(0.9), lineWidth: 3)
                                     .matchedGeometryEffect(id: move ? "card_basic5" : "", in: readingCard05, isSource: true)
                                     .frame(width: width, height: height)

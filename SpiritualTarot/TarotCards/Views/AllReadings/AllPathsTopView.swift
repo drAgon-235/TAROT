@@ -9,33 +9,26 @@ import SwiftUI
 
 struct AllPathsTopView: View {
     
-    
-    
     var body: some View {
        
             
             NavigationLink(destination: SimplePathView(width: 80, height: 120)) {
-                ReadingDefaultBTN(text: "The Simple Path")
+                ReadingDefaultBTN(text: AllPathsEnum.simplePath.name)
             }
             
             NavigationLink(destination: LittleCrossView(width: 80, height: 120)) {
-                ReadingDefaultBTN(text: "The Little Cross")
+                ReadingDefaultBTN(text: AllPathsEnum.littleCross.name)
             }
             
             NavigationLink(destination: GreatPathView(width: 60, height: 90)) {
-                ReadingDefaultBTN(text: "The Great Path")
+                ReadingDefaultBTN(text: AllPathsEnum.greatPath.name)
             }
             
             NavigationLink(destination: LoveOracleView(width: 80, height: 120)) {
-                ReadingDefaultBTN(text: "Love Oracle")
+                ReadingDefaultBTN(text: AllPathsEnum.loveOracle.name)
             }
             
             //.navigationBarTitle(Text("Tarot Cards"))
-            
-            
-            
-        
-
         
     }
 }

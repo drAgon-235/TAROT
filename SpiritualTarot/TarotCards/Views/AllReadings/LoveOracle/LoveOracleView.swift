@@ -1,13 +1,13 @@
 //
-//  SimplePathView.swift
+//  LoveOracleView.swift
 //  SpiritualTarot
 //
-//  Created by Slawo Dragon on 14.02.24.
+//  Created by Slawo Dragon on 15.02.24.
 //
 
 import SwiftUI
 
-struct SimplePathView: View {
+struct LoveOracleView: View {
     
     // Global variables for each card:
     let width: CGFloat
@@ -86,6 +86,7 @@ struct SimplePathView: View {
     @Namespace private var readingCard01
     @Namespace private var readingCard02
     @Namespace private var readingCard03
+    @Namespace private var readingCard04
 
     @State private var move = false
     
@@ -110,6 +111,8 @@ struct SimplePathView: View {
     @State var showCardSheet01 = false
     @State var showCardSheet02 = false
     @State var showCardSheet03 = false
+    @State var showCardSheet04 = false
+
 
     // corresponding functions:
     private func toggleCard01Sheet() {
@@ -123,7 +126,11 @@ struct SimplePathView: View {
     private func toggleCard03Sheet() {
         showCardSheet03.toggle()
     }
-    
+
+    private func toggleCard04Sheet() {
+        showCardSheet04.toggle()
+    }
+
     
     // Variables for filling the cards with sense & logic:
     @StateObject var cardVM = CardViewModelCoreDB()
@@ -133,6 +140,7 @@ struct SimplePathView: View {
         let shuffledDeck = cardVM.shuffledDeck()
         return shuffledDeck
     }
+    
     
     
     var body: some View {
@@ -194,6 +202,15 @@ struct SimplePathView: View {
                     TransparentCardBTN(action: toggleCard03Sheet )
                         .matchedGeometryEffect(id: "card_basic3", in: readingCard03, isSource: false)
                     
+                    // Card 4 - Front & Back:
+                    CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
+                        .matchedGeometryEffect(id: "card_basic4", in: readingCard04, isSource: false)
+                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: shuffledDeck[3])
+                        .matchedGeometryEffect(id: "card_basic4", in: readingCard04, isSource: false)
+                    // & the corresponding [transparent] button (appears just when card is laid out):
+                    TransparentCardBTN(action: toggleCard04Sheet )
+                        .matchedGeometryEffect(id: "card_basic4", in: readingCard04, isSource: false)
+                    
                     
                     // The twisting cards on top:
                     // The "fake" cards (no front-picture) on the bottom (in the background)
@@ -234,59 +251,77 @@ struct SimplePathView: View {
             
             Spacer()
             VStack {
-                HStack(spacing: 30) {
+                HStack {
                     VStack {
-                        Text("2")
-                        RoundedRectangle(cornerRadius: 20.0)
-                            .stroke(.red.opacity(0.9), lineWidth: 3)
-                            .matchedGeometryEffect(id:  move ? "card_basic2" : "", in: readingCard02, isSource: true)
+                        Text("3")
+                        RoundedRectangle(cornerRadius: 10.0)
+                            .stroke(.green.opacity(0.9), lineWidth: 3)
+                            .matchedGeometryEffect(id:  move ? "card_basic3" : "", in: readingCard03, isSource: true)
                             .frame(width: width, height: height)
-                        Text("PAST")
+                        Text("You")
                     }
-                    .foregroundColor(.red)
+                    .foregroundColor(.green)
 
                     
+                }
+                HStack(spacing: 30) {
                     VStack {
                         Text("1")
-                        RoundedRectangle(cornerRadius: 20.0)
+                        RoundedRectangle(cornerRadius: 10.0)
                             .stroke(.blue.opacity(0.9), lineWidth: 3)
                             .matchedGeometryEffect(id: move ? "card_basic1" : "", in: readingCard01, isSource: true)
                             .frame(width: width, height: height)
-                        Text("PRESENT")
+                            .padding(.horizontal, 40)
+                        Text("Relationship")
                     }
                     .foregroundColor(.blue)
 
                     
                     VStack {
-                        Text("3")
-                        RoundedRectangle(cornerRadius: 20.0)
-                            .stroke(.green.opacity(0.9), lineWidth: 3)
-                            .matchedGeometryEffect(id: move ? "card_basic3" : "", in: readingCard03, isSource: true)
+                        Text("2")
+                        RoundedRectangle(cornerRadius: 10.0)
+                            .stroke(.red.opacity(0.9), lineWidth: 3)
+                            .matchedGeometryEffect(id: move ? "card_basic2" : "", in: readingCard02, isSource: true)
                             .frame(width: width, height: height)
-                        Text("FUTURE")
+                            .padding(.horizontal, 40)
+                        Text("The other one")
                     }
-                    .foregroundColor(.green)
+                    .foregroundColor(.red)
+
+                }
+                HStack {
+                    VStack {
+                        Text("4")
+                        RoundedRectangle(cornerRadius: 10.0)
+                            .stroke(.purple.opacity(0.9), lineWidth: 3)
+                            .matchedGeometryEffect(id: move ? "card_basic4" : "", in: readingCard04, isSource: true)
+                            .frame(width: width, height: height)
+                        Text("What to do")
+                    }
+                    .foregroundColor(.purple)
                 }
             }
             Spacer()
             
         }
         .sheet( isPresented: $showCardSheet01){
-            CardSheetExplanation(oneCard: shuffledDeck[0], givenText: "This card represents the PRESENT. \nThe actual situation / issue. \nWhat it's all about.")
+            CardSheetExplanation(oneCard: shuffledDeck[0], givenText: "The Significator:\nThis card represents the \nrelationship, topic or question.")
         }
         
         .sheet( isPresented: $showCardSheet02){
-            CardSheetExplanation(oneCard: shuffledDeck[1], givenText: "This card represents the PAST \nand it's influence for the issue. \nThe root cause for the actual situation. ")
+            CardSheetExplanation(oneCard: shuffledDeck[1], givenText: "This card shows the other person.\nHer/his attitude, expectations, \nHis/her perspective on you.")
         }
         
         .sheet( isPresented: $showCardSheet03){
-            CardSheetExplanation(oneCard: shuffledDeck[2], givenText: "This card represents the FUTURE. \nThe direction it all evolves to. \nThe outcome.")
+            CardSheetExplanation(oneCard: shuffledDeck[2], givenText: "This card represents your inner world. Hopes, anxieties, wishes, motivations. ")
         }
         
-        
-            }
+        .sheet( isPresented: $showCardSheet04){
+            CardSheetExplanation(oneCard: shuffledDeck[3], givenText: "This card is your Oracle! \n It can be a proposal for an action  \nor attitude.")
+        }   
+    }
 }
 
 #Preview {
-    SimplePathView(width: 80, height: 120)
+    LoveOracleView(width: 80, height: 120)
 }

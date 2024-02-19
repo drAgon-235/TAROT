@@ -253,7 +253,7 @@ struct LittleCrossView: View {
                 HStack {
                     VStack {
                         Text("3")
-                        RoundedRectangle(cornerRadius: 20.0)
+                        RoundedRectangle(cornerRadius: 10.0)
                             .stroke(.green.opacity(0.9), lineWidth: 3)
                             .matchedGeometryEffect(id:  move ? "card_basic3" : "", in: readingCard03, isSource: true)
                             .frame(width: width, height: height)
@@ -266,7 +266,7 @@ struct LittleCrossView: View {
                 HStack(spacing: 30) {
                     VStack {
                         Text("1")
-                        RoundedRectangle(cornerRadius: 20.0)
+                        RoundedRectangle(cornerRadius: 10.0)
                             .stroke(.blue.opacity(0.9), lineWidth: 3)
                             .matchedGeometryEffect(id: move ? "card_basic1" : "", in: readingCard01, isSource: true)
                             .frame(width: width, height: height)
@@ -278,7 +278,7 @@ struct LittleCrossView: View {
                     
                     VStack {
                         Text("2")
-                        RoundedRectangle(cornerRadius: 20.0)
+                        RoundedRectangle(cornerRadius: 10.0)
                             .stroke(.red.opacity(0.9), lineWidth: 3)
                             .matchedGeometryEffect(id: move ? "card_basic2" : "", in: readingCard02, isSource: true)
                             .frame(width: width, height: height)
@@ -291,7 +291,7 @@ struct LittleCrossView: View {
                 HStack {
                     VStack {
                         Text("4")
-                        RoundedRectangle(cornerRadius: 20.0)
+                        RoundedRectangle(cornerRadius: 10.0)
                             .stroke(.purple.opacity(0.9), lineWidth: 3)
                             .matchedGeometryEffect(id: move ? "card_basic4" : "", in: readingCard04, isSource: true)
                             .frame(width: width, height: height)

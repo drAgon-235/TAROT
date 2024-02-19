@@ -1,17 +1,33 @@
 //
-//  LoveOracleView.swift
+//  SimplePathView.swift
 //  SpiritualTarot
 //
-//  Created by Slawo Dragon on 15.02.24.
+//  Created by Slawo Dragon on 14.02.24.
 //
 
 import SwiftUI
 
-struct LoveOracleView: View {
+struct SimplePathView: View {
     
     // Global variables for each card:
     let width: CGFloat
     let height: CGFloat
+    
+    // Variable for filling the cards with sense & logic:
+    @StateObject var cardVM = CardViewModelCoreDB()
+        
+    // Variables for showing the "CardMeanig"-sheets:
+    @State var showCardSheet01 = false
+    @State var showCardSheet02 = false
+    @State var showCardSheet03 = false
+
+    
+    // Variables for saving the session - in alert:
+    @State var showSaveSessionAlert = false
+    @StateObject var savedSessionsVM = SavedSessionViewModel()
+    var listOfIDsToSave: [Int16] = []
+    @State var newSessionTopic = ""
+
     
     
     // Variables for the ShuffleAnimViews:
@@ -86,7 +102,6 @@ struct LoveOracleView: View {
     @Namespace private var readingCard01
     @Namespace private var readingCard02
     @Namespace private var readingCard03
-    @Namespace private var readingCard04
 
     @State private var move = false
     
@@ -106,53 +121,16 @@ struct LoveOracleView: View {
         } else {  }
     }
     
-    
-    // Variables for showing the "CardMeanig"-sheet:
-    @State var showCardSheet01 = false
-    @State var showCardSheet02 = false
-    @State var showCardSheet03 = false
-    @State var showCardSheet04 = false
 
-
-    // corresponding functions:
-    private func toggleCard01Sheet() {
-        showCardSheet01.toggle()
-    }
-    
-    private func toggleCard02Sheet() {
-        showCardSheet02.toggle()
-    }
-    
-    private func toggleCard03Sheet() {
-        showCardSheet03.toggle()
-    }
-
-    private func toggleCard04Sheet() {
-        showCardSheet04.toggle()
-    }
-
-    
-    // Variables for filling the cards with sense & logic:
-    @StateObject var cardVM = CardViewModelCoreDB()
-
-    func shuffleDeck() -> [Card] {
-        // our freshly shuffled deck:
-        let shuffledDeck = cardVM.shuffledDeck()
-        return shuffledDeck
-    }
-    
-    
     
     var body: some View {
-        // our freshly shuffled deck:
-        @State var shuffledDeck = shuffleDeck()
-
+    
         VStack{
             HStack {
                 ZStack{
                     // the magic of moving and disappearing buttons:
                     if move {
-                        ActionBTN(text: "Interprete", action: {}, action_02: {}, action_03: {})
+                        ActionBTN(text: "Save", action: {showSaveSessionAlert.toggle()}, action_02: {}, action_03: {})
                             .padding(40)
                     } else {
                         ActionBTN(text: "Shuffle",
@@ -177,39 +155,30 @@ struct LoveOracleView: View {
                     // Card 1 - Front & Back:
                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
                         .matchedGeometryEffect(id: "card_basic1", in: readingCard01, isSource: false)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: shuffledDeck[0])
+                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[0])
                         .matchedGeometryEffect(id: "card_basic1", in: readingCard01, isSource: false)
                     // & the corresponding [transparent] button (appears just when card is laid out):
-                    TransparentCardBTN(action: toggleCard01Sheet )
+                    TransparentCardBTN(action: { showCardSheet01.toggle() } )
                         .matchedGeometryEffect(id: "card_basic1", in: readingCard01, isSource: false)
 
                     
                     // Card 2 - Front & Back:
                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
                         .matchedGeometryEffect(id: "card_basic2", in: readingCard02, isSource: false)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: shuffledDeck[1])
+                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[1])
                         .matchedGeometryEffect(id: "card_basic2", in: readingCard02, isSource: false)
                     // & the corresponding [transparent] button (appears just when card is laid out):
-                    TransparentCardBTN(action: toggleCard02Sheet )
+                    TransparentCardBTN(action: { showCardSheet02.toggle() } )
                         .matchedGeometryEffect(id: "card_basic2", in: readingCard02, isSource: false)
                     
                     // Card 3 - Front & Back:
                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
                         .matchedGeometryEffect(id: "card_basic3", in: readingCard03, isSource: false)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: shuffledDeck[2])
+                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[2])
                         .matchedGeometryEffect(id: "card_basic3", in: readingCard03, isSource: false)
                     // & the corresponding [transparent] button (appears just when card is laid out):
-                    TransparentCardBTN(action: toggleCard03Sheet )
+                    TransparentCardBTN(action: { showCardSheet03.toggle() } )
                         .matchedGeometryEffect(id: "card_basic3", in: readingCard03, isSource: false)
-                    
-                    // Card 4 - Front & Back:
-                    CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
-                        .matchedGeometryEffect(id: "card_basic4", in: readingCard04, isSource: false)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: shuffledDeck[3])
-                        .matchedGeometryEffect(id: "card_basic4", in: readingCard04, isSource: false)
-                    // & the corresponding [transparent] button (appears just when card is laid out):
-                    TransparentCardBTN(action: toggleCard04Sheet )
-                        .matchedGeometryEffect(id: "card_basic4", in: readingCard04, isSource: false)
                     
                     
                     // The twisting cards on top:
@@ -219,7 +188,7 @@ struct LoveOracleView: View {
                     CardBackTwist(theWidth: width, theHeight: height, myDegree: $backDegree_02)
                     // The only "real" card on top, otherwise you don't really see the rotation of the "Wheel of Fortune"
                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegree_A)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegree_A, card: shuffledDeck[11])
+                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegree_A, card: cardVM.allCards[11])
 
                     
                 }
@@ -251,77 +220,70 @@ struct LoveOracleView: View {
             
             Spacer()
             VStack {
-                HStack {
-                    VStack {
-                        Text("3")
-                        RoundedRectangle(cornerRadius: 20.0)
-                            .stroke(.green.opacity(0.9), lineWidth: 3)
-                            .matchedGeometryEffect(id:  move ? "card_basic3" : "", in: readingCard03, isSource: true)
-                            .frame(width: width, height: height)
-                        Text("You")
-                    }
-                    .foregroundColor(.green)
-
-                    
-                }
                 HStack(spacing: 30) {
                     VStack {
+                        Text("2")
+                        RoundedRectangle(cornerRadius: 10.0)
+                            .stroke(.red.opacity(0.9), lineWidth: 3)
+                            .matchedGeometryEffect(id:  move ? "card_basic2" : "", in: readingCard02, isSource: true)
+                            .frame(width: width, height: height)
+                        Text("PAST")
+                    }
+                    .foregroundColor(.red)
+
+                    
+                    VStack {
                         Text("1")
-                        RoundedRectangle(cornerRadius: 20.0)
+                        RoundedRectangle(cornerRadius: 10.0)
                             .stroke(.blue.opacity(0.9), lineWidth: 3)
                             .matchedGeometryEffect(id: move ? "card_basic1" : "", in: readingCard01, isSource: true)
                             .frame(width: width, height: height)
-                            .padding(.horizontal, 40)
-                        Text("Relationship")
+                        Text("PRESENT")
                     }
                     .foregroundColor(.blue)
 
                     
                     VStack {
-                        Text("2")
-                        RoundedRectangle(cornerRadius: 20.0)
-                            .stroke(.red.opacity(0.9), lineWidth: 3)
-                            .matchedGeometryEffect(id: move ? "card_basic2" : "", in: readingCard02, isSource: true)
+                        Text("3")
+                        RoundedRectangle(cornerRadius: 10.0)
+                            .stroke(.green.opacity(0.9), lineWidth: 3)
+                            .matchedGeometryEffect(id: move ? "card_basic3" : "", in: readingCard03, isSource: true)
                             .frame(width: width, height: height)
-                            .padding(.horizontal, 40)
-                        Text("The other one")
+                        Text("FUTURE")
                     }
-                    .foregroundColor(.red)
-
-                }
-                HStack {
-                    VStack {
-                        Text("4")
-                        RoundedRectangle(cornerRadius: 20.0)
-                            .stroke(.purple.opacity(0.9), lineWidth: 3)
-                            .matchedGeometryEffect(id: move ? "card_basic4" : "", in: readingCard04, isSource: true)
-                            .frame(width: width, height: height)
-                        Text("What to do")
-                    }
-                    .foregroundColor(.purple)
+                    .foregroundColor(.green)
                 }
             }
             Spacer()
             
         }
         .sheet( isPresented: $showCardSheet01){
-            CardSheetExplanation(oneCard: shuffledDeck[0], givenText: "The Significator:\nThis card represents the \nrelationship, topic or question.")
+            CardSheetExplanation(oneCard: cardVM.allCards[0], givenText: "This card represents the PRESENT. \nThe actual situation / issue. \nWhat it's all about.")
         }
         
         .sheet( isPresented: $showCardSheet02){
-            CardSheetExplanation(oneCard: shuffledDeck[1], givenText: "This card shows the other person.\nHer/his attitude, expectations, \nHis/her perspective on you.")
+            CardSheetExplanation(oneCard: cardVM.allCards[1], givenText: "This card represents the PAST \nand it's influence for the issue. \nThe root cause for the actual situation. ")
         }
         
         .sheet( isPresented: $showCardSheet03){
-            CardSheetExplanation(oneCard: shuffledDeck[2], givenText: "This card represents your inner world. Hopes, anxieties, wishes, motivations. ")
+            CardSheetExplanation(oneCard: cardVM.allCards[2], givenText: "This card represents the FUTURE. \nThe direction it all evolves to. \nThe outcome.")
         }
         
-        .sheet( isPresented: $showCardSheet04){
-            CardSheetExplanation(oneCard: shuffledDeck[3], givenText: "This card is your Oracle! \n It can be a proposal for an action  \nor attitude.")
-        }   
+        // saving the Session: 
+        .alert("Save the session? \n \(savedSessionsVM.getCurrentDate())", isPresented: $showSaveSessionAlert) {
+            // Textfield for topic:
+            TextField("Topic", text: $newSessionTopic)
+            
+            Button("Cancel", role: .cancel) {}
+            Button("Save") {
+                // creating new SavedSession in FirestoreDB with our cards in the right order (thx to List[]):
+                savedSessionsVM.createSavedSession(thisReading: AllPathsEnum.simplePath.name, thisTopic: newSessionTopic, thisCardIdList: [ cardVM.allCards[0].id - 1, cardVM.allCards[1].id - 1, cardVM.allCards[2].id - 1 ])
+            }
+        }
+        
     }
 }
 
 #Preview {
-    LoveOracleView(width: 80, height: 120)
+    SimplePathView(width: 80, height: 120)
 }
