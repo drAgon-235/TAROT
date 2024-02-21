@@ -13,16 +13,21 @@ struct PrimaryButton: View {
     let action: () -> Void
     
     var body: some View {
-        
-        Button(action: action) {
-            Text(title)
-                .font(.headline)
-                .frame(maxWidth: .infinity)
-                .foregroundColor(.white)
+        VStack {
+            Button(action: action) {
+                Text(title)
+                    .font(.headline)
+                    .frame(maxWidth: .infinity)
+                    .foregroundColor(.white)
+
+            }
+            .padding(.vertical, 12)
+            .background(Color.accentColor)
+            .cornerRadius(12)
+            .shadow(radius: 10)
         }
-        .padding(.vertical, 12)
-        .background(Color.accentColor)
-        .cornerRadius(12)    }
+
+    }
 }
 
 #Preview {

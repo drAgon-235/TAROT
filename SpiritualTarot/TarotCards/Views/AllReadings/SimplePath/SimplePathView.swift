@@ -59,7 +59,6 @@ struct SimplePathView: View {
             withAnimation(.linear(duration: durationAndDelay_03)) {
                 backDegree_03 = -360
             }
-            
         } else {
             withAnimation(.linear(duration: durationAndDelay_A)) {
                 backDegree_A = 0
@@ -76,7 +75,6 @@ struct SimplePathView: View {
             withAnimation(.linear(duration: durationAndDelay_03)) {
                 backDegree_03 = 0
             }
-  
         }
     }
     
@@ -95,7 +93,6 @@ struct SimplePathView: View {
 
     @State private var move = false
     
-
     
     // After clicking Reading Button:
     func flipFlowingCard() {
@@ -119,8 +116,6 @@ struct SimplePathView: View {
     var listOfIDsToSave: [Int16] = []
     @State var newSessionTopic = ""
     @State private var sessionIsSaved = false
-
-
     
     var body: some View {
     
@@ -157,36 +152,28 @@ struct SimplePathView: View {
                 }
                 
                 // Center of the HStack:
+                // All the cards to be read hidden in the back - I love ZStacks:
                 ZStack {
-                    // All the cards to be read in the back - I love ZStacks:
-                    // Card 1 - Front & Back:
-                    CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
-                        .matchedGeometryEffect(id: "card_basic1", in: readingCard01, isSource: false)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[0])
-                        .matchedGeometryEffect(id: "card_basic1", in: readingCard01, isSource: false)
-                    // & the corresponding [transparent] button (appears just when card is laid out):
-                    TransparentCardBTN(action: { showCardSheet01.toggle() } )
-                        .matchedGeometryEffect(id: "card_basic1", in: readingCard01, isSource: false)
-
+                    // Card 1 - Front & Back & transparent Button:
+                    ZStack {
+                        CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
+                        CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[0])
+                        TransparentCardBTN(action: { showCardSheet01.toggle() } )
+                    } .matchedGeometryEffect(id: "card_basic1", in: readingCard01, isSource: false)
                     
-                    // Card 2 - Front & Back:
-                    CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
-                        .matchedGeometryEffect(id: "card_basic2", in: readingCard02, isSource: false)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[1])
-                        .matchedGeometryEffect(id: "card_basic2", in: readingCard02, isSource: false)
-                    // & the corresponding [transparent] button (appears just when card is laid out):
-                    TransparentCardBTN(action: { showCardSheet02.toggle() } )
-                        .matchedGeometryEffect(id: "card_basic2", in: readingCard02, isSource: false)
+                    // Card 2 - Front & Back & transparent Button:
+                    ZStack {
+                        CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
+                        CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[1])
+                        TransparentCardBTN(action: { showCardSheet02.toggle() } )
+                    } .matchedGeometryEffect(id: "card_basic2", in: readingCard02, isSource: false)
                     
-                    // Card 3 - Front & Back:
-                    CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
-                        .matchedGeometryEffect(id: "card_basic3", in: readingCard03, isSource: false)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[2])
-                        .matchedGeometryEffect(id: "card_basic3", in: readingCard03, isSource: false)
-                    // & the corresponding [transparent] button (appears just when card is laid out):
-                    TransparentCardBTN(action: { showCardSheet03.toggle() } )
-                        .matchedGeometryEffect(id: "card_basic3", in: readingCard03, isSource: false)
-                    
+                    // Card 3 - Front & Back & transparent Button:
+                    ZStack {
+                        CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
+                        CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[2])
+                        TransparentCardBTN(action: { showCardSheet03.toggle() } )
+                    } .matchedGeometryEffect(id: "card_basic3", in: readingCard03, isSource: false)
                     
                     // The twisting cards on top:
                     // The "fake" cards (no front-picture) on the bottom (in the background)
@@ -196,10 +183,7 @@ struct SimplePathView: View {
                     // The only "real" card on top, otherwise you don't really see the rotation of the "Wheel of Fortune"
                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegree_A)
                     CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegree_A, card: cardVM.allCards[11])
-
-                    
                 }
-                //.padding( 20)
                 
                 // Right part of the HStack:
                 // Thanks to the Holy Spirit for this logic (NO ChatGPT!):
@@ -227,7 +211,6 @@ struct SimplePathView: View {
             // End of HStack on top of view
             Spacer()
 
-            
             // Start Cards View:
             VStack {
                 HStack(spacing: 30) {

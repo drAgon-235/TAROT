@@ -14,11 +14,20 @@ struct TextButton: View {
     
     var body: some View {
         
-        Button(action: action) {
-            Text(title)
-                .font(.headline)
-                .frame(maxWidth: .infinity)
-        }   
+        VStack {
+            Button(action: action) {
+                Text(title)
+                    .foregroundColor(.white)
+                    .font(.headline)
+                    .frame(maxWidth: .infinity)
+                    .padding(5)
+            }
+        }
+        .background(.mint)
+        .cornerRadius(5)
+        .shadow(radius: 10)
+
+
     }
 }
 

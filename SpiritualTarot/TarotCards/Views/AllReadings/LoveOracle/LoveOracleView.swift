@@ -42,7 +42,6 @@ struct LoveOracleView: View {
             withAnimation(.linear(duration: durationAndDelay_A)) {
                 frontDegree_A = 270
             }
-            
             withAnimation(.linear(duration: durationAndDelay_01)) {
                 backDegree_01 = -360
             }
@@ -52,7 +51,6 @@ struct LoveOracleView: View {
             withAnimation(.linear(duration: durationAndDelay_03)) {
                 backDegree_03 = -360
             }
-            
         } else {
             withAnimation(.linear(duration: durationAndDelay_A)) {
                 backDegree_A = 0
@@ -60,7 +58,6 @@ struct LoveOracleView: View {
             withAnimation(.linear(duration: durationAndDelay_A)) {
                 frontDegree_A = -270
             }
-            
             withAnimation(.linear(duration: durationAndDelay_01)) {
                 backDegree_01 = 0
             }
@@ -70,10 +67,8 @@ struct LoveOracleView: View {
             withAnimation(.linear(duration: durationAndDelay_03)) {
                 backDegree_03 = 0
             }
-  
         }
     }
-    
     
     // Variables for CardFlipView when rading button is clicked::
     @State var isFlippedReading = false
@@ -106,31 +101,11 @@ struct LoveOracleView: View {
         } else {  }
     }
     
-    
     // Variables for showing the "CardMeanig"-sheet:
     @State var showCardSheet01 = false
     @State var showCardSheet02 = false
     @State var showCardSheet03 = false
     @State var showCardSheet04 = false
-
-
-    // corresponding functions:
-    private func toggleCard01Sheet() {
-        showCardSheet01.toggle()
-    }
-    
-    private func toggleCard02Sheet() {
-        showCardSheet02.toggle()
-    }
-    
-    private func toggleCard03Sheet() {
-        showCardSheet03.toggle()
-    }
-
-    private func toggleCard04Sheet() {
-        showCardSheet04.toggle()
-    }
-
     
     // Variables for filling the cards with sense & logic:
     @StateObject var cardVM = CardViewModelCoreDB()
@@ -141,9 +116,7 @@ struct LoveOracleView: View {
     @State var showSaveSessionAlert = false
     var listOfIDsToSave: [Int16] = []
     @State var newSessionTopic = ""
-    
-    
-    
+
     
     var body: some View {
 
@@ -176,48 +149,37 @@ struct LoveOracleView: View {
                                 .foregroundColor(.gray)
                         } else {  }
                     }
-    
                 }
                 
                 ZStack {
                     // All the cards to be read in the back - I love ZStacks:
-                    // Card 1 - Front & Back:
-                    CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
-                        .matchedGeometryEffect(id: "card_basic1", in: readingCard01, isSource: false)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[0])
-                        .matchedGeometryEffect(id: "card_basic1", in: readingCard01, isSource: false)
-                    // & the corresponding [transparent] button (appears just when card is laid out):
-                    TransparentCardBTN(action: toggleCard01Sheet )
-                        .matchedGeometryEffect(id: "card_basic1", in: readingCard01, isSource: false)
-
+                    // Card 1 - Front & Back & transparent Button:
+                    ZStack {
+                        CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
+                        CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[0])
+                        TransparentCardBTN(action: {showCardSheet01.toggle()} )
+                    } .matchedGeometryEffect(id: "card_basic1", in: readingCard01, isSource: false)
                     
-                    // Card 2 - Front & Back:
-                    CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
-                        .matchedGeometryEffect(id: "card_basic2", in: readingCard02, isSource: false)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[1])
-                        .matchedGeometryEffect(id: "card_basic2", in: readingCard02, isSource: false)
-                    // & the corresponding [transparent] button (appears just when card is laid out):
-                    TransparentCardBTN(action: toggleCard02Sheet )
-                        .matchedGeometryEffect(id: "card_basic2", in: readingCard02, isSource: false)
+                    // Card 2 - Front & Back & transparent Button:
+                    ZStack {
+                        CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
+                        CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[1])
+                        TransparentCardBTN(action: {showCardSheet02.toggle()} )
+                    } .matchedGeometryEffect(id: "card_basic2", in: readingCard02, isSource: false)
                     
-                    // Card 3 - Front & Back:
-                    CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
-                        .matchedGeometryEffect(id: "card_basic3", in: readingCard03, isSource: false)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[2])
-                        .matchedGeometryEffect(id: "card_basic3", in: readingCard03, isSource: false)
-                    // & the corresponding [transparent] button (appears just when card is laid out):
-                    TransparentCardBTN(action: toggleCard03Sheet )
-                        .matchedGeometryEffect(id: "card_basic3", in: readingCard03, isSource: false)
+                    // Card 3 - Front & Back & transparent Button:
+                    ZStack {
+                        CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
+                        CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[2])
+                        TransparentCardBTN(action: {showCardSheet03.toggle()} )
+                    } .matchedGeometryEffect(id: "card_basic3", in: readingCard03, isSource: false)
                     
-                    // Card 4 - Front & Back:
-                    CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
-                        .matchedGeometryEffect(id: "card_basic4", in: readingCard04, isSource: false)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[3])
-                        .matchedGeometryEffect(id: "card_basic4", in: readingCard04, isSource: false)
-                    // & the corresponding [transparent] button (appears just when card is laid out):
-                    TransparentCardBTN(action: toggleCard04Sheet )
-                        .matchedGeometryEffect(id: "card_basic4", in: readingCard04, isSource: false)
-                    
+                    // Card 4 - Front & Back & transparent Button:
+                    ZStack {
+                        CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
+                        CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[3])
+                        TransparentCardBTN(action: {showCardSheet04.toggle()} )
+                    } .matchedGeometryEffect(id: "card_basic4", in: readingCard04, isSource: false)
                     
                     // The twisting cards on top:
                     // The "fake" cards (no front-picture) on the bottom (in the background)
@@ -227,8 +189,6 @@ struct LoveOracleView: View {
                     // The only "real" card on top, otherwise you don't really see the rotation of the "Wheel of Fortune"
                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegree_A)
                     CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegree_A, card: cardVM.allCards[13])
-
-                    
                 }
                 //.padding( 20)
                 

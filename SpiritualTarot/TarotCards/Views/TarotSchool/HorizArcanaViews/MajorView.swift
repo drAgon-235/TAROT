@@ -32,6 +32,8 @@ struct MajorView: View {
                                     .shadow(radius: 10)
                                 Text(thisCard.name ?? "No Value found")
                             }
+                            .foregroundColor(.purple)
+                            .bold()
                             .onTapGesture {
                                 cardForSheet = thisCard
                                 showCardSheet01.toggle()

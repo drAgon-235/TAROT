@@ -27,6 +27,7 @@ struct QuoteView: View {
                         .padding(.top, 10)
                         
                         Text("for: ")
+                            .padding(5)
                             .font(.title3)
                         
                         Text(userVM.name)

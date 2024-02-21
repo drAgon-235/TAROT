@@ -16,7 +16,11 @@ struct TarotTopView: View {
     @StateObject var cardVM = CardViewModelCoreDB()
 
     var body: some View {
+   
         NavigationStack {
+            ZStack {
+                Image("aaastars02").resizable().scaledToFill().opacity(0.8)
+                
             VStack {
                 CardOfTheDayBTN(action: {
                     showCardSheet01.toggle()
@@ -33,7 +37,7 @@ struct TarotTopView: View {
                 NavigationLink(destination: ArchivedSessionsListView(width: 80, height: 120)) {
                     NavigationBTN(text: "Saved Sessions", color: Color.orange)
                 }
-                .navigationBarTitle(Text("Tarot Home"))
+               // .navigationBarTitle(Text("Tarot Home"))
 
                 
                 .toolbar {
@@ -41,10 +45,14 @@ struct TarotTopView: View {
                         Spacer()
                         LogoutButtonAlert()
                     }
+                    
                 }
-                
+
             }
         }
+
+        }
+
          
             // The daily/random Card:
                 .sheet( isPresented: $showCardSheet01){
@@ -54,10 +62,15 @@ struct TarotTopView: View {
                     Button("Close"){ showCardSheet01.toggle() }
                     // Spacer()
                 }
-            
+        
+
     }
+    
+    
 }
 
 #Preview {
     TarotTopView()
 }
+
+//  aaastars02

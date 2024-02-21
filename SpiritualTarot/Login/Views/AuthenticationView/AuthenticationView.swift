@@ -50,7 +50,7 @@ struct AuthenticationView: View {
     
     var body: some View {
         VStack(spacing: 49) {
-            Image("logo")
+            Image("")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 100, height: 100)
@@ -61,25 +61,41 @@ struct AuthenticationView: View {
                 if mode.nameFieldIsVisible {
                     ZStack(alignment: .bottom) {
                         TextField("Name", text: $name)
+                            .padding(5)
+                            .foregroundColor(Color.black)
+                               .accentColor(Color.purple)
                             .frame(minHeight: 36)
+                            .background(.white.opacity(0.9))
                         Divider()
                     }
+                    .cornerRadius(5)
                 }
                 
                 
                 ZStack(alignment: .bottom) {
                     TextField("E-Mail", text: $email)
+                        .padding(5)
+                        .foregroundColor(Color.black)
+                           .accentColor(Color.mint)
                         .frame(minHeight: 36)
-                    
+                        .background(.white.opacity(0.9))
+
                     Divider()
                 }
+                .cornerRadius(5)
                 
                 ZStack(alignment: .bottom) {
                     SecureField("Passwort", text: $password)
+                        .padding(5)
+                        .foregroundColor(Color.black)
+                           .accentColor(Color.mint)
                         .frame(minHeight: 36)
+                        .background(.white.opacity(0.9))
                     
                     Divider()
                 }
+                .cornerRadius(5)
+                
             }
             .font(.headline)
             .textInputAutocapitalization(.never)
@@ -91,8 +107,9 @@ struct AuthenticationView: View {
             TextButton(title: mode.alternativeTitle, action: switchAuthenticationMode)
         }
         .padding(30)
-        .background(Image("back").opacity(0.2))
-            }
+        .background(Image("aaastar04").resizable().scaledToFill().opacity(0.7))
+        
+    }
 }
 
 #Preview {

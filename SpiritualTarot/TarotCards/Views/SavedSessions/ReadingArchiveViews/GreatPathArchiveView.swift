@@ -129,8 +129,6 @@ struct GreatPathArchiveView: View {
                     .onTapGesture {
                         showCardSheet07.toggle()
                     }
-
-                    
                 }
                 Spacer()
                 

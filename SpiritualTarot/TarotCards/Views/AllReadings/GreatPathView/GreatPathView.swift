@@ -117,47 +117,17 @@ struct GreatPathView: View {
     @State var showCardSheet05 = false
     @State var showCardSheet06 = false
     @State var showCardSheet07 = false
-
-
-    // corresponding functions:
-    private func toggleCard01Sheet() {
-        showCardSheet01.toggle()
-    }
-    
-    private func toggleCard02Sheet() {
-        showCardSheet02.toggle()
-    }
-    
-    private func toggleCard03Sheet() {
-        showCardSheet03.toggle()
-    }
-
-    private func toggleCard04Sheet() {
-        showCardSheet04.toggle()
-    }
-
-    private func toggleCard05Sheet() {
-        showCardSheet05.toggle()
-    }
-    
-    private func toggleCard06Sheet() {
-        showCardSheet06.toggle()
-    }
-
-    private func toggleCard07Sheet() {
-        showCardSheet07.toggle()
-    }
     
     // Variables for filling the cards with sense & logic:
     @StateObject var cardVM = CardViewModelCoreDB()
 
     // Variables for saving a session - in alert:
     @StateObject var savedSessionsVM = SavedSessionViewModel()
-    @State private var sessionIsSaved = false
     @State var showSaveSessionAlert = false
     var listOfIDsToSave: [Int16] = []
     @State var newSessionTopic = ""
-    
+    @State private var sessionIsSaved = false
+
     
     var body: some View {
         // Outer VStack:
@@ -171,7 +141,7 @@ struct GreatPathView: View {
                                 .font(.title2)
                                 .bold()
                                 .foregroundColor(.mint)
-                                .padding(40)
+                                .padding( 40)
                         } else {
                             ActionBTN(text: "Save", action: {showSaveSessionAlert.toggle()}, action_02: {}, action_03: {})
                                 .padding(40)
@@ -190,78 +160,76 @@ struct GreatPathView: View {
                                 .foregroundColor(.gray)
                         } else {  }
                     }
-                    
                 }
                 
+                // All the cards to be lead in the back - I love ZStacks:
                 ZStack {
-                    // All the cards to be read in the back - I love ZStacks:
-                    // Card 1 - Front & Back:
+                    // Card 1 - Front & Back & Transparent Button:
                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
-                        .matchedGeometryEffect(id: "card_basic1", in: readingCard01, isSource: false)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[0])
-                        .matchedGeometryEffect(id: "card_basic1", in: readingCard01, isSource: false)
-                    // & the corresponding [transparent] button (appears just when card is laid out):
-                    TransparentCardBTN(action: toggleCard01Sheet )
-                        .matchedGeometryEffect(id: "card_basic1", in: readingCard01, isSource: false)
-                    
-                    
-                    // Card 2 - Front & Back:
-                    CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
-                        .matchedGeometryEffect(id: "card_basic2", in: readingCard02, isSource: false)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[1])
-                        .matchedGeometryEffect(id: "card_basic2", in: readingCard02, isSource: false)
-                    // & the corresponding [transparent] button (appears just when card is laid out):
-                    TransparentCardBTN(action: toggleCard02Sheet )
-                        .matchedGeometryEffect(id: "card_basic2", in: readingCard02, isSource: false)
-                    
-                    // Card 3 - Front & Back:
-                    CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
-                        .matchedGeometryEffect(id: "card_basic3", in: readingCard03, isSource: false)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[2])
-                        .matchedGeometryEffect(id: "card_basic3", in: readingCard03, isSource: false)
-                    // & the corresponding [transparent] button (appears just when card is laid out):
-                    TransparentCardBTN(action: toggleCard03Sheet )
-                        .matchedGeometryEffect(id: "card_basic3", in: readingCard03, isSource: false)
-                    
-                    // Card 4 - Front & Back:
-                    CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
-                        .matchedGeometryEffect(id: "card_basic4", in: readingCard04, isSource: false)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[3])
-                        .matchedGeometryEffect(id: "card_basic4", in: readingCard04, isSource: false)
-                    // & the corresponding [transparent] button (appears just when card is laid out):
-                    TransparentCardBTN(action: toggleCard04Sheet )
-                        .matchedGeometryEffect(id: "card_basic4", in: readingCard04, isSource: false)
-                    
-                    // Card 5 - Front & Back:
-                    CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
-                        .matchedGeometryEffect(id: "card_basic5", in: readingCard05, isSource: false)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[4])
-                        .matchedGeometryEffect(id: "card_basic5", in: readingCard05, isSource: false)
-                    // & the corresponding [transparent] button (appears just when card is laid out):
-                    TransparentCardBTN(action: toggleCard05Sheet )
-                        .matchedGeometryEffect(id: "card_basic5", in: readingCard05, isSource: false)
-                                        
-                    // Card 6 - Front & Back:
-                    CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
-                        .matchedGeometryEffect(id: "card_basic6", in: readingCard06, isSource: false)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[5])
-                        .matchedGeometryEffect(id: "card_basic6", in: readingCard06, isSource: false)
-                    // & the corresponding [transparent] button (appears just when card is laid out):
-                    TransparentCardBTN(action: toggleCard06Sheet )
-                        .matchedGeometryEffect(id: "card_basic6", in: readingCard06, isSource: false)
-                    
-                    
-                    // Card 6 - Front & Back:
-                    CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
-                        .matchedGeometryEffect(id: "card_basic7", in: readingCard07, isSource: false)
-                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[6])
-                        .matchedGeometryEffect(id: "card_basic7", in: readingCard07, isSource: false)
-                    // & the corresponding [transparent] button (appears just when card is laid out):
-                    TransparentCardBTN(action: toggleCard07Sheet )
-                        .matchedGeometryEffect(id: "card_basic7", in: readingCard07, isSource: false)
+                                         .matchedGeometryEffect(id: "card_basic1", in: readingCard01, isSource: false)
+                                     CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[0])
+                                         .matchedGeometryEffect(id: "card_basic1", in: readingCard01, isSource: false)
+                                     // & the corresponding [transparent] button (appears just when card is laid out):
+                    TransparentCardBTN(action: {showCardSheet01.toggle()} )
+                                         .matchedGeometryEffect(id: "card_basic1", in: readingCard01, isSource: false)
+                                     
+                                     
+                                     // Card 2 - Front & Back:
+                                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
+                                         .matchedGeometryEffect(id: "card_basic2", in: readingCard02, isSource: false)
+                                     CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[1])
+                                         .matchedGeometryEffect(id: "card_basic2", in: readingCard02, isSource: false)
+                                     // & the corresponding [transparent] button (appears just when card is laid out):
+                    TransparentCardBTN(action: {showCardSheet02.toggle()} )
+                                         .matchedGeometryEffect(id: "card_basic2", in: readingCard02, isSource: false)
+                                     
+                                     // Card 3 - Front & Back:
+                                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
+                                         .matchedGeometryEffect(id: "card_basic3", in: readingCard03, isSource: false)
+                                     CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[2])
+                                         .matchedGeometryEffect(id: "card_basic3", in: readingCard03, isSource: false)
+                                     // & the corresponding [transparent] button (appears just when card is laid out):
+                    TransparentCardBTN(action: {showCardSheet03.toggle()} )
+                                         .matchedGeometryEffect(id: "card_basic3", in: readingCard03, isSource: false)
+                                     
+                                     // Card 4 - Front & Back:
+                                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
+                                         .matchedGeometryEffect(id: "card_basic4", in: readingCard04, isSource: false)
+                                     CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[3])
+                                         .matchedGeometryEffect(id: "card_basic4", in: readingCard04, isSource: false)
+                                     // & the corresponding [transparent] button (appears just when card is laid out):
+                    TransparentCardBTN(action: {showCardSheet04.toggle()} )
+                                         .matchedGeometryEffect(id: "card_basic4", in: readingCard04, isSource: false)
+                                     
+                                     // Card 5 - Front & Back:
+                                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
+                                         .matchedGeometryEffect(id: "card_basic5", in: readingCard05, isSource: false)
+                                     CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[4])
+                                         .matchedGeometryEffect(id: "card_basic5", in: readingCard05, isSource: false)
+                                     // & the corresponding [transparent] button (appears just when card is laid out):
+                    TransparentCardBTN(action: {showCardSheet05.toggle()} )
+                                         .matchedGeometryEffect(id: "card_basic5", in: readingCard05, isSource: false)
+                                                         
+                                     // Card 6 - Front & Back:
+                                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
+                                         .matchedGeometryEffect(id: "card_basic6", in: readingCard06, isSource: false)
+                                     CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[5])
+                                         .matchedGeometryEffect(id: "card_basic6", in: readingCard06, isSource: false)
+                                     // & the corresponding [transparent] button (appears just when card is laid out):
+                    TransparentCardBTN(action: {showCardSheet06.toggle()} )
+                                         .matchedGeometryEffect(id: "card_basic6", in: readingCard06, isSource: false)
+                                     
+                                     
+                                     // Card 6 - Front & Back:
+                                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
+                                         .matchedGeometryEffect(id: "card_basic7", in: readingCard07, isSource: false)
+                                     CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[6])
+                                         .matchedGeometryEffect(id: "card_basic7", in: readingCard07, isSource: false)
+                                     // & the corresponding [transparent] button (appears just when card is laid out):
+                    TransparentCardBTN(action: {showCardSheet07.toggle()} )
+                                         .matchedGeometryEffect(id: "card_basic7", in: readingCard07, isSource: false)
 
-                    
-               
+                                  
                     // The twisting cards on top:
                     // The "fake" cards (no front-picture) on the bottom (in the background)
                     CardBackTwist(theWidth: width, theHeight: height, myDegree: $backDegree_01)
@@ -270,10 +238,7 @@ struct GreatPathView: View {
                     // The only "real" card on top, otherwise you don't really see the rotation of the "Wheel of Fortune"
                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegree_A)
                     CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegree_A, card: cardVM.allCards[11])
-                    
-                    
                 }
-                //.padding( 20)
                 
                 // Thanks to the Holy Spirit for this logic (NO ChatGPT!):
                 if !move {
@@ -303,7 +268,7 @@ struct GreatPathView: View {
            // ScrollView {
                // Spacer()
                 VStack {
-                    Spacer()
+                    //Spacer()
                     
                     HStack {
                         VStack {
@@ -358,10 +323,11 @@ struct GreatPathView: View {
                                     .stroke(.blue.opacity(0.9), lineWidth: 3)
                                     .matchedGeometryEffect(id: move ? "card_basic3" : "", in: readingCard03, isSource: true)
                                     .frame(width: width, height: height)
-                                    .padding(.horizontal, 60)
+                                   // .padding(.horizontal, 60)
                                 Text("subjective\nemotions")
                                     .font(.footnote)
                         }
+                        .padding(.horizontal, 60)
                         .foregroundColor(.blue)
 
                         
@@ -371,10 +337,11 @@ struct GreatPathView: View {
                                     .stroke(.red.opacity(0.9), lineWidth: 3)
                                     .matchedGeometryEffect(id: move ? "card_basic6" : "", in: readingCard06, isSource: true)
                                     .frame(width: width, height: height)
-                                    .padding(.horizontal, 60)
+                                //    .padding(.horizontal, 60)
                                 Text("subjective\nemotions")
                                         .font(.footnote)
                         }
+                        .padding(.horizontal, 60)
                         .foregroundColor(.red)
                         
                     }
@@ -389,11 +356,12 @@ struct GreatPathView: View {
                                     .stroke(.blue.opacity(0.9), lineWidth: 3)
                                     .matchedGeometryEffect(id: move ? "card_basic4" : "", in: readingCard04, isSource: true)
                                     .frame(width: width, height: height)
-                                    .padding(.horizontal, 60)
+                                   // .padding(.horizontal, 60)
                             Text("reality")
                                     .font(.footnote)
                             
                         }
+                        .padding(.horizontal, 60)
                         .foregroundColor(.blue)
 
                         
@@ -403,17 +371,16 @@ struct GreatPathView: View {
                                     .stroke(.red.opacity(0.9), lineWidth: 3)
                                     .matchedGeometryEffect(id: move ? "card_basic5" : "", in: readingCard05, isSource: true)
                                     .frame(width: width, height: height)
-                                    .padding(.horizontal, 60)
+                                    //.padding(.horizontal, 60)
                             Text("reality")
                                     .font(.footnote)
                         }
+                        .padding(.horizontal, 60)
                         .foregroundColor(.red)
-
-                        
                     }
                     // space to upper HStack:
                     //.padding(.top, 10)
-                    Spacer()
+              //  Spacer()
                     
                //    } // End of scroll view
            //     .padding(.top, 30)

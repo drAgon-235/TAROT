@@ -17,40 +17,43 @@ struct QuoteTopView: View {
     
     var body: some View {
         NavigationStack{
-            VStack {
-                Button(action: {
-                    showQuoteView.toggle()}, label: {
-                    HStack(spacing: 10) {
-                        Image(systemName: "quote.bubble")
-                        Text("Quote of the day")
+            ZStack {
+                Image("aaaQuotesBack01").resizable().scaledToFill().opacity(0.8)
+                VStack {
+                    Button(action: {
+                        showQuoteView.toggle()}, label: {
+                            HStack(spacing: 10) {
+                                Image(systemName: "quote.bubble")
+                                Text("Quote of the day")
+                            }
+                            .frame(minWidth: 0)
+                            .font(.title)
+                            .padding(.vertical, 10)
+                            .padding(.horizontal, 15)
+                            .foregroundColor(.white)
+                            .background(Color.purple)
+                            .cornerRadius(10)
+                            .shadow(radius: 10)
+                        })
+                    .padding(40)
+                    
+                    
+                    
+                    
+                    NavigationLink(destination: FavoriteQuotesView()) {
+                        ShowFavBTN()
                     }
-                    .frame(minWidth: 0)
-                    .font(.title)
-                    .padding(.vertical, 10)
-                    .padding(.horizontal, 15)
-                    .foregroundColor(.white)
-                    .background(Color.mint)
-                    .cornerRadius(10)
-                    .shadow(radius: 10)
-                })
-                .padding(40)
-                
-                
-                
-                
-                NavigationLink(destination: FavoriteQuotesView()) {
-                    ShowFavBTN()
-                }
-                .navigationBarTitle(Text("Quotes Home"))
-                
-                .toolbar {
-                    HStack {
-                        Spacer()
-                        LogoutButtonAlert()
+                    .navigationBarTitle(Text("Quotes Home"))
+                    
+                    .toolbar {
+                        HStack {
+                            Spacer()
+                            LogoutButtonAlert()
+                        }
                     }
+                    
+                    
                 }
-  
-                
             }
         }
         // sheet for Quote of the Day
