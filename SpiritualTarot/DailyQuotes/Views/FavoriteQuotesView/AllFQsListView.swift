@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FavoriteQuotesView: View {
+struct AllFQsListView: View {
     
     @ObservedObject private var observedFavQuotesVM = FavoriteQuotesVM()
     
@@ -18,7 +18,7 @@ struct FavoriteQuotesView: View {
 
             VStack {
                 Text("My Favorite Quotes")
-                    .foregroundColor(.mint)
+                    .foregroundColor(.orange)
                     .font(.title)
                 
                 List(observedFavQuotesVM.favQuotes) { favoriteQuote in
@@ -59,6 +59,6 @@ struct FavoriteQuotesView: View {
 
     
 #Preview {
-    FavoriteQuotesView()
+    AllFQsListView()
 }
 
