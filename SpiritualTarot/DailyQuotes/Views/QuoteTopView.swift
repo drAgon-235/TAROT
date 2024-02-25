@@ -17,9 +17,13 @@ struct QuoteTopView: View {
     
     var body: some View {
         NavigationStack{
+            
+            // Background:
             ZStack {
-                Image("aaaQuotesBack01").resizable().scaledToFill().opacity(0.8)
+                Image("aaaBackQuote").resizable().scaledToFill().opacity(0.5)
+                
                 VStack {
+                    // Button: daily / random Quote
                     Button(action: {
                         showQuoteView.toggle()}, label: {
                             HStack(spacing: 10) {
@@ -38,9 +42,7 @@ struct QuoteTopView: View {
                     .padding(40)
                     
                     
-                    
-                    
-                    NavigationLink(destination: FavoriteQuotesView()) {
+                    NavigationLink(destination: AllFQsListView()) {
                         ShowFavBTN()
                     }
                     .navigationBarTitle(Text("Quotes Home"))
@@ -48,7 +50,7 @@ struct QuoteTopView: View {
                     .toolbar {
                         HStack {
                             Spacer()
-                            LogoutButtonAlert()
+                            LogoutButtonAlert(color: Color.purple)
                         }
                     }
                     

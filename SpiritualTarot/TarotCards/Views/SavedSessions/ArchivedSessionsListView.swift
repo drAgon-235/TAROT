@@ -54,9 +54,12 @@ struct ArchivedSessionsListView: View {
                     }
                     .background(Color.orange.blur(radius: 25).opacity(0.5))
                 }
+
             }
+
             
         }
+
     }
 }
 

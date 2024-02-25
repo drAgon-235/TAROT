@@ -11,21 +11,22 @@ struct CardBackTestView: View {
     
     let theWidth: CGFloat
     let theHeight: CGFloat
-    
+   
+    // Signal Flagto vanish !!!!
+    // Signal Flagto vanish !!!!
+    // Signal Flagto vanish !!!!
+
     var body: some View {
         
         // The borders and backgrounds:
         // The bisser rectanagle:
         ZStack {
-            // The purple border (biggest element in back):
-            RoundedRectangle(cornerRadius: 20.0)
-                .stroke(.purple.opacity(0.7), lineWidth: 3)
-                .frame(width: theWidth, height: theHeight)
+ 
             
             // the mint margin, also in the back
             RoundedRectangle(cornerRadius: 20.0)
                 .fill(.mint.opacity(0.2))
-                .frame(width: theWidth, height: theHeight)
+                .frame(width: 400, height: 500)
                 .shadow(color: .gray, radius: 1, x: 0, y: 0)
             
             // The smaller, purple rectangle just gets a padding:
@@ -53,7 +54,7 @@ struct CardBackTestView: View {
             Image(systemName: "seal")
                 .resizable()
                 .frame(width: theWidth * 0.6,height: theHeight * 0.6)
-                .foregroundColor(.purple.opacity(0.4))
+                .foregroundColor(.orange.opacity(0.9))
             
             Image(systemName: "seal.fill")
                 .resizable()

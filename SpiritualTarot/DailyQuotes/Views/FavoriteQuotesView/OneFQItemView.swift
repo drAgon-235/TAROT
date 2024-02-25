@@ -26,10 +26,9 @@ struct OneFQItemView: View {
                 //Only padding to bottom, for the Divider() already "has" an own padding by default
                 Text(favQuote.a)
                     .padding(.bottom, 8)
-                    .foregroundColor(.purple)
             }
             //.padding(8)
-            .background(Color.mint)
+            .background(Color.orange.opacity(0.6))
             .cornerRadius(10)
             .shadow(radius: 8)
 

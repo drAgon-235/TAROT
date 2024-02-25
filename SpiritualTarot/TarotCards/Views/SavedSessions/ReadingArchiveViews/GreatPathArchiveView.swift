@@ -214,12 +214,18 @@ struct GreatPathArchiveView: View {
                     }
                     
                 }
+                // Coorective Element:
+                RoundedRectangle(cornerRadius: 10.0)
+                    .frame(height: 30)
+                    .opacity(0)
                 Spacer()
 
             }
             // End of inner VStack 2
 
         }
+        .padding(.bottom, 30)
+
         // End of outer VStack
         .sheet( isPresented: $showCardSheet01){
             CardSheetExplanation(oneCard: cardVM.allCards[cardId01], givenText: "This card represents the CHANCES  and GOALS at the end of your path. The possible outcome.")

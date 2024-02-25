@@ -21,7 +21,8 @@ struct SpiritualTarotApp: App {
     var body: some Scene {
         WindowGroup {
             if userVM.userIsLoggedIn {
-                NavigatorView()
+                AnimTabBar()
+                //NavigatorView()
                     .environmentObject(userVM)
             } else {
                 AuthenticationView()

@@ -57,7 +57,7 @@ struct ApiCashQuoteItemView: View {
                         Text("Is saved in your")
                             .foregroundColor(.purple)
                        
-                        NavigationLink(destination: FavoriteQuotesView()) {
+                        NavigationLink(destination: AllFQsListView()) {
                             ShowFavListBTN()
                         }
                         
@@ -79,18 +79,17 @@ struct ApiCashQuoteItemView: View {
                         Divider()
                         Text(quote.a)
                             .padding(4)
-                            .foregroundColor(.purple)
                         
                     }
                     .padding()
-                    .background(Color.mint)
+                    .background(Color.orange.opacity(0.6))
                     .cornerRadius(10)
                     .padding()
                     .shadow(radius: 10)
                 }
            
             // Test Fields:
-            Text("Status: \(cachingTest)")
+            Text("( Data-Status: \(cachingTest) )")
         //    Text("Last Data: \(lastFetchedDate)")
            // Text(allDaQuotes.first!.q)
             
@@ -107,7 +106,7 @@ struct ApiCashQuoteItemView: View {
                         clearDailyQuoteCache()
                     // get quote from API:
                         try await fetchQuotes()  // Our cashe: 'allDataQuotes' gets refreshed with API request
-                        cachingTest = "API Call !!!"
+                        cachingTest = "API Request & cashing !"
                 } catch {
                     print("Error in fetchQuotes \(error)")
                 }

@@ -54,7 +54,7 @@ struct CardBackTurn: View {
             Image(systemName: "seal")
                 .resizable()
                 .frame(width: theWidth * 0.6,height: theHeight * 0.6)
-                .foregroundColor(.purple.opacity(0.4))
+                .foregroundColor(.orange.opacity(0.9))
             
             Image(systemName: "seal.fill")
                 .resizable()

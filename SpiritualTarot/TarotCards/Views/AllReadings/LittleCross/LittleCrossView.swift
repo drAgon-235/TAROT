@@ -269,10 +269,15 @@ struct LittleCrossView: View {
                 }
             }
             // End of inner VStack
+            // Coorective Element:
+            RoundedRectangle(cornerRadius: 10.0)
+                .frame(height: 30)
+                .opacity(0)
             Spacer()
             
         }
         // End of outer VStack
+        //Spacer()  // if you set this, the backgroundcolor will disappear ... !!! ( took me 2 days to find this bug !!! )
         
         .sheet( isPresented: $showCardSheet01){
             CardSheetExplanation(oneCard: cardVM.allCards[0],givenText: "This card represents your \nissue, topic or question. \nIt shows what's on your mind. ")
@@ -303,6 +308,8 @@ struct LittleCrossView: View {
                 sessionIsSaved = true
             }
         }
+        .background(Color.blue.opacity(0.2))
+
     }
 }
 

@@ -11,11 +11,11 @@ struct ShowFavBTN: View {
     var body: some View {
         HStack {
             Image(systemName: "heart.fill")
-            Text("Favorite Quotes")
+            Text("Saved Quotes")
         }
         .font(.title)
         .frame(width: 250, height: 50, alignment: .center)
-        .background(Color.mint)
+        .background(Color.orange)
         .foregroundColor(Color.white)
         .cornerRadius(10)   
         .shadow(radius: 10)

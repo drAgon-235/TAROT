@@ -268,6 +268,12 @@ struct LoveOracleView: View {
                     .foregroundColor(.purple)
                 }
             }
+            // End of inner VStack
+
+            // Corrective Element: 
+            RoundedRectangle(cornerRadius: 10.0)
+                .frame(height: 30)
+                .opacity(0)
             Spacer()
             
         }
@@ -301,6 +307,8 @@ struct LoveOracleView: View {
                 sessionIsSaved = true
             }
         }
+        .background(Color.blue.opacity(0.2))
+
     }
 }
 

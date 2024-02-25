@@ -32,7 +32,8 @@ struct CardSheetExplanation: View {
                 Text(oneCard.name!)
                     .font(.title)
                     .bold()
-                    .foregroundColor(.purple)
+                    .foregroundColor(.orange)
+                    .shadow(radius: 1)
                 
                 Image(oneCard.image!)
                     .resizable()
@@ -44,14 +45,15 @@ struct CardSheetExplanation: View {
                     Text(oneCard.value!)
                     
                 }
-                .foregroundColor(.blue)
+                .padding(.top, 5)
+                .foregroundColor(.purple)
                 .bold()
                 
                 HStack {
                     Text("Arcana:")
                     Text(oneCard.suite!)
                 }
-                .foregroundColor(.blue)
+                .foregroundColor(.purple)
                 .bold()
                 
                 
@@ -89,10 +91,9 @@ struct CardSheetExplanation: View {
                 Text(oneCard.descript!)
                     .padding(.horizontal, 20)
                 
-                
             }
         }
-        .background(Color.purple.opacity(0.2))
+        .background(Color.purple.opacity(0.3))
         
     }
 }

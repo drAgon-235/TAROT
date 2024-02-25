@@ -121,6 +121,8 @@ struct SimplePathArchiveView: View {
                     CardSheetExplanation(oneCard: cardVM.allCards[cardId03], givenText: "This card represents the FUTURE. \nThe direction it all evolves to. \nThe outcome.")
                 }
         }
+       // .background(Color.orange.opacity(0.1))
+
         // workaround to eliminate the big space under the Navigationtitle "Back"
         .padding(.top, 90)
         .ignoresSafeArea()

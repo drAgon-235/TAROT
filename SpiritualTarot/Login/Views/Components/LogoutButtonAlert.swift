@@ -11,6 +11,7 @@ struct LogoutButtonAlert: View {
     
     @EnvironmentObject private var userVM: UserViewModel
     @State private var alertVisible = false
+    var color: Color
 
     var body: some View {
         VStack {
@@ -18,6 +19,7 @@ struct LogoutButtonAlert: View {
                 alertVisible.toggle()
             } label: {
                 Image(systemName: "rectangle.portrait.and.arrow.right")
+                    .foregroundColor(color)
             }
         }
         .alert("Logout?", isPresented: $alertVisible) {
@@ -31,5 +33,5 @@ struct LogoutButtonAlert: View {
 }
 
 #Preview {
-    LogoutButtonAlert()
+    LogoutButtonAlert(color: Color.white)
 }

@@ -19,7 +19,7 @@ struct TarotTopView: View {
    
         NavigationStack {
             ZStack {
-                Image("aaastars02").resizable().scaledToFill().opacity(0.8)
+                Image("aaa_stars01").resizable().scaledToFill().opacity(0.8)
                 
             VStack {
                 CardOfTheDayBTN(action: {
@@ -43,7 +43,7 @@ struct TarotTopView: View {
                 .toolbar {
                     HStack {
                         Spacer()
-                        LogoutButtonAlert()
+                        LogoutButtonAlert(color: Color.white)
                     }
                     
                 }

@@ -246,8 +246,13 @@ struct SimplePathView: View {
                 }
             }
             // - End Cards View -
+            // Coorective Element: ( without this we would have an ugly margin )
+            RoundedRectangle(cornerRadius: 10.0)
+                .frame(height: 30)
+                .opacity(0)
             Spacer()
         }
+        
         .sheet( isPresented: $showCardSheet01){
             CardSheetExplanation(oneCard: cardVM.allCards[0], givenText: "This card represents the PRESENT. \nThe actual situation / issue. \nWhat it's all about.")
         }
@@ -273,8 +278,10 @@ struct SimplePathView: View {
                 sessionIsSaved = true
             }
         }
-        
+        .background(Color.blue.opacity(0.2)).scaledToFill()
+
     }
+    
 }
 
 #Preview {

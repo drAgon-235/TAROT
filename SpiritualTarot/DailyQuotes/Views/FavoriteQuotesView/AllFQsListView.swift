@@ -13,11 +13,11 @@ struct AllFQsListView: View {
     
     var body: some View {
         ZStack {
-            Color.mint.opacity(0.2)
+            Color.orange.opacity(0.2)
                 .ignoresSafeArea() // has to be exactly here, not at the end of the Stack
 
             VStack {
-                Text("My Favorite Quotes")
+                Text("My saved Quotes")
                     .foregroundColor(.orange)
                     .font(.title)
                 

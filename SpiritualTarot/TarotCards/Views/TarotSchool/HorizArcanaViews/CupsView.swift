@@ -27,7 +27,7 @@ struct CupsView: View {
                                 Text("\(thisCard.value!)")
                                 Image(thisCard.image!)
                                     .resizable()
-                                    .frame(width: 150, height: 250)
+                                    .frame(width: 100, height: 160)
                                     .shadow(radius: 10)
                                 Text(thisCard.name ?? "No Value found")
                             }
@@ -43,6 +43,7 @@ struct CupsView: View {
                     .padding()
 
                 }
+                
             }
 
         Spacer()

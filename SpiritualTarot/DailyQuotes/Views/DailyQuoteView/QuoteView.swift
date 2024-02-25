@@ -22,13 +22,16 @@ struct QuoteView: View {
                         HStack{
                             Image(systemName: "quote.opening")
                             Text("Quote of the day")
+                                .font(.title3)
+                                .bold()
                             Image(systemName: "quote.closing")
                         }
                         .padding(.top, 10)
                         
                         Text("for: ")
-                            .padding(5)
+                            //.padding(5)
                             .font(.title3)
+                            .bold()
                         
                         Text(userVM.name)
                             .bold()
@@ -54,7 +57,7 @@ struct QuoteView: View {
                 
                 Spacer()
             }
-            .background(Color.orange.opacity(0.1))
+            .background(Color.purple.opacity(0.2))
 
         }
     }

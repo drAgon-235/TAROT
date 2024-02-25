@@ -11,8 +11,8 @@ struct AllPathsTopView: View {
     
     var body: some View {
         ZStack {
-            Image("aaareadings01").resizable().scaledToFill().opacity(0.3)
-
+            Image("aaa_readingBack01").resizable().scaledToFill().opacity(0.3)
+            Color.blue.opacity(0.2)
             VStack {
                 NavigationLink(destination: SimplePathView(width: 80, height: 120)) {
                     ReadingDefaultBTN(text: AllPathsEnum.simplePath.name)

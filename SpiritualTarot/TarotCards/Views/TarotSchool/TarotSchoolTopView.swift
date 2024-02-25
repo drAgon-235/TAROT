@@ -27,11 +27,11 @@ struct TarotSchoolTopView: View {
                     .bold()
                     .foregroundColor(.orange)
                 
+                // Segmented Picker:
                 Picker("Arcanas", selection: $selectedTab) {
                     ForEach(ArcanaTabsEnum.allCases, id: \.self) { tab in
                         Text(tab.rawValue).tag(tab)
                     }
-                    
                 }
                 .pickerStyle(.segmented)
                 .padding(.horizontal, 10)
@@ -39,7 +39,6 @@ struct TarotSchoolTopView: View {
                 selectedTab.tabView()
             }
         }
-        Spacer()
         
     }
 }

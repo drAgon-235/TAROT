@@ -161,7 +161,6 @@ struct GreatPathView: View {
                         } else {  }
                     }
                 }
-                
                 // All the cards to be lead in the back - I love ZStacks:
                 ZStack {
                     // Card 1 - Front & Back & Transparent Button:
@@ -327,7 +326,7 @@ struct GreatPathView: View {
                                 Text("subjective\nemotions")
                                     .font(.footnote)
                         }
-                        .padding(.horizontal, 60)
+                        .padding(.horizontal, 50)
                         .foregroundColor(.blue)
 
                         
@@ -341,7 +340,7 @@ struct GreatPathView: View {
                                 Text("subjective\nemotions")
                                         .font(.footnote)
                         }
-                        .padding(.horizontal, 60)
+                        .padding(.horizontal, 50)
                         .foregroundColor(.red)
                         
                     }
@@ -361,7 +360,7 @@ struct GreatPathView: View {
                                     .font(.footnote)
                             
                         }
-                        .padding(.horizontal, 60)
+                        .padding(.horizontal, 50)
                         .foregroundColor(.blue)
 
                         
@@ -375,17 +374,22 @@ struct GreatPathView: View {
                             Text("reality")
                                     .font(.footnote)
                         }
-                        .padding(.horizontal, 60)
+                        .padding(.horizontal, 50)
                         .foregroundColor(.red)
                     }
-                    // space to upper HStack:
-                    //.padding(.top, 10)
-              //  Spacer()
+                    // Coorective Element:
+                    RoundedRectangle(cornerRadius: 10.0)
+                        .frame(height: 4)
+                        .opacity(0)
+                    Spacer()
+                    
                     
                //    } // End of scroll view
            //     .padding(.top, 30)
                 
             }
+            .padding(.bottom, 50)
+
             .sheet( isPresented: $showCardSheet01){
                 CardSheetExplanation(oneCard: cardVM.allCards[0], givenText: "This card represents the CHANCES  and GOALS at the end of your path. The possible outcome.")
             }
@@ -428,7 +432,9 @@ struct GreatPathView: View {
                 sessionIsSaved = true
             }
         }
+        .background(Color.blue.opacity(0.2))
     }
+        
 }
 
 #Preview {
