@@ -257,6 +257,7 @@ struct GreatPathArchiveView: View {
         // workaround to eliminate the big space under the Navigationtitle "Back"
         .padding(.top, 90)
         .ignoresSafeArea()
+        .background(Color.orange.opacity(0.2))
 
     }
 }

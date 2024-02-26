@@ -55,8 +55,10 @@ struct SimplePathArchiveView: View {
             }
        
             
-            Spacer()
+            //Spacer()
             VStack {
+                Spacer()
+
                 HStack(spacing: 30) {
                     VStack {
                         Text("2")
@@ -106,8 +108,13 @@ struct SimplePathArchiveView: View {
                         showCardSheet03.toggle()
                     }
                 }
+                // Coorective Element: ( without this we would have an ugly margin )
+                RoundedRectangle(cornerRadius: 10.0)
+                    .frame(height: 30)
+                    .opacity(0)
+                Spacer()
             }
-            Spacer()
+            //Spacer()
             
                 .sheet( isPresented: $showCardSheet01){
                     CardSheetExplanation(oneCard: cardVM.allCards[cardId01], givenText: "This card represents the PRESENT. \nThe actual situation / issue. \nWhat it's all about.")
@@ -121,11 +128,13 @@ struct SimplePathArchiveView: View {
                     CardSheetExplanation(oneCard: cardVM.allCards[cardId03], givenText: "This card represents the FUTURE. \nThe direction it all evolves to. \nThe outcome.")
                 }
         }
-       // .background(Color.orange.opacity(0.1))
+        .background(Color.orange.opacity(0.2))
 
         // workaround to eliminate the big space under the Navigationtitle "Back"
         .padding(.top, 90)
         .ignoresSafeArea()
+       // .background(Color.blue.opacity(0.2))
+
     }
 }
 

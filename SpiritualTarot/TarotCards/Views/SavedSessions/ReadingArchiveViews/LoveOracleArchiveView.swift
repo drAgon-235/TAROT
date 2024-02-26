@@ -138,6 +138,10 @@ struct LoveOracleArchiveView: View {
                 }
             }
             // End of inner VStack 2
+            // Coorective Element: ( without this we would have an ugly margin )
+            RoundedRectangle(cornerRadius: 10.0)
+                .frame(height: 30)
+                .opacity(0)
             
         }
         // End of outer VStack
@@ -159,6 +163,8 @@ struct LoveOracleArchiveView: View {
         // workaround to eliminate the big space under the Navigationtitle "Back"
         .padding(.top, 90)
         .ignoresSafeArea()
+        .background(Color.orange.opacity(0.2))
+
     }
 }
 

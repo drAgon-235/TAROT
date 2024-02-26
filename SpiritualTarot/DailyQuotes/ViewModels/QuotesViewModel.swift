@@ -7,6 +7,8 @@
 
 import Foundation
 
+// The SwiftData actually is the VewModel
+
 class QuotesViewModel: ObservableObject {
     /*
     init() {

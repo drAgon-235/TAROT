@@ -17,10 +17,12 @@ struct MajorView: View {
     
         // the default card for our "details-sheet"
         var cardForSheet: Card = cardVM.allCards.first!
-        Spacer()
-
+        VStack {
+            Spacer()
+            Text("Tap the card to learn more about it")
+            Spacer()
             ScrollView(.horizontal) {
-
+                
                 HStack {
                     ForEach(cardVM.allCards) { thisCard in
                         if thisCard.suite == "Major Arcana" {
@@ -39,14 +41,16 @@ struct MajorView: View {
                                 showCardSheet01.toggle()
                             }
                         }
-   
+                        
                     }
                     .padding()
-
+                    
                 }
-            } 
-
-        Spacer()
+                .padding(.bottom, 40)
+            }
+            Spacer()
+        }
+        
         
         .sheet( isPresented: $showCardSheet01){
             CardSheetBlank(oneCard: cardForSheet)
