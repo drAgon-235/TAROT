@@ -16,14 +16,11 @@ struct CardBackTwist: View {
     @Binding var myDegree: Double
     
     var body: some View {
-        // The borders and backgrounds:
-        // The bisser rectanagle:
         ZStack {
             // The purple border (biggest element in back):
             RoundedRectangle(cornerRadius: 10.0)
                 .stroke(.purple.opacity(0.9), lineWidth: 3)
                 .frame(width: theWidth, height: theHeight)
-            
             // the mint margin, also in the back
             RoundedRectangle(cornerRadius: 10.0)
                 .fill(.mint.opacity(0.9))
@@ -51,12 +48,10 @@ struct CardBackTwist: View {
                 .resizable()
                 .frame(width: theWidth * 0.7,height: theHeight * 0.7)
                 .foregroundColor(.white.opacity(0.4))
-            
             Image(systemName: "seal")
                 .resizable()
                 .frame(width: theWidth * 0.6,height: theHeight * 0.6)
                 .foregroundColor(.purple.opacity(0.4))
-            
             Image(systemName: "seal.fill")
                 .resizable()
                 .frame(width: theWidth * 0.4,height: theHeight * 0.4)

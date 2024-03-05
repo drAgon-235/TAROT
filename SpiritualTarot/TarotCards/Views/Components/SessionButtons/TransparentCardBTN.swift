@@ -25,7 +25,8 @@ struct TransparentCardBTN: View {
             //.background(Color.accentColor)
             //.clipShape(Capsule())
             
-        }    }
+        }  
+    }
 }
 
 #Preview {

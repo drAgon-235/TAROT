@@ -10,6 +10,7 @@ import CoreData
 
 struct DBManager {
     
+    // Singleton:
     static let shared = DBManager()
     
     init() {
@@ -24,25 +25,11 @@ struct DBManager {
         }
     }
     
-    // MARK: - Variables
-    
+    // Variables:    
     private let container: NSPersistentContainer
     var context: NSManagedObjectContext { container.viewContext }
 
-    
-    
-    // MARK: - Functions
-    
-    func save() {
-        guard context.hasChanges else { return }
-        
-        do {
-            try context.save()
-        } catch let error as NSError {
-            NSLog("Unresolved error saving context: \(error), \(error.userInfo)")
-        }
-    }
-    
+    // Functions:
     
     // Self made:
     // checking if CoreDB container is empty (we want to fill the CoreDB only once, initially, see VM):
@@ -60,6 +47,20 @@ struct DBManager {
         }
         return isEmpty
     }
+    
+    // Save boiler plate:
+    func save() {
+        guard context.hasChanges else { return }
+        
+        do {
+            try context.save()
+        } catch let error as NSError {
+            NSLog("Unresolved error saving context: \(error), \(error.userInfo)")
+        }
+    }
+    
+    
+
     
 
     

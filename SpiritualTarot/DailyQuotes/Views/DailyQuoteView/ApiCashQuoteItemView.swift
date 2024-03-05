@@ -8,20 +8,14 @@
 import SwiftUI
 import SwiftData
 
-// Arguments for breaking the MVVM in this case:
-// 1. the fetched Data (from Api or SwiftData) is only used in this View
-// 2. the SwiftData actually IS the View Model !!! used here
-
 struct ApiCashQuoteItemView: View {
     
-    
-    // Variables for saving Favorite Quotes in Firebase:
-    @StateObject private var favQuotesVW = FavoriteQuotesVM()
-    @State var showFavConfirmAlert = false
-    
-    // Variables for Caching the daily Quote - only one API call per day neccessary !!!:
-    @Environment(\.modelContext) private var quoteModelContext
+// (it took me 3 days to implement SwiftData into MVVM-Architecture):
+    @StateObject private var quoteVM = QuotesViewModel()
+
+// Variables for Caching the daily Quote in SwiftData - only one API call per day neccessary !!!:
     @AppStorage("lastFetched") private var lastFetchedDate: String = "Start"
+    @Environment(\.modelContext) private var quoteModelContext
     @Query() private var allDaQuotes: [Quote]
 
     // showing animation while loading the Daily Quoe from API - almost invisible :-D
@@ -30,6 +24,37 @@ struct ApiCashQuoteItemView: View {
     // for Testing purposes:
     @State private var cachingTest: String = "Cashe !!!"
 
+// Functions for Caching the daily Quote
+    // gives us the current date formatted to a String:
+    func getCurrentDate() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MMM-yyyy" // MMM: short month name
+        return formatter.string(from: Date())
+    }
+    
+    // Checking if cashed date (lastFetchedDate) is same as today:
+    func lastSavedDayIsSameAsToday() -> Bool {
+        let dateToday = getCurrentDate()
+        let lastCall = lastFetchedDate
+        if dateToday == lastCall {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    // in case of loading new Quote from API & loading it to cash
+    // the old Quote cash data is being deleted:
+    func clearDailyQuoteCache() {
+        _ = try? quoteModelContext.delete(model: Quote.self)
+    }
+
+    
+// Variables for saving Favorite Quotes in Firebase:
+    @StateObject private var favQuotesVW = FavoriteQuotesVM()
+    @State var showFavConfirmAlert = false
+    
+// Functions for saving Favorite Quotes in Firebase:
     // checks if Quote is already in Favourites list:
     // (most tricky part of this View - took me 2 days to figure out, this has to be an extra function also checking EMPTYNESS first)
     func favQuoteExists() -> Bool {
@@ -44,6 +69,7 @@ struct ApiCashQuoteItemView: View {
         }
     }
     
+   // var cachingTest = "Using cashing only \nNo API Request!!"
     
     var body: some View {
         VStack {
@@ -56,7 +82,7 @@ struct ApiCashQuoteItemView: View {
                 if favQuoteExists()  {
                         Text("Is saved in your")
                             .foregroundColor(.purple)
-                       
+                    
                         NavigationLink(destination: AllFQsListView()) {
                             ShowFavListBTN()
                         }
@@ -79,7 +105,6 @@ struct ApiCashQuoteItemView: View {
                         Divider()
                         Text(quote.a)
                             .padding(4)
-                        
                     }
                     .padding()
                     .background(Color.orange.opacity(0.6))
@@ -87,32 +112,40 @@ struct ApiCashQuoteItemView: View {
                     .padding()
                     .shadow(radius: 10)
                 }
-           
-            // Test Fields:
-            Text("( Data-Status: \(cachingTest) )")
-        //    Text("Last Data: \(lastFetchedDate)")
-           // Text(allDaQuotes.first!.q)
-            
+            Text(cachingTest)
+
             Spacer()
         }
         .onAppear {
             if !lastSavedDayIsSameAsToday() || allDaQuotes.isEmpty{
+                // this Task is executed  ONLY ONCE per day (or if allDaQuotes.isEmpty):
             Task {
                 do {
                     // almost invisible loading animation:
                     isLoading = true
                     defer { isLoading = false }
-                    // cler cashe before refilling:
-                        clearDailyQuoteCache()
-                    // get quote from API:
-                        try await fetchQuotes()  // Our cashe: 'allDataQuotes' gets refreshed with API request
-                        cachingTest = "API Request & cashing !"
+                    
+                    // clear cashe before refilling:
+                    clearDailyQuoteCache()
+                    
+                    // get quote from API using ViewModel (MVVM):
+                    let gotQuote = try await quoteVM.fetchQuotes()
+           
+                    // caching in SwiftData:
+                    gotQuote.forEach { quoteModelContext.insert($0) }
+                    
+                    // saving current date in AppStorage for future comaprisons with new daily quote
+                    lastFetchedDate = getCurrentDate()
+
+                    // If teh API call is made, it is shown on TestVariable:
+                    cachingTest = "API Request & cashing !"
                 } catch {
                     print("Error in fetchQuotes \(error)")
                 }
             }
-            } // else: data cached in 'allDataQuotes' is called
+        } // else: data cached in 'allDataQuotes' is called directly
 
+            
         }
         /*
          // alternative Code to .onAppear:
@@ -157,49 +190,4 @@ struct ApiCashQuoteItemView: View {
 
 }
 
-
-// Extension for caching in SwiftData & AppStorage:
-extension ApiCashQuoteItemView {
-    
-    // The tricky part is, that the JSON call gives a List[Quote] of Quotes, even though it returns definitely just one single random Quote !!!
-    func fetchQuotes() async throws {
-        
-        guard let url = URL(string: "https://zenquotes.io/api/today") else {
-            throw HTTPError.invalidURL
-        }
-        let (data, _) = try await URLSession.shared.data(from: url)
-        
-        let outputQuotes = try JSONDecoder().decode([Quote].self, from: data)
-        
-        // caching in SwiftData:
-        outputQuotes.forEach { quoteModelContext.insert($0) }
-        
-        // saving current date in AppStorage for future comaprisons with new daily quote
-        lastFetchedDate = getCurrentDate()
-    }
-    
-    // Checking if cashed date (lastFetchedDate) is same as today:
-    func lastSavedDayIsSameAsToday() -> Bool {
-        let dateToday = getCurrentDate()
-        let lastCall = lastFetchedDate
-        if dateToday == lastCall {
-            return true
-        } else {
-            return false
-        }
-    }
-    
-    // in case of loading new Quote from API & loading it to cash
-    // the old Quote cash data is being deleted:
-    func clearDailyQuoteCache() {
-        _ = try? quoteModelContext.delete(model: Quote.self)
-    }
-    
-    // gives us the current date formatted to a String:
-    func getCurrentDate() -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd-MMM-yyyy" // MMM: short month name
-        return formatter.string(from: Date())
-    }
-}
 

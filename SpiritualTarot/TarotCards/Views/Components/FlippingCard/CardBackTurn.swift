@@ -16,13 +16,11 @@ struct CardBackTurn: View {
     @Binding var myDegree: Double
     
     var body: some View {
-        
         ZStack {
             // The purple border (biggest element in back):
             RoundedRectangle(cornerRadius: 10.0)
                 .stroke(.purple.opacity(0.9), lineWidth: 3)
                 .frame(width: theWidth, height: theHeight)
-            
             // the mint margin, also in the back
             RoundedRectangle(cornerRadius: 10.0)
                 .fill(.mint.opacity(0.9))
@@ -38,7 +36,7 @@ struct CardBackTurn: View {
                 .stroke(.purple.opacity(0.8), lineWidth: 3)
                 .padding()
                 .frame(width: theWidth, height: theHeight)
-            
+
             // The '4 circles in a cross' background:
             Image(systemName: "circle.grid.cross")
                 .resizable()
@@ -50,12 +48,10 @@ struct CardBackTurn: View {
                 .resizable()
                 .frame(width: theWidth * 0.7,height: theHeight * 0.7)
                 .foregroundColor(.white.opacity(0.4))
-            
             Image(systemName: "seal")
                 .resizable()
                 .frame(width: theWidth * 0.6,height: theHeight * 0.6)
                 .foregroundColor(.orange.opacity(0.9))
-            
             Image(systemName: "seal.fill")
                 .resizable()
                 .frame(width: theWidth * 0.4,height: theHeight * 0.4)

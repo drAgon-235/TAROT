@@ -16,7 +16,6 @@ struct AddToFavoritesBTN: View {
         Button(action: action) {
             HStack(spacing: 10) {
                 Image(systemName: "heart")
-                
                 Text("")
             }
             .font(.title)

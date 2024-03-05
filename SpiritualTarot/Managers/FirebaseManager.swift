@@ -18,7 +18,6 @@ class FirebaseManager {
     let auth = Auth.auth()
     let database = Firestore.firestore()
     
-    
     var userId: String? {
         auth.currentUser?.uid
     }

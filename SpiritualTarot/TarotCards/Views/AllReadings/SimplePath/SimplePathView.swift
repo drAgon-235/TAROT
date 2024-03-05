@@ -96,9 +96,9 @@ struct SimplePathView: View {
     
     // After clicking Reading Button:
     func flipFlowingCard() {
-        // The parameters make the turn animation slower or faster for each card:
         isFlippedReading = true
         if isFlippedReading {
+            // The parameters make the turn animation slower or faster for each card:
             withAnimation(.linear(duration:
                 durationAndDelay).delay(durationAndDelay2)) {
                 backDegreeReading = 90

@@ -38,7 +38,6 @@ struct CardFrontTurn: View {
         // this enables the card to rotate, by $changing the $myDegree variable on call around the definded axis:
         .rotation3DEffect(Angle(degrees: myDegree), axis: (x: 0, y: 1, z: 0))
         .shadow(radius: 10)
-
     }
 }
 
