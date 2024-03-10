@@ -10,6 +10,9 @@ import SwiftUI
 struct LogoutButtonAlert: View {
     
     @EnvironmentObject private var userVM: UserViewModel
+    @StateObject private var favoriteQuotesVM = FavoriteQuotesVM()
+    @StateObject private var savedSessionsVM = SavedSessionViewModel()
+    
     @State private var alertVisible = false
     var color: Color
 
@@ -25,7 +28,10 @@ struct LogoutButtonAlert: View {
         .alert("Logout?", isPresented: $alertVisible) {
             Button("OK") {
                 userVM.logout()
-                //marketVM.removeListener()  // important for DB cart , but not for etarnal favorites !!!
+                // Very Important after each Logout:
+                favoriteQuotesVM.removeListener() // ! ! !
+                savedSessionsVM.removeListener()  // ! ! !
+
             }
             Button("Cancel", role: .cancel) {}
         }   

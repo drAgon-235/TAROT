@@ -277,6 +277,20 @@ struct LoveOracleView: View {
             Spacer()
             
         }
+        
+        .toolbar(content: {
+            Menu {
+                Text("Instruction:")
+                Text("1. Click 'SHUFFLE' button. ")
+                Text("2. Click 'READING' button.")
+                Text("3. Click each card to see the interpretation.")
+                Text("4. (optional) Click the 'SAVE' button to save a session.")
+
+            } label: {
+                Label("info", systemImage: "info.circle")
+            }
+        })
+        
         .sheet( isPresented: $showCardSheet01){
             CardSheetExplanation(oneCard: cardVM.allCards[0], givenText: "The Significator:\nThis card represents the \nrelationship, topic or question.")
         }

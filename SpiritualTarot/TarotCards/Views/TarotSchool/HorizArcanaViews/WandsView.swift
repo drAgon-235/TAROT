@@ -16,10 +16,12 @@ struct WandsView: View {
     var body: some View {
         // the default card for our "details-sheet"
         var cardForSheet: Card = cardVM.allCards.first!
-        Spacer()
-
+        VStack {
+            Spacer()
+            Text("Tap the card to learn more about it")
+            Spacer()
             ScrollView(.horizontal) {
-
+                
                 HStack {
                     ForEach(cardVM.allCards) { thisCard in
                         if thisCard.suite == "Wands" {
@@ -38,14 +40,15 @@ struct WandsView: View {
                                 showCardSheet01.toggle()
                             }
                         }
-   
+                        
                     }
                     .padding()
-
+                    
                 }
             }
-        
-        Spacer()
+            
+            Spacer()
+        }
         
         .sheet( isPresented: $showCardSheet01){
             CardSheetBlank(oneCard: cardForSheet)

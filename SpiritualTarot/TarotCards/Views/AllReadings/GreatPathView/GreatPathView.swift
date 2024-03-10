@@ -418,6 +418,19 @@ struct GreatPathView: View {
                 CardSheetExplanation(oneCard: cardVM.allCards[6], givenText: "This card suggests, on what you should focus your thaughts and actions in FUTURE CONSCIOUSLY.\n(compare to card 2)")
             }
             
+            .toolbar(content: {
+                Menu {
+                    Text("Instruction:")
+                    Text("1. Click 'SHUFFLE' button. ")
+                    Text("2. Click 'READING' button.")
+                    Text("3. Click each card to see the interpretation.")
+                    Text("4. (optional) Click the 'SAVE' button to save a session.")
+
+                } label: {
+                    Label("info", systemImage: "info.circle")
+                }
+            })
+            
         }
         // saving the Session:
         .alert("Save the session? \n \(savedSessionsVM.getCurrentDate())", isPresented: $showSaveSessionAlert) {

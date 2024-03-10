@@ -131,7 +131,7 @@ struct ApiCashQuoteItemView: View {
                     // get quote from API using ViewModel (MVVM):
                     let gotQuote = try await quoteVM.fetchQuotes()
            
-                    // caching in SwiftData:
+                    // caching the API Request in SwiftData:
                     gotQuote.forEach { quoteModelContext.insert($0) }
                     
                     // saving current date in AppStorage for future comaprisons with new daily quote

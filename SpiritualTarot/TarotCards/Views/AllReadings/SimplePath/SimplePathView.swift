@@ -252,7 +252,6 @@ struct SimplePathView: View {
                 .opacity(0)
             Spacer()
         }
-        
         .sheet( isPresented: $showCardSheet01){
             CardSheetExplanation(oneCard: cardVM.allCards[0], givenText: "This card represents the PRESENT. \nThe actual situation / issue. \nWhat it's all about.")
         }
@@ -265,7 +264,20 @@ struct SimplePathView: View {
             CardSheetExplanation(oneCard: cardVM.allCards[2], givenText: "This card represents the FUTURE. \nThe direction it all evolves to. \nThe outcome.")
         }
         
-        // saving the Session: 
+        .toolbar(content: {
+            Menu {
+                Text("Instruction:")
+                Text("1. Click 'SHUFFLE' button. ")
+                Text("2. Click 'READING' button.")
+                Text("3. Click each card to see the interpretation.")
+                Text("4. (optional) Click the 'SAVE' button to save a session.")
+
+            } label: {
+                Label("info", systemImage: "info.circle")
+            }
+        })
+        
+        // saving the Session:
         .alert("Save the session? \n \(savedSessionsVM.getCurrentDate())", isPresented: $showSaveSessionAlert) {
             // Textfield for topic:
             TextField("Topic", text: $newSessionTopic)
