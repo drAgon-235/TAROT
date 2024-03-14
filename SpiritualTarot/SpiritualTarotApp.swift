@@ -24,6 +24,7 @@ struct SpiritualTarotApp: App {
                 AnimTabBar()
                 //NavigatorView()
                     .environmentObject(userVM)
+                
             } else {
                 AuthenticationView()
                     .environmentObject(userVM)

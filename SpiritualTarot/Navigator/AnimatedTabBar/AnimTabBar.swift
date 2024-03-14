@@ -20,44 +20,69 @@ struct AnimTabBar: View {
     
     // Matched Geometry effect:
     @Namespace var animation
-    
     @State var currentXValue: CGFloat = 0
     
+    // Bonus : Splash Animation - Start values:
+    @State private var imageScale: CGSize = .init(width: 1.8, height: 1.8)
+    @State private var readyToLoad: Bool = false
+
+    
     var body: some View {
-        
-        TabView(selection: $currentTab) {
+        ZStack {
+            // Bonus : Animated Card as Splash Start screen after Login:
+            ZStack {
+                Image("m10")
+                    .resizable()
+                    .scaledToFit()
+                    .shadow(radius: 10)
+                    .scaleEffect(self.imageScale)
+                    .onAppear {
+                        withAnimation(.easeIn(duration: 1)) {
+                            self.imageScale = CGSize(width: 0.0, height: 0.0)
+                            
+                            // deadline is same as duration of animation:
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                                withAnimation {
+                                    self.readyToLoad.toggle()
+                                }
+                            })
+                        }
+                    }
+            }
             
-            TarotTopView()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                //.background(Color(Color.mint.opacity(0.2)).ignoresSafeArea())
-                .tag(TabEnum.tabTarot)
-            
-            QuoteTopView()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-               // .background(Color(Color.purple.opacity(0.2)).ignoresSafeArea())
-                .tag(TabEnum.tabQuotes)
-        }
-        // Curved Tab bar:
-        .overlay(
-            HStack(spacing: 0) {
-                ForEach(TabEnum.allCases, id: \.rawValue) { thisTab in
-                    tabButton(tab: thisTab)
+            // After Start Splash Animation:
+            if readyToLoad {
+                VStack {
+                    TabView(selection: $currentTab) {
+                        
+                        TarotTopView()
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .tag(TabEnum.tabTarot)
+                        
+                        QuoteTopView()
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .tag(TabEnum.tabQuotes)
+                    }
+                    // Curved Tab bar:
+                    .overlay(
+                        HStack(spacing: 0) {
+                            ForEach(TabEnum.allCases, id: \.rawValue) { thisTab in
+                                tabButton(tab: thisTab)
+                            }
+                        }
+                            .padding(.vertical)
+                            .padding(.bottom, getSafeArea().bottom == 0 ? 10 : (getSafeArea().bottom - 10))
+                            .background(
+                                MaterialEffect(style: .systemUltraThinMaterial)
+                                    .clipShape(BottomCurve(currentXValue: currentXValue))
+                            )
+                        ,alignment: .bottom
+                    )
+                    .ignoresSafeArea(.all, edges: .bottom)
                 }
             }
-                .padding(.vertical)
-                .padding(.bottom, getSafeArea().bottom == 0 ? 10 : (getSafeArea().bottom - 10))
-                .background(
-                    MaterialEffect(style: .systemUltraThinMaterial)
-                        .clipShape(BottomCurve(currentXValue: currentXValue))
-                )
-            
-            ,alignment: .bottom
-        )
-        .ignoresSafeArea(.all, edges: .bottom)
-        //.preferredColorScheme(.light)
-        
+        }
     }
-    
     
     // Tab Button:
     @ViewBuilder
@@ -93,18 +118,16 @@ struct AnimTabBar: View {
                     .contentShape(Rectangle())
                     .offset(y: currentTab == tab ? -50 : 0)
             }
+            
             // Setting initial curve position:
             .onAppear {
                 if tab == TabEnum.allCases.first && currentXValue == 0 {
                     currentXValue = proxy.frame(in: .global).midX
                 }
             }
-            
         }
         .frame(height: 10)
-        // Max Size    }
     }
-    
 }
     
     
