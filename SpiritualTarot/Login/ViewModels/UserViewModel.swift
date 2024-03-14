@@ -15,20 +15,21 @@ class UserViewModel: ObservableObject {
     }
     
     
-    // MARK: - Variables
+    // Variables:
     
+    @Published var loginFailed: Bool = false
+
     // ? ! ? ! ?
     //private var auth = Auth.auth()
     
     @Published var user: FireUser?
     
-    //Firebase Variablen:
+    //Firebase Variables:
     private let firebaseManager = FirebaseManager.shared
 
     
+    // Computed Properties:
     
-    
-    // MARK: - Computed Properties
     
     var userIsLoggedIn: Bool {
         firebaseManager.auth.currentUser != nil
@@ -43,7 +44,7 @@ class UserViewModel: ObservableObject {
         user?.name ?? "Name"
     }
     
-    // MARK: - Functions
+    // Functions:
     
     /**
      Überprüfen, ob aktuell ein User angemeldet ist. Falls ja, wird der User gesetzt.
@@ -65,15 +66,16 @@ class UserViewModel: ObservableObject {
     func login(email: String, password: String) {
         firebaseManager.auth.signIn(withEmail: email, password: password) { authResult, error in
             if let error {
-                print("Login failed:", error.localizedDescription)
+                self.loginFailed = true
+                print("Login has failed:", error.localizedDescription)
                 return
             }
             
             guard let authResult, let email = authResult.user.email else { return }
             print("User with email '\(email)' is logged in with id '\(authResult.user.uid)'")
-            
             self.fetchUser(with: authResult.user.uid)
         }
+        
     }
     
     /**

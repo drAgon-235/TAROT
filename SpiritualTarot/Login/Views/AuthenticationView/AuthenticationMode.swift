@@ -24,6 +24,7 @@ enum AuthenticationMode {
         }
     }
     
+    // Self made:
     // Makes the Name-TextField visible in AuthenticationView
     // only while registring, invisible while Logging-in:
     var nameFieldIsVisible: Bool {
