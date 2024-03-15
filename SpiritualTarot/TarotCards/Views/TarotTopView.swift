@@ -57,7 +57,7 @@ struct TarotTopView: View {
                         Text("3. Click each card to see the interpretation.")
                         Text("4. (optional) Click the 'SAVE' button to save a session.")
                         LogoutButtonAlert(color: Color.white)
-
+  
                     } label: {
                         Label("info", systemImage: "info.circle")
                     }
@@ -73,6 +73,7 @@ struct TarotTopView: View {
                 .sheet( isPresented: $showCardSheet01){
                     // the first card from the shuffled deck = random card
                     CardSheetExplanation( oneCard: cardVM.shuffledDeck().first!, givenText: "Your daily/random Card")
+                    
                     // optional:
                     Button("Close"){ showCardSheet01.toggle() }
                     // Spacer()

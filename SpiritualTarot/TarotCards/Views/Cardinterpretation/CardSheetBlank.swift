@@ -21,6 +21,7 @@ struct CardSheetBlank: View {
                     .font(.title)
                     .bold()
                     .foregroundColor(.purple)
+                    .padding(.top, 15)
                 
                 Image(oneCard.image!)
                     .resizable()
@@ -30,18 +31,18 @@ struct CardSheetBlank: View {
                 HStack {
                     Text("Value:")
                     Text(oneCard.value!)
-                    
+                        .foregroundColor(.purple)
                 }
-                .foregroundColor(.blue)
+                .padding(.top, 5)
                 .bold()
                 
                 HStack {
                     Text("Arcana:")
                     Text(oneCard.suite!)
+                        .foregroundColor(.purple)
                 }
-                .foregroundColor(.blue)
                 .bold()
-
+                
                 
                 Text("Keywords:")
                     .padding(.top, 10)
@@ -80,7 +81,11 @@ struct CardSheetBlank: View {
                 
             }
         }
-        .background(Color.purple.opacity(0.2))    }
+        .background {
+            LinearGradient(colors: [Color.mint.opacity(0.5), .purple.opacity(0.4), .mint.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing)
+        }
+        
+    }
 }
 
 /*
