@@ -23,9 +23,9 @@ struct AnimTabBar: View {
     @State var currentXValue: CGFloat = 0
     
     // Bonus : Splash Animation - Start values:
-    @State private var imageScale: CGSize = .init(width: 1.8, height: 1.8)
+    @State private var imageScale: CGSize = .init(width: 1.4, height: 1.4)
     @State private var readyToLoad: Bool = false
-
+    @StateObject var cardVM = CardViewModelCoreDB()
     
     var body: some View {
         ZStack {
@@ -37,11 +37,11 @@ struct AnimTabBar: View {
                     .shadow(radius: 10)
                     .scaleEffect(self.imageScale)
                     .onAppear {
-                        withAnimation(.easeIn(duration: 1)) {
+                        withAnimation(.easeIn(duration: 1.5)) {
                             self.imageScale = CGSize(width: 0.0, height: 0.0)
                             
                             // deadline is same as duration of animation:
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
                                 withAnimation {
                                     self.readyToLoad.toggle()
                                 }

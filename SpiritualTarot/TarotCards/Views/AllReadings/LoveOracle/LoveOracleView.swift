@@ -101,7 +101,7 @@ struct LoveOracleView: View {
         } else {  }
     }
     
-    // Variables for showing the "CardMeanig"-sheet:
+    // Variables for showing the "CardMeanig"-sheets:
     @State var showCardSheet01 = false
     @State var showCardSheet02 = false
     @State var showCardSheet03 = false
