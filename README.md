@@ -73,7 +73,7 @@ The free API for random quotes - no key, unlimited requests :smiley: : [zenquote
   ( *very good for basic educational purposes!!!*)
 
 ## Design of card backside
-The 'backside of the card deck' is designed by me : myny ZStacks with symbols and geographic figures
+The 'backside of the card deck' is designed by me : many ZStacks with symbols and geographic figures
 ( File: SpiritualTarot/Tarotcards/Views/Components/FlippingCard/Design_Test/CardBackTestView.swift )
 
 ## Design of Tarot Deck - Rider Waite Deck
