@@ -59,6 +59,7 @@ For the 'flying, rotating and twisting' Cards
 --------------------------------------------------------------------
 
 # Navigation - Architecture
+![Navigation_withTitle](https://github.com/drAgon-235/TAROT/assets/81158877/f8c12638-30ef-479d-8cbf-e17dc9a394b9)
 
 
 --------------------------------------------------------------------
