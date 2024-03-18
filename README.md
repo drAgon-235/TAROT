@@ -59,8 +59,6 @@ For the 'flying, rotating and twisting' Cards
 --------------------------------------------------------------------
 
 # Navigation - Architecture
-<img width="4508" alt="NAvigation_Tarot_iOS" src="https://github.com/drAgon-235/TAROT/assets/81158877/ae7e0b90-d254-4baf-9012-6f5430ec8237">
-
 
 
 --------------------------------------------------------------------
