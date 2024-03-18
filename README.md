@@ -1,6 +1,6 @@
 # Spiritual Tarot Guide APP - for Apple iOS
 (Final Project: Mobile Developer IHK - Syntax-Institute-Berlin 
- Module 4. : SwiftUI )
+- Module 4. : SwiftUI )
 
 ## The Idea
 Those who know Tarot also know that you can use the cards everytime and everywhere, in the train or on a party with other people. 
@@ -21,6 +21,7 @@ This offer is rounded off by a very personal special service:
 --------------------------------------------------------------------
 
 # Technical Features
+
 ### Minimum Deployments: iOS 17.2
 
 ### Pattern: MVVM
@@ -34,6 +35,7 @@ This offer is rounded off by a very personal special service:
 - Swift Data (API Cashing)
 - AppStorage
 
+
 ### Complex, nested & responsive Animations 
 For the 'flying, rotating and twisting' Cards
 - .withAnimation
@@ -42,6 +44,17 @@ For the 'flying, rotating and twisting' Cards
 - MaterialEffect
 
 
+### Other (required) Features
+- API Request
+- TabBar
+- Sheets
+- (Nested) List
+- (Nested) ScrollViews
+- NavigationStacks
+- Enums
+- Toolbar
+- Alerts 
+- Gradient Colors
 
 --------------------------------------------------------------------
 
