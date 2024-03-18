@@ -1,5 +1,6 @@
 # Spiritual Tarot Guide APP - for Apple iOS
-(Final Project: Syntax-Institute-Berlin - Kotlin-Course )
+(Final Project: Mobile Developer IHK - Syntax-Institute-Berlin 
+ Module 4. : SwiftUI )
 
 ## The Idea
 Those who know Tarot also know that you can use the cards everytime and everywhere, in the train or on a party with other people. 
@@ -19,8 +20,26 @@ This offer is rounded off by a very personal special service:
 
 --------------------------------------------------------------------
 
+# Technical Features
+### Minimum Deployments: iOS 17.2
 
+### Pattern: MVVM
 
+### Persistent Storages: 
+- Core Data (Tarot Cards)
+- Firebase / Firestore
+  * Favorite Quotes
+  * Saved Tarot Sessions
+  * User Management
+- Swift Data (API Cashing)
+- AppStorage
+
+### Complex, nested & responsive Animations 
+For the 'flying, rotating and twisting' Cards
+- .withAnimation
+- .rotation3Deffect
+- .matchedGeometryEffect using @Namespace 
+- MaterialEffect
 
 
 
@@ -34,7 +53,8 @@ The free API for random quotes - no key, unlimited requests :smiley: : [zenquote
   ( *very good for basic educational purposes!!!*)
 
 ## Design of card backside
-The design of the 'backside of the card deck' is a freepik from: [freepik.com](https://www.freepik.com/free-vector/hand-drawn-mystical-tarot-mobile-wallpaper_21862417.htm)
+The 'backside of the card deck' is designed by me : myny ZStacks with symbols and geographic figures
+( File: SpiritualTarot/Tarotcards/Views/Components/FlippingCard/Design_Test/CardBackTestView.swift )
 
 ## Design of Tarot Deck - Rider Waite Deck
 
