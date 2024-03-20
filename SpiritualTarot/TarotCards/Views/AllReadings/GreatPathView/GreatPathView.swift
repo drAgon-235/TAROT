@@ -152,7 +152,7 @@ struct GreatPathView: View {
                                   action_02: {cardVM.justShuffle()}, // this action makes the Deck really shuffle each time you click the BTN
                                   // you see the result: every time another card is flipping !!! This is Perfection !!!
                                   action_03: {})
-                                .padding(40)
+                        .padding(40)
                         // Optional Query-Text for repetition of shuffling:
                         if readingBtnIsVisible {
                             Text("..again..?")
@@ -165,70 +165,70 @@ struct GreatPathView: View {
                 ZStack {
                     // Card 1 - Front & Back & Transparent Button:
                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
-                                         .matchedGeometryEffect(id: "card_basic1", in: readingCard01, isSource: false)
-                                     CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[0])
-                                         .matchedGeometryEffect(id: "card_basic1", in: readingCard01, isSource: false)
-                                     // & the corresponding [transparent] button (appears just when card is laid out):
+                        .matchedGeometryEffect(id: "card_basic1", in: readingCard01, isSource: false)
+                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[0])
+                        .matchedGeometryEffect(id: "card_basic1", in: readingCard01, isSource: false)
+                    // & the corresponding [transparent] button (appears just when card is laid out):
                     TransparentCardBTN(action: {showCardSheet01.toggle()} )
-                                         .matchedGeometryEffect(id: "card_basic1", in: readingCard01, isSource: false)
-                                     
-                                     
-                                     // Card 2 - Front & Back:
-                                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
-                                         .matchedGeometryEffect(id: "card_basic2", in: readingCard02, isSource: false)
-                                     CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[1])
-                                         .matchedGeometryEffect(id: "card_basic2", in: readingCard02, isSource: false)
-                                     // & the corresponding [transparent] button (appears just when card is laid out):
+                        .matchedGeometryEffect(id: "card_basic1", in: readingCard01, isSource: false)
+                    
+                    
+                    // Card 2 - Front & Back:
+                    CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
+                        .matchedGeometryEffect(id: "card_basic2", in: readingCard02, isSource: false)
+                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[1])
+                        .matchedGeometryEffect(id: "card_basic2", in: readingCard02, isSource: false)
+                    // & the corresponding [transparent] button (appears just when card is laid out):
                     TransparentCardBTN(action: {showCardSheet02.toggle()} )
-                                         .matchedGeometryEffect(id: "card_basic2", in: readingCard02, isSource: false)
-                                     
-                                     // Card 3 - Front & Back:
-                                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
-                                         .matchedGeometryEffect(id: "card_basic3", in: readingCard03, isSource: false)
-                                     CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[2])
-                                         .matchedGeometryEffect(id: "card_basic3", in: readingCard03, isSource: false)
-                                     // & the corresponding [transparent] button (appears just when card is laid out):
+                        .matchedGeometryEffect(id: "card_basic2", in: readingCard02, isSource: false)
+                    
+                    // Card 3 - Front & Back:
+                    CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
+                        .matchedGeometryEffect(id: "card_basic3", in: readingCard03, isSource: false)
+                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[2])
+                        .matchedGeometryEffect(id: "card_basic3", in: readingCard03, isSource: false)
+                    // & the corresponding [transparent] button (appears just when card is laid out):
                     TransparentCardBTN(action: {showCardSheet03.toggle()} )
-                                         .matchedGeometryEffect(id: "card_basic3", in: readingCard03, isSource: false)
-                                     
-                                     // Card 4 - Front & Back:
-                                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
-                                         .matchedGeometryEffect(id: "card_basic4", in: readingCard04, isSource: false)
-                                     CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[3])
-                                         .matchedGeometryEffect(id: "card_basic4", in: readingCard04, isSource: false)
-                                     // & the corresponding [transparent] button (appears just when card is laid out):
+                        .matchedGeometryEffect(id: "card_basic3", in: readingCard03, isSource: false)
+                    
+                    // Card 4 - Front & Back:
+                    CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
+                        .matchedGeometryEffect(id: "card_basic4", in: readingCard04, isSource: false)
+                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[3])
+                        .matchedGeometryEffect(id: "card_basic4", in: readingCard04, isSource: false)
+                    // & the corresponding [transparent] button (appears just when card is laid out):
                     TransparentCardBTN(action: {showCardSheet04.toggle()} )
-                                         .matchedGeometryEffect(id: "card_basic4", in: readingCard04, isSource: false)
-                                     
-                                     // Card 5 - Front & Back:
-                                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
-                                         .matchedGeometryEffect(id: "card_basic5", in: readingCard05, isSource: false)
-                                     CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[4])
-                                         .matchedGeometryEffect(id: "card_basic5", in: readingCard05, isSource: false)
-                                     // & the corresponding [transparent] button (appears just when card is laid out):
+                        .matchedGeometryEffect(id: "card_basic4", in: readingCard04, isSource: false)
+                    
+                    // Card 5 - Front & Back:
+                    CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
+                        .matchedGeometryEffect(id: "card_basic5", in: readingCard05, isSource: false)
+                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[4])
+                        .matchedGeometryEffect(id: "card_basic5", in: readingCard05, isSource: false)
+                    // & the corresponding [transparent] button (appears just when card is laid out):
                     TransparentCardBTN(action: {showCardSheet05.toggle()} )
-                                         .matchedGeometryEffect(id: "card_basic5", in: readingCard05, isSource: false)
-                                                         
-                                     // Card 6 - Front & Back:
-                                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
-                                         .matchedGeometryEffect(id: "card_basic6", in: readingCard06, isSource: false)
-                                     CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[5])
-                                         .matchedGeometryEffect(id: "card_basic6", in: readingCard06, isSource: false)
-                                     // & the corresponding [transparent] button (appears just when card is laid out):
+                        .matchedGeometryEffect(id: "card_basic5", in: readingCard05, isSource: false)
+                    
+                    // Card 6 - Front & Back:
+                    CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
+                        .matchedGeometryEffect(id: "card_basic6", in: readingCard06, isSource: false)
+                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[5])
+                        .matchedGeometryEffect(id: "card_basic6", in: readingCard06, isSource: false)
+                    // & the corresponding [transparent] button (appears just when card is laid out):
                     TransparentCardBTN(action: {showCardSheet06.toggle()} )
-                                         .matchedGeometryEffect(id: "card_basic6", in: readingCard06, isSource: false)
-                                     
-                                     
-                                     // Card 6 - Front & Back:
-                                     CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
-                                         .matchedGeometryEffect(id: "card_basic7", in: readingCard07, isSource: false)
-                                     CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[6])
-                                         .matchedGeometryEffect(id: "card_basic7", in: readingCard07, isSource: false)
-                                     // & the corresponding [transparent] button (appears just when card is laid out):
+                        .matchedGeometryEffect(id: "card_basic6", in: readingCard06, isSource: false)
+                    
+                    
+                    // Card 6 - Front & Back:
+                    CardBackTurn(theWidth: width, theHeight: height, myDegree: $backDegreeReading)
+                        .matchedGeometryEffect(id: "card_basic7", in: readingCard07, isSource: false)
+                    CardFrontTurn(theWidth: width, theHeight: height, myDegree: $frontDegreeReading, card: cardVM.allCards[6])
+                        .matchedGeometryEffect(id: "card_basic7", in: readingCard07, isSource: false)
+                    // & the corresponding [transparent] button (appears just when card is laid out):
                     TransparentCardBTN(action: {showCardSheet07.toggle()} )
-                                         .matchedGeometryEffect(id: "card_basic7", in: readingCard07, isSource: false)
-
-                                  
+                        .matchedGeometryEffect(id: "card_basic7", in: readingCard07, isSource: false)
+                    
+                    
                     // The twisting cards on top:
                     // The "fake" cards (no front-picture) on the bottom (in the background)
                     CardBackTwist(theWidth: width, theHeight: height, myDegree: $backDegree_01)
@@ -264,132 +264,132 @@ struct GreatPathView: View {
             // End of HStack on top of view
             
             Spacer()
-           // ScrollView {
-               // Spacer()
-                VStack {
-                    //Spacer()
+            // ScrollView {
+            // Spacer()
+            VStack {
+                //Spacer()
+                
+                HStack {
+                    VStack {
+                        Text("PAST")
+                            .foregroundColor(.blue)
+                        Text("2")
+                        RoundedRectangle(cornerRadius: 10.0)
+                            .stroke(.blue.opacity(0.9), lineWidth: 3)
+                            .matchedGeometryEffect(id: move ? "card_basic2" : "", in: readingCard02, isSource: true)
+                            .frame(width: width, height: height)
+                        Text(" objective\nawareness")
+                            .font(.footnote)
+                    }
+                    .foregroundColor(.blue)
                     
-                    HStack {
-                        VStack {
-                            Text("PAST")
-                                .foregroundColor(.blue)
-                            Text("2")
-                                RoundedRectangle(cornerRadius: 10.0)
-                                    .stroke(.blue.opacity(0.9), lineWidth: 3)
-                                    .matchedGeometryEffect(id: move ? "card_basic2" : "", in: readingCard02, isSource: true)
-                                    .frame(width: width, height: height)
-                                Text(" objective\nawareness")
-                                    .font(.footnote)
-                        }
-                        .foregroundColor(.blue)
-                        
-                        VStack {
-                            Text("1")
-                            RoundedRectangle(cornerRadius: 10.0)
-                                    .stroke(.green.opacity(0.9), lineWidth: 3)
-                                    .matchedGeometryEffect(id: move ? "card_basic1" : "", in: readingCard01, isSource: true)
-                                    .frame(width: width, height: height)
-                                Text("Chance")
-                                    .foregroundColor(.green)
-                        }
-                        .foregroundColor(.green)
-                        // positioning this stack a little bit higher, than the other 2 cards:
-                        .offset(x: 0, y: -30)
-                        // and exactly central:
-                        .padding(.horizontal, 30)
-                        
-                        
-                        VStack {
-                            Text("FUTURE")
-                            Text("7")
-                                RoundedRectangle(cornerRadius: 10.0)
-                                    .stroke(.red.opacity(0.9), lineWidth: 3)
-                                    .matchedGeometryEffect(id: move ? "card_basic7" : "", in: readingCard07, isSource: true)
-                                    .frame(width: width, height: height)
-                                Text(" objective\nawareness")
-                                    .font(.footnote)
-                        }
-                        .foregroundColor(.red)
-
+                    VStack {
+                        Text("1")
+                        RoundedRectangle(cornerRadius: 10.0)
+                            .stroke(.green.opacity(0.9), lineWidth: 3)
+                            .matchedGeometryEffect(id: move ? "card_basic1" : "", in: readingCard01, isSource: true)
+                            .frame(width: width, height: height)
+                        Text("Chance")
+                            .foregroundColor(.green)
+                    }
+                    .foregroundColor(.green)
+                    // positioning this stack a little bit higher, than the other 2 cards:
+                    .offset(x: 0, y: -30)
+                    // and exactly central:
+                    .padding(.horizontal, 30)
+                    
+                    
+                    VStack {
+                        Text("FUTURE")
+                        Text("7")
+                        RoundedRectangle(cornerRadius: 10.0)
+                            .stroke(.red.opacity(0.9), lineWidth: 3)
+                            .matchedGeometryEffect(id: move ? "card_basic7" : "", in: readingCard07, isSource: true)
+                            .frame(width: width, height: height)
+                        Text(" objective\nawareness")
+                            .font(.footnote)
+                    }
+                    .foregroundColor(.red)
+                    
+                    
+                }
+                Spacer()
+                
+                HStack(spacing: 30) {
+                    VStack {
+                        Text("3")
+                        RoundedRectangle(cornerRadius: 10.0)
+                            .stroke(.blue.opacity(0.9), lineWidth: 3)
+                            .matchedGeometryEffect(id: move ? "card_basic3" : "", in: readingCard03, isSource: true)
+                            .frame(width: width, height: height)
+                        // .padding(.horizontal, 60)
+                        Text("subjective\nemotions")
+                            .font(.footnote)
+                    }
+                    .padding(.horizontal, 50)
+                    .foregroundColor(.blue)
+                    
+                    
+                    VStack{
+                        Text("6")
+                        RoundedRectangle(cornerRadius: 10.0)
+                            .stroke(.red.opacity(0.9), lineWidth: 3)
+                            .matchedGeometryEffect(id: move ? "card_basic6" : "", in: readingCard06, isSource: true)
+                            .frame(width: width, height: height)
+                        //    .padding(.horizontal, 60)
+                        Text("subjective\nemotions")
+                            .font(.footnote)
+                    }
+                    .padding(.horizontal, 50)
+                    .foregroundColor(.red)
+                    
+                }
+                // space to upper HStack:
+                // .padding(.top, 10)
+                Spacer()
+                
+                HStack(spacing: 30) {
+                    VStack {
+                        Text("4")
+                        RoundedRectangle(cornerRadius: 10.0)
+                            .stroke(.blue.opacity(0.9), lineWidth: 3)
+                            .matchedGeometryEffect(id: move ? "card_basic4" : "", in: readingCard04, isSource: true)
+                            .frame(width: width, height: height)
+                        // .padding(.horizontal, 60)
+                        Text("reality")
+                            .font(.footnote)
                         
                     }
-                    Spacer()
+                    .padding(.horizontal, 50)
+                    .foregroundColor(.blue)
                     
-                    HStack(spacing: 30) {
-                        VStack {
-                            Text("3")
-                                RoundedRectangle(cornerRadius: 10.0)
-                                    .stroke(.blue.opacity(0.9), lineWidth: 3)
-                                    .matchedGeometryEffect(id: move ? "card_basic3" : "", in: readingCard03, isSource: true)
-                                    .frame(width: width, height: height)
-                                   // .padding(.horizontal, 60)
-                                Text("subjective\nemotions")
-                                    .font(.footnote)
-                        }
-                        .padding(.horizontal, 50)
-                        .foregroundColor(.blue)
-
-                        
-                        VStack{
-                            Text("6")
-                                RoundedRectangle(cornerRadius: 10.0)
-                                    .stroke(.red.opacity(0.9), lineWidth: 3)
-                                    .matchedGeometryEffect(id: move ? "card_basic6" : "", in: readingCard06, isSource: true)
-                                    .frame(width: width, height: height)
-                                //    .padding(.horizontal, 60)
-                                Text("subjective\nemotions")
-                                        .font(.footnote)
-                        }
-                        .padding(.horizontal, 50)
-                        .foregroundColor(.red)
-                        
+                    
+                    VStack{
+                        Text("5")
+                        RoundedRectangle(cornerRadius: 10.0)
+                            .stroke(.red.opacity(0.9), lineWidth: 3)
+                            .matchedGeometryEffect(id: move ? "card_basic5" : "", in: readingCard05, isSource: true)
+                            .frame(width: width, height: height)
+                        //.padding(.horizontal, 60)
+                        Text("reality")
+                            .font(.footnote)
                     }
-                    // space to upper HStack:
-                   // .padding(.top, 10)
-                    Spacer()
-                    
-                    HStack(spacing: 30) {
-                        VStack {
-                            Text("4")
-                            RoundedRectangle(cornerRadius: 10.0)
-                                    .stroke(.blue.opacity(0.9), lineWidth: 3)
-                                    .matchedGeometryEffect(id: move ? "card_basic4" : "", in: readingCard04, isSource: true)
-                                    .frame(width: width, height: height)
-                                   // .padding(.horizontal, 60)
-                            Text("reality")
-                                    .font(.footnote)
-                            
-                        }
-                        .padding(.horizontal, 50)
-                        .foregroundColor(.blue)
-
-                        
-                        VStack{
-                            Text("5")
-                            RoundedRectangle(cornerRadius: 10.0)
-                                    .stroke(.red.opacity(0.9), lineWidth: 3)
-                                    .matchedGeometryEffect(id: move ? "card_basic5" : "", in: readingCard05, isSource: true)
-                                    .frame(width: width, height: height)
-                                    //.padding(.horizontal, 60)
-                            Text("reality")
-                                    .font(.footnote)
-                        }
-                        .padding(.horizontal, 50)
-                        .foregroundColor(.red)
-                    }
-                    // Coorective Element:
-                    RoundedRectangle(cornerRadius: 10.0)
-                        .frame(height: 4)
-                        .opacity(0)
-                    Spacer()
-                    
-                    
-               //    } // End of scroll view
-           //     .padding(.top, 30)
+                    .padding(.horizontal, 50)
+                    .foregroundColor(.red)
+                }
+                // Coorective Element:
+                RoundedRectangle(cornerRadius: 10.0)
+                    .frame(height: 4)
+                    .opacity(0)
+                Spacer()
+                
+                
+                //    } // End of scroll view
+                //     .padding(.top, 30)
                 
             }
             .padding(.bottom, 50)
-
+            
             .sheet( isPresented: $showCardSheet01){
                 CardSheetExplanation(oneCard: cardVM.allCards[0], givenText: "This card represents the CHANCES  and GOALS at the end of your path. The possible outcome.")
             }
@@ -425,7 +425,7 @@ struct GreatPathView: View {
                     Text("2. Click 'READING' button.")
                     Text("3. Click each card to see the interpretation.")
                     Text("4. (optional) Click the 'SAVE' button to save a session.")
-
+                    
                 } label: {
                     Label("info", systemImage: "info.circle")
                 }
@@ -445,9 +445,10 @@ struct GreatPathView: View {
                 sessionIsSaved = true
             }
         }
-        .background(Color.blue.opacity(0.2))
+        .background (
+            LinearGradient(colors: [Color.blue.opacity(0.4), .purple.opacity(0.2), .blue.opacity(0.4)], startPoint: .bottomTrailing, endPoint: .topLeading)
+        )  // it makes a big difference, whether the brackets are round or curly !!!!    }
     }
-        
 }
 
 #Preview {

@@ -322,7 +322,7 @@ struct LoveOracleView: View {
             }
         }
         .background (
-            LinearGradient(colors: [Color.blue.opacity(0.4), .purple.opacity(0.2), .blue.opacity(0.4)], startPoint: .topLeading, endPoint: .bottomTrailing)
+            LinearGradient(colors: [Color.blue.opacity(0.4), .purple.opacity(0.2), .blue.opacity(0.4)], startPoint: .topTrailing, endPoint: .bottomLeading)
         )  // it makes a big difference, whether the brackets are round or curly !!!!
     }
 }

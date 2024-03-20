@@ -30,7 +30,6 @@ struct DBManager {
     var context: NSManagedObjectContext { container.viewContext }
 
     // Functions:
-    
     // Self made:
     // checking if CoreDB container is empty (we want to fill the CoreDB only once, initially, see VM):
     func containerIsEmpty() -> Bool {

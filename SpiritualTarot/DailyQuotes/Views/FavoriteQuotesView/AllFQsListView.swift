@@ -13,7 +13,7 @@ struct AllFQsListView: View {
     
     var body: some View {
         ZStack {
-            Color.orange.opacity(0.2)
+           Color.orange.opacity(0.2)
                 .ignoresSafeArea() // has to be exactly here, not at the end of the Stack
 
             VStack {
@@ -33,7 +33,7 @@ struct AllFQsListView: View {
                         }
                 }
             }
-            /* here the swipesActions didn't work : ?!?!?!??
+            /* with ScrollView the swipesActions didn't work : ?!?!?!??
              ScrollView(showsIndicators: false) {
              VStack {
              ForEach(favQuotesVM.favQuotes) { favoriteQuote in

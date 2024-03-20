@@ -19,7 +19,7 @@ struct CupsView: View {
         VStack {
             Spacer()
             Text("Tap the card to learn more about it")
-            Spacer()
+                .padding(20)
             ScrollView(.horizontal) {
                 HStack {
                     ForEach(cardVM.allCards) { thisCard in
@@ -39,21 +39,16 @@ struct CupsView: View {
                                 showCardSheet01.toggle()
                             }
                         }
-                        
                     }
                     .padding()
                     
                 }
-                
             }
-            
             Spacer()
         }
-        
         .sheet( isPresented: $showCardSheet01){
             CardSheetBlank(oneCard: cardForSheet)
         }
-        
     }
 }
 

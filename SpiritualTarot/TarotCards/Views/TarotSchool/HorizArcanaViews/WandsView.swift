@@ -19,7 +19,7 @@ struct WandsView: View {
         VStack {
             Spacer()
             Text("Tap the card to learn more about it")
-            Spacer()
+                .padding(20)
             ScrollView(.horizontal) {
                 
                 HStack {

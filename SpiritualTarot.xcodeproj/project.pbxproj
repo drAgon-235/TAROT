@@ -521,9 +521,9 @@
 		29C46C122B6000AE00881C4E /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				29C46C282B6006F200881C4E /* ViewModels */,
-				29C46C272B6006EB00881C4E /* Views */,
 				29C46C262B6006DF00881C4E /* DataModels */,
+				29C46C272B6006EB00881C4E /* Views */,
+				29C46C282B6006F200881C4E /* ViewModels */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -532,8 +532,8 @@
 			isa = PBXGroup;
 			children = (
 				29C46C1A2B6002DC00881C4E /* DataModels */,
-				29C46C192B6002BD00881C4E /* ViewModels */,
 				29C46C182B6002B400881C4E /* Views */,
+				29C46C192B6002BD00881C4E /* ViewModels */,
 			);
 			path = DailyQuotes;
 			sourceTree = "<group>";
@@ -543,8 +543,8 @@
 			children = (
 				298A45082B7D4834006F8A77 /* CardsRepository */,
 				298A45072B7D4799006F8A77 /* DataModels */,
-				298A45062B7D478A006F8A77 /* ViewModels */,
 				29C46C1F2B60043900881C4E /* Views */,
+				298A45062B7D478A006F8A77 /* ViewModels */,
 			);
 			path = TarotCards;
 			sourceTree = "<group>";
@@ -561,10 +561,10 @@
 		29C46C182B6002B400881C4E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				29C46C1C2B6003ED00881C4E /* QuoteTopView.swift */,
 				29C46C842B60320200881C4E /* FavoriteQuotesView */,
 				29C46C832B6031F300881C4E /* DailyQuoteView */,
 				29C46C802B60312500881C4E /* Components */,
-				29C46C1C2B6003ED00881C4E /* QuoteTopView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

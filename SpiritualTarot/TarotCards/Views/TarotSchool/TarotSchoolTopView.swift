@@ -14,7 +14,9 @@ struct TarotSchoolTopView: View {
     var body: some View {
         ZStack {
             //Image("aaastars02").resizable().scaledToFill().opacity(0.8)
-            Color.mint.opacity(0.2)
+            LinearGradient(colors: [Color.mint.opacity(0.4), .purple.opacity(0.2), .mint.opacity(0.4)], startPoint: .topLeading, endPoint: .bottomTrailing)
+
+            //Color.mint.opacity(0.2)
                 .ignoresSafeArea() // has to be exactly here, not at the end of the Stack
 
             VStack {
@@ -36,6 +38,7 @@ struct TarotSchoolTopView: View {
                 .pickerStyle(.segmented)
                 .padding(.horizontal, 10)
                 
+                // The selected View:
                 selectedTab.tabView()
             }
         }

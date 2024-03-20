@@ -11,18 +11,13 @@ struct CardBackTestView: View {
     
     let theWidth: CGFloat
     let theHeight: CGFloat
-   
-    // Signal Flagto vanish !!!!
-    // Signal Flagto vanish !!!!
-    // Signal Flagto vanish !!!!
 
     var body: some View {
         
         // The borders and backgrounds:
-        // The bisser rectanagle:
+        // The rectanagle:
         ZStack {
  
-            
             // the mint margin, also in the back
             RoundedRectangle(cornerRadius: 20.0)
                 .fill(.mint.opacity(0.2))

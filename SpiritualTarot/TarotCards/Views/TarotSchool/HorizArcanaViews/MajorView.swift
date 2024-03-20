@@ -20,9 +20,9 @@ struct MajorView: View {
         VStack {
             Spacer()
             Text("Tap the card to learn more about it")
-            Spacer()
+                .padding(20)
+            //Spacer()
             ScrollView(.horizontal) {
-                
                 HStack {
                     ForEach(cardVM.allCards) { thisCard in
                         if thisCard.suite == "Major Arcana" {
@@ -41,22 +41,16 @@ struct MajorView: View {
                                 showCardSheet01.toggle()
                             }
                         }
-                        
                     }
                     .padding()
                     
                 }
-                .padding(.bottom, 40)
             }
             Spacer()
         }
-        
-        
         .sheet( isPresented: $showCardSheet01){
             CardSheetBlank(oneCard: cardForSheet)
-            
         }
-        
     }
 }
 

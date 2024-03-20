@@ -128,13 +128,13 @@ struct SimplePathArchiveView: View {
                     CardSheetExplanation(oneCard: cardVM.allCards[cardId03], givenText: "This card represents the FUTURE. \nThe direction it all evolves to. \nThe outcome.")
                 }
         }
-        .background(Color.orange.opacity(0.2))
-
         // workaround to eliminate the big space under the Navigationtitle "Back"
         .padding(.top, 90)
         .ignoresSafeArea()
-       // .background(Color.blue.opacity(0.2))
-
+        .background (
+            LinearGradient(colors: [Color.orange.opacity(0.4), .purple.opacity(0.3), .orange.opacity(0.4)], startPoint: .bottomTrailing, endPoint: .topLeading)
+        )  // it makes a big difference, whether the brackets are round or curly !!!!
+        
     }
 }
 

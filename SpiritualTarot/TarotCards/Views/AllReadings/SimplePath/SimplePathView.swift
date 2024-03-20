@@ -290,8 +290,9 @@ struct SimplePathView: View {
                 sessionIsSaved = true
             }
         }
-        .background(Color.blue.opacity(0.2)).scaledToFill()
-
+        .background (
+            LinearGradient(colors: [Color.blue.opacity(0.4), .purple.opacity(0.2), .blue.opacity(0.4)], startPoint: .bottomTrailing, endPoint: .topLeading)
+        )  // it makes a big difference, whether the brackets are round or curly !!!!
     }
     
 }

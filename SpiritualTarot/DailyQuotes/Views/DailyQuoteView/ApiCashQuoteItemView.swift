@@ -81,7 +81,7 @@ struct ApiCashQuoteItemView: View {
                 //(it took me 2 day to fix it with: func favQuoteExists()  above)
                 if favQuoteExists()  {
                         Text("Is saved in your")
-                            .foregroundColor(.purple)
+                            //.foregroundColor(.purple)
                     
                         NavigationLink(destination: AllFQsListView()) {
                             ShowFavListBTN()

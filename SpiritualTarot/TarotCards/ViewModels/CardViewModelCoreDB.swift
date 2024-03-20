@@ -16,9 +16,8 @@ class CardViewModelCoreDB: ObservableObject {
         saveCardsToCoreDB()
         fetchCardsFromCoreDB()
     }
-    // MARK: - Variables
-    
-    
+    // Variables
+
     // The source of TarotCard-Data for the CoreDB:
     private let cardsRepo = TarotCardsRepo()
     
@@ -27,7 +26,7 @@ class CardViewModelCoreDB: ObservableObject {
     @Published var allCards: [Card] = []
     
     
-    // MARK: Functions
+    // Functions
     
     func fetchCardsFromCoreDB() {
         let request = NSFetchRequest<Card>(entityName: "Card")
@@ -61,16 +60,8 @@ class CardViewModelCoreDB: ObservableObject {
                     coreCard.qTA = card.qTA
                     coreCard.descript = card.description
                     coreCard.image = card.image
-                    
-                    /*
-                    if let imageData = card.image {
-                        self.image = UIImage(data: imageData)
-                    } else {
-                        self.image = nil
-                    }
-                     */
+
                     container.save()
-          //      }
             }
         }
     }
@@ -95,7 +86,6 @@ class CardViewModelCoreDB: ObservableObject {
         container.save()
         fetchCardsFromCoreDB()
     }
-
     
     // returns the deck (@Published var cards) shuffled - but does NOT shuffle THIS deck!!!:
     // (only used in "Your daily/random Card" as randomizer, used only once, each time)
@@ -104,13 +94,10 @@ class CardViewModelCoreDB: ObservableObject {
         return shuffledDeck
     }
     
-    
     // only shuffles THIS deck - allows multiple shuffleing the deck before laying
     func justShuffle() {
         allCards.shuffle()
     }
-    
-        
 }
     
     

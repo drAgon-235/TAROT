@@ -22,7 +22,7 @@ struct QuoteView: View {
                         HStack{
                             Image(systemName: "quote.opening")
                             Text("Quote of the day")
-                                .font(.title3)
+                                .font(.title2)
                                 .bold()
                             Image(systemName: "quote.closing")
                         }
@@ -30,7 +30,7 @@ struct QuoteView: View {
                         
                         Text("for: ")
                             //.padding(5)
-                            .font(.title3)
+                            .font(.title2)
                             .bold()
                         
                         Text(userVM.name)
@@ -39,7 +39,7 @@ struct QuoteView: View {
                             .font(.title2)
                             .foregroundColor(.purple)
                     }
-                    .foregroundColor(.mint)
+                    //.foregroundColor(.orange)
                     
                     DateTodayView()
                         .padding(.top, 25)
@@ -57,8 +57,9 @@ struct QuoteView: View {
                 
                 Spacer()
             }
-            .background(Color.purple.opacity(0.2))
-
+            .background {
+                LinearGradient(colors: [Color.purple.opacity(0.5), .orange.opacity(0.4)], startPoint: .topLeading, endPoint: .bottomTrailing)
+            }
         }
     }
 }

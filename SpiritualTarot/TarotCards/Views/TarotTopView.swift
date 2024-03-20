@@ -39,16 +39,16 @@ struct TarotTopView: View {
                 }
                // .navigationBarTitle(Text("Tarot Home"))
 
-                /*
+                
                 .toolbar {
                     HStack {
                         Spacer()
                         LogoutButtonAlert(color: Color.white)
                     }
                 }
-                */
                 
                 
+/*
                 .toolbar(content: {
                     Menu {
                         Text("Instruction:")
@@ -56,13 +56,19 @@ struct TarotTopView: View {
                         Text("2. Click 'READING' button.")
                         Text("3. Click each card to see the interpretation.")
                         Text("4. (optional) Click the 'SAVE' button to save a session.")
-                        LogoutButtonAlert(color: Color.white)
+                       
+                        Button  {
+                            
+                        } label: {
+                            LogoutButtonAlert(color: Color.white)
+                        }
+                        
   
                     } label: {
                         Label("info", systemImage: "info.circle")
                     }
                 })
-
+*/
             }
         }
 

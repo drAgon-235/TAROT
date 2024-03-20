@@ -24,7 +24,7 @@ struct DateTodayView: View {
     
     var body: some View {
         VStack {
-            LinearGradient(gradient: Gradient(colors: [Color.mint, Color.purple, Color.mint]), startPoint: .leading, endPoint: .trailing)
+            LinearGradient(gradient: Gradient(colors: [Color.orange, Color.purple, Color.orange]), startPoint: .leading, endPoint: .trailing)
                 .frame(height: 3)
                 .padding(.horizontal, 120)
             
@@ -34,11 +34,11 @@ struct DateTodayView: View {
             Text(getCurrentDate())
                 .font(.title3)
             
-            LinearGradient(gradient: Gradient(colors: [Color.mint, Color.purple, Color.mint]), startPoint: .leading, endPoint: .trailing)
+            LinearGradient(gradient: Gradient(colors: [Color.orange, Color.purple, Color.orange]), startPoint: .leading, endPoint: .trailing)
                 .frame(height: 3)
                 .padding(.horizontal, 120)
         }
-        .foregroundColor(.mint)
+        .foregroundColor(.purple)
     }
 }
 
