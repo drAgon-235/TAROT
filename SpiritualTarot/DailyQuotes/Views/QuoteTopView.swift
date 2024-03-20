@@ -18,8 +18,8 @@ struct QuoteTopView: View {
     var body: some View {
         NavigationStack{
             
-            // Background:
             ZStack {
+                // Background:
                 Image("aaaBackQuote").resizable().scaledToFill().opacity(0.5)
                 
                 VStack {
@@ -41,20 +41,16 @@ struct QuoteTopView: View {
                         })
                     .padding(40)
                     
-                    
                     NavigationLink(destination: AllFQsListView()) {
                         ShowFavBTN()
                     }
-                    .navigationBarTitle(Text("Quotes Home"))
-                    
+                    //.navigationBarTitle(Text("Quotes Home"))
                     .toolbar {
                         HStack {
                             Spacer()
                             LogoutButtonAlert(color: Color.purple)
                         }
                     }
-                    
-                    
                 }
             }
         }
