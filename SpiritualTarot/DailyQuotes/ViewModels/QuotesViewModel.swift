@@ -22,6 +22,7 @@ class QuotesViewModel: ObservableObject {
         let outputQuotes = try JSONDecoder().decode([Quote].self, from: data)
         return outputQuotes
         
+        
 // The cashing to SwiftData happens in the View, unlike the Tutorial ;-D
         // caching in SwiftData:
       //  outputQuotes.forEach { quoteModelContext.insert($0) }

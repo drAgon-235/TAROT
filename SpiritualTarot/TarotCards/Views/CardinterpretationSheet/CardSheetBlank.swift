@@ -15,6 +15,18 @@ struct CardSheetBlank: View {
         
     var body: some View {
         ScrollView {
+            ZStack {
+                RoundedRectangle(cornerRadius: 10.0)
+                    .fill(.mint.opacity(0.2))
+                    .stroke(.purple.opacity(0.9), lineWidth: 3)
+                
+                Text("The position of the card within the laying pattern depicts the unique perspective for it's distinct interpretation... ")
+                    .padding()
+                    .foregroundColor(.brown)
+                    .font(.title3)
+                    .bold()
+            }
+            .padding()
             
             VStack {
                 Text(oneCard.name!)
@@ -77,8 +89,6 @@ struct CardSheetBlank: View {
                     .bold()
                 Text(oneCard.descript!)
                     .padding(.horizontal, 20)
-                
-                
             }
         }
         .background {

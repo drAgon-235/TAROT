@@ -75,7 +75,6 @@ class SavedSessionViewModel: ObservableObject {
             }
             print("DELETED FavQuote with ID: \(id)")
         }
-        
     }
     
     // gives us the current date formatted to a String:

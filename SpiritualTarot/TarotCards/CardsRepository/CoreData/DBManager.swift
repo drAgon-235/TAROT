@@ -30,6 +30,18 @@ struct DBManager {
     var context: NSManagedObjectContext { container.viewContext }
 
     // Functions:
+    
+    // Saving - boiler plate:
+    func save() {
+        guard context.hasChanges else { return }
+        
+        do {
+            try context.save()
+        } catch let error as NSError {
+            NSLog("Unresolved error saving context: \(error), \(error.userInfo)")
+        }
+    }
+    
     // Self made:
     // checking if CoreDB container is empty (we want to fill the CoreDB only once, initially, see VM):
     func containerIsEmpty() -> Bool {
@@ -46,21 +58,5 @@ struct DBManager {
         }
         return isEmpty
     }
-    
-    // Save boiler plate:
-    func save() {
-        guard context.hasChanges else { return }
-        
-        do {
-            try context.save()
-        } catch let error as NSError {
-            NSLog("Unresolved error saving context: \(error), \(error.userInfo)")
-        }
-    }
-    
-    
-
-    
-
     
 }

@@ -39,11 +39,13 @@ struct QuoteTopView: View {
                             .cornerRadius(10)
                             .shadow(radius: 10)
                         })
+                    .shadow(radius: 10)
                     .padding(40)
                     
                     NavigationLink(destination: AllFQsListView()) {
                         ShowFavBTN()
                     }
+                    .shadow(radius: 10)
                     //.navigationBarTitle(Text("Quotes Home"))
                     .toolbar {
                         HStack {

@@ -16,7 +16,8 @@ class CardViewModelCoreDB: ObservableObject {
         saveCardsToCoreDB()
         fetchCardsFromCoreDB()
     }
-    // Variables
+    
+// Variables:
 
     // The source of TarotCard-Data for the CoreDB:
     private let cardsRepo = TarotCardsRepo()
@@ -26,7 +27,7 @@ class CardViewModelCoreDB: ObservableObject {
     @Published var allCards: [Card] = []
     
     
-    // Functions
+// Functions
     
     func fetchCardsFromCoreDB() {
         let request = NSFetchRequest<Card>(entityName: "Card")
@@ -41,12 +42,8 @@ class CardViewModelCoreDB: ObservableObject {
     
     // Self made:
     func saveCardsToCoreDB() {
-        // new version: Checking the CoreDB container itself (if it's empty):
+        //  Checking the CoreDB container itself (if it's empty):
         if container.containerIsEmpty() {
-            
-        /* //old version:  checking the CardViemModelCoreDB.allCards list:
-            if allCards.isEmpty {
-        */
                 for card in cardsRepo.cardsList {
                     // transferring the hardcoded cards to CoreData:
                     let coreCard = Card(context: container.context)
@@ -66,7 +63,21 @@ class CardViewModelCoreDB: ObservableObject {
         }
     }
     
-    // only needed for testing the CoreDB
+    // returns the deck (@Published var cards) shuffled - but does NOT shuffle THIS deck!!!:
+    // (only used in "Your daily/random Card" as randomizer, used only once, each time)
+    func shuffledDeck() -> [Card] {
+        let shuffledDeck: [Card] = allCards.shuffled()
+        return shuffledDeck
+    }
+    
+    // only shuffles THIS deck - allows multiple shuffleing the deck before laying
+    func justShuffle() {
+        allCards.shuffle()
+    }
+    
+    
+    
+// only needed for testing the CoreDB:
     // (just deletes data, not the Entity itself):
     func delete() {
         let allcards = container.context.persistentStoreCoordinator
@@ -87,17 +98,7 @@ class CardViewModelCoreDB: ObservableObject {
         fetchCardsFromCoreDB()
     }
     
-    // returns the deck (@Published var cards) shuffled - but does NOT shuffle THIS deck!!!:
-    // (only used in "Your daily/random Card" as randomizer, used only once, each time)
-    func shuffledDeck() -> [Card] {
-        let shuffledDeck: [Card] = allCards.shuffled()
-        return shuffledDeck
-    }
     
-    // only shuffles THIS deck - allows multiple shuffleing the deck before laying
-    func justShuffle() {
-        allCards.shuffle()
-    }
 }
     
     

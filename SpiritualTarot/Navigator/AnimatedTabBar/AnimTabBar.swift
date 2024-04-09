@@ -38,7 +38,7 @@ struct AnimTabBar: View {
                         withAnimation(.easeIn(duration: 1.5)) {
                             self.imageScale = CGSize(width: 0.0, height: 0.0)
                             
-                            // deadline is same as duration of animation:
+                            // deadline should be the same as duration of animation !!! :
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
                                 withAnimation {
                                     self.readyToLoad.toggle()

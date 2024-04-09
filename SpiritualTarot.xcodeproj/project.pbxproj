@@ -335,13 +335,13 @@
 			path = SimplePath;
 			sourceTree = "<group>";
 		};
-		298A451A2B7D52BF006F8A77 /* Cardinterpretation */ = {
+		298A451A2B7D52BF006F8A77 /* CardinterpretationSheet */ = {
 			isa = PBXGroup;
 			children = (
 				298A452D2B7D5896006F8A77 /* CardSheetExplanation.swift */,
 				2978ACD42B7EBAFA0090C12D /* CardSheetBlank.swift */,
 			);
-			path = Cardinterpretation;
+			path = CardinterpretationSheet;
 			sourceTree = "<group>";
 		};
 		298A451B2B7D5326006F8A77 /* FlippingCard */ = {
@@ -595,7 +595,7 @@
 				29197BE82B8004AF00B05C47 /* SavedSessions */,
 				29A6DD5D2B7E266900F6F06C /* TarotSchool */,
 				298A453A2B7D6D58006F8A77 /* AllReadings */,
-				298A451A2B7D52BF006F8A77 /* Cardinterpretation */,
+				298A451A2B7D52BF006F8A77 /* CardinterpretationSheet */,
 				298A45182B7D527E006F8A77 /* Components */,
 				29C46C222B60046F00881C4E /* TarotTopView.swift */,
 			);

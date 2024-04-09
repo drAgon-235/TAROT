@@ -51,9 +51,12 @@ struct QuoteView: View {
                     ApiCashQuoteItemView()
                     // implementing the cache container: (gets FORGOTTEN very OFTEN !!!)
                         .modelContainer(for: [Quote.self])
+                        //.shadow(radius: 10)
+
                     
                     ShareLink(item: "TEST 123")
                 }
+               // .shadow(radius: 10)
                 
                 Spacer()
             }

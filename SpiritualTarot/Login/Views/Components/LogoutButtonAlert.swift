@@ -34,7 +34,7 @@ struct LogoutButtonAlert: View {
 
             }
             Button("Cancel", role: .cancel) {}
-        }   
+        }
     }
 }
 

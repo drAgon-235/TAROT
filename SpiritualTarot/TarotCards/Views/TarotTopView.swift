@@ -25,18 +25,25 @@ struct TarotTopView: View {
                 CardOfTheDayBTN(action: {
                     showCardSheet01.toggle()
                 })
+                .shadow(radius: 10)
+
                 
                 NavigationLink(destination: AllPathsTopView()) {
                     NavigationBTN(text: "Reading Sessions", color: Color.blue)
                 }
+                .shadow(radius: 10)
+
                 
                 NavigationLink(destination: TarotSchoolTopView()) {
                     NavigationBTN(text: "Tarot School", color: Color.mint)            
                 }
+                .shadow(radius: 10)
                 
                 NavigationLink(destination: ArchivedSessionsListView(width: 80, height: 120)) {
                     NavigationBTN(text: "Saved Sessions", color: Color.orange)
                 }
+                .shadow(radius: 10)
+
                // .navigationBarTitle(Text("Tarot Home"))
 
                 
