@@ -58,6 +58,7 @@ struct CardSheetBlank: View {
                 
                 
                 Text("Keywords:")
+                    .font(Font.custom("MerriGables", size: 24))
                     .padding(.top, 10)
                     .bold()
                 Text(oneCard.keywords!)
@@ -65,6 +66,7 @@ struct CardSheetBlank: View {
                 
                 
                 Text("Meaning:")
+                    .font(Font.custom("MerriGables", size: 24))
                     .padding(.top, 10)
                     .bold()
                 Text(oneCard.meaning!)
@@ -72,6 +74,7 @@ struct CardSheetBlank: View {
                 
                 
                 Text("Fortune Telling:")
+                    .font(Font.custom("MerriGables", size: 24))
                     .padding(.top, 10)
                     .bold()
                 Text(oneCard.fortuneTelling!)
@@ -79,6 +82,7 @@ struct CardSheetBlank: View {
                 
                 
                 Text("Questions to ask:")
+                    .font(Font.custom("MerriGables", size: 24))
                     .padding(.top, 10)
                     .bold()
                 Text(oneCard.qTA!)
@@ -86,6 +90,7 @@ struct CardSheetBlank: View {
                 
                 
                 Text("Description:")
+                    .font(Font.custom("MerriGables", size: 24))
                     .padding(.top, 10)
                     .bold()
                 Text(oneCard.descript!)
