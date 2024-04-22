@@ -46,6 +46,8 @@
 		298A45462B7D7E20006F8A77 /* LittleCrossView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A45452B7D7E20006F8A77 /* LittleCrossView.swift */; };
 		298F611E2B81408E00B5D4D7 /* SimplePathArchiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298F611D2B81408E00B5D4D7 /* SimplePathArchiveView.swift */; };
 		298F61202B81548B00B5D4D7 /* ArchivedSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298F611F2B81548B00B5D4D7 /* ArchivedSessionView.swift */; };
+		299BC26D2BD6D81A00235312 /* MerriGables.otf in Resources */ = {isa = PBXBuildFile; fileRef = 299BC26B2BD6D6B600235312 /* MerriGables.otf */; };
+		299BC26E2BD6D81A00235312 /* Erasmus.otf in Resources */ = {isa = PBXBuildFile; fileRef = 299BC2692BD6D64F00235312 /* Erasmus.otf */; };
 		29A6DD5F2B7E26A400F6F06C /* TarotSchoolTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A6DD5E2B7E26A400F6F06C /* TarotSchoolTopView.swift */; };
 		29A6DD642B7E391F00F6F06C /* GreatPathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A6DD632B7E391F00F6F06C /* GreatPathView.swift */; };
 		29A6DD672B7E48B400F6F06C /* ArcanaTabsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A6DD662B7E48B400F6F06C /* ArcanaTabsEnum.swift */; };
@@ -153,6 +155,9 @@
 		298A45452B7D7E20006F8A77 /* LittleCrossView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleCrossView.swift; sourceTree = "<group>"; };
 		298F611D2B81408E00B5D4D7 /* SimplePathArchiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePathArchiveView.swift; sourceTree = "<group>"; };
 		298F611F2B81548B00B5D4D7 /* ArchivedSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivedSessionView.swift; sourceTree = "<group>"; };
+		299BC2692BD6D64F00235312 /* Erasmus.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Erasmus.otf; sourceTree = "<group>"; };
+		299BC26B2BD6D6B600235312 /* MerriGables.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MerriGables.otf; sourceTree = "<group>"; };
+		299BC26C2BD6D7B300235312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		29A6DD5E2B7E26A400F6F06C /* TarotSchoolTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarotSchoolTopView.swift; sourceTree = "<group>"; };
 		29A6DD632B7E391F00F6F06C /* GreatPathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreatPathView.swift; sourceTree = "<group>"; };
 		29A6DD662B7E48B400F6F06C /* ArcanaTabsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcanaTabsEnum.swift; sourceTree = "<group>"; };
@@ -423,6 +428,24 @@
 			path = ReadingArchiveViews;
 			sourceTree = "<group>";
 		};
+		299BC2652BD6D21300235312 /* AllAssets */ = {
+			isa = PBXGroup;
+			children = (
+				299BC2662BD6D22C00235312 /* Fonts */,
+				29C46C082B5FFFB700881C4E /* Assets.xcassets */,
+			);
+			path = AllAssets;
+			sourceTree = "<group>";
+		};
+		299BC2662BD6D22C00235312 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				299BC26B2BD6D6B600235312 /* MerriGables.otf */,
+				299BC2692BD6D64F00235312 /* Erasmus.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		29A6DD5D2B7E266900F6F06C /* TarotSchool */ = {
 			isa = PBXGroup;
 			children = (
@@ -497,6 +520,8 @@
 		29C46C032B5FFFB500881C4E /* SpiritualTarot */ = {
 			isa = PBXGroup;
 			children = (
+				299BC26C2BD6D7B300235312 /* Info.plist */,
+				299BC2652BD6D21300235312 /* AllAssets */,
 				29C46C322B6010D900881C4E /* GoogleService-Info.plist */,
 				29C46C2A2B60075000881C4E /* Managers */,
 				29C46C152B60012500881C4E /* Navigator */,
@@ -504,7 +529,6 @@
 				29C46C132B6000B700881C4E /* DailyQuotes */,
 				29C46C122B6000AE00881C4E /* Login */,
 				29C46C042B5FFFB500881C4E /* SpiritualTarotApp.swift */,
-				29C46C082B5FFFB700881C4E /* Assets.xcassets */,
 				29C46C0A2B5FFFB700881C4E /* Preview Content */,
 			);
 			path = SpiritualTarot;
@@ -783,6 +807,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				299BC26D2BD6D81A00235312 /* MerriGables.otf in Resources */,
+				299BC26E2BD6D81A00235312 /* Erasmus.otf in Resources */,
 				29C46C0C2B5FFFB700881C4E /* Preview Assets.xcassets in Resources */,
 				29C46C092B5FFFB700881C4E /* Assets.xcassets in Resources */,
 				29C46C332B6010DA00881C4E /* GoogleService-Info.plist in Resources */,
@@ -1031,6 +1057,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SpiritualTarot/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SpiritualTarot/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1059,6 +1086,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SpiritualTarot/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SpiritualTarot/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

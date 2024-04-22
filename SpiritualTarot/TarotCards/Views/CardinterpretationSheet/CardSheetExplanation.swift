@@ -30,6 +30,7 @@ struct CardSheetExplanation: View {
             
             VStack {
                 Text(oneCard.name!)
+                    .font(Font.custom("MerriGables", size: 34))
                     .font(.title)
                     .bold()
                     .foregroundColor(.purple)
