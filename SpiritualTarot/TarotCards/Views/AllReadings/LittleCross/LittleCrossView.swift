@@ -294,18 +294,22 @@ struct LittleCrossView: View {
         
         .sheet( isPresented: $showCardSheet01){
             CardSheetExplanation(oneCard: cardVM.allCards[0],givenText: "This card represents your \nissue, topic or question. \nIt shows what's on your mind. ")
+            Button("Close"){ showCardSheet01.toggle() }
         }
         
         .sheet( isPresented: $showCardSheet02){
             CardSheetExplanation(oneCard: cardVM.allCards[1], givenText: "This card tells you what you should \navoid! Don't do that!")
+            Button("Close"){ showCardSheet02.toggle() }
         }
         
         .sheet( isPresented: $showCardSheet03){
             CardSheetExplanation(oneCard: cardVM.allCards[2], givenText: "This card tells you what you should do. \nIt shows you the direction to go.")
+            Button("Close"){ showCardSheet03.toggle() }
         }
         
         .sheet( isPresented: $showCardSheet04){
             CardSheetExplanation(oneCard: cardVM.allCards[3], givenText: "This card shows a possible outcome, if you follow the card 2 and 3. The goal to achieve.")
+            Button("Close"){ showCardSheet04.toggle() }
         }
         
         // saving the Session:
