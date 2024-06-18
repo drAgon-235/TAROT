@@ -293,18 +293,22 @@ struct LoveOracleView: View {
         
         .sheet( isPresented: $showCardSheet01){
             CardSheetExplanation(oneCard: cardVM.allCards[0], givenText: "The Significator:\nThis card represents the \nrelationship, topic or question.")
+            Button("Close"){ showCardSheet01.toggle() }
         }
         
         .sheet( isPresented: $showCardSheet02){
             CardSheetExplanation(oneCard: cardVM.allCards[1], givenText: "This card shows the other person.\nHer/his attitude, expectations, \nHis/her perspective on you.")
+            Button("Close"){ showCardSheet02.toggle() }
         }
         
         .sheet( isPresented: $showCardSheet03){
             CardSheetExplanation(oneCard: cardVM.allCards[2], givenText: "This card represents your inner world. Hopes, anxieties, wishes, motivations. ")
+            Button("Close"){ showCardSheet03.toggle() }
         }
         
         .sheet( isPresented: $showCardSheet04){
             CardSheetExplanation(oneCard: cardVM.allCards[3], givenText: "This card is your Oracle! \n It can be a proposal for an action  \nor attitude.")
+            Button("Close"){ showCardSheet04.toggle() }
         }
         
         // saving the Session:
